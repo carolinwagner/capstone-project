@@ -1,7 +1,8 @@
 import React from 'react'
+import Header from './Header'
 
 function App() {
-  return <div>hello bylaws</div>
+  return <Header />
 }
 
 export default App
