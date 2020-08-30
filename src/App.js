@@ -1,8 +1,14 @@
 import React from 'react'
 import Header from './Header'
+import QuestionsAndAnswerPossibilities from './QuestionsAndAnswerPossibilities'
 
 function App() {
-  return <Header />
+  return (
+    <>
+      <Header />
+      <QuestionsAndAnswerPossibilities />
+    </>
+  )
 }
 
 export default App

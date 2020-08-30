@@ -1,0 +1,164 @@
+[
+  {
+    "questionText": "Wie soll der Name des Vereins lauten?",
+    "answerType": "text",
+    "answerOptions": []
+  },
+  {
+    "questionText": "Wo soll der Verein sitzen?",
+    "answerType": "text",
+    "answerOptions": []
+  },
+  {
+    "questionText": "Welchen Zweck verfolgt der Verein?",
+    "answerType": "text",
+    "answerOptions": []
+  },
+  {
+    "questionText": "Wer soll Mitglied in dem Verein werden können?",
+    "answerType": "checkbox",
+    "answerOptions": [
+      "natürliche Personen < 18",
+      "natürliche Personen > 18",
+      "Personengesellschaften",
+      "juristische Personen"
+    ]
+  },
+  {
+    "questionText": "Auf welchem Wege sollen potentielle Mitglieder einen Mitgliedsantrag stellen?",
+    "answerType": "checkbox",
+    "answerOptions": ["schriftlich", "per E-Mail"]
+  },
+  {
+    "questionText": "Sollen die Mitglieder eine Aufnahmegebühr zahlen?",
+    "answerType": "radio",
+    "answerOptions": ["ja", "nein"]
+  },
+  {
+    "questionText": "Für welche Belange soll die Mitgliedsversammlung als oberstes Vereinsorgan zuständig sein?",
+    "answerType": "checkbox",
+    "answerOptions": [
+      "Wahl des Vorstandes",
+      "Entlastung des Vorstandes",
+      "Haushaltsplan",
+      "Festsetzung der Höhe des Mitgliedsbeitrags",
+      "Entscheidung über eingereichte Anträge",
+      "Beschlussfassung über Satzungsänderungen",
+      "Beschlussfassung über Auflösung des Vereins"
+    ]
+  },
+  {
+    "questionText": "Wie soll die Einladung zur Mitgliederversammlung erfolgen?",
+    "answerType": "radio",
+    "answerOptions": [
+      "schriftlich",
+      "per Email (falls keine E-Mail-Adresse hinterlegt wurde, schriftlich)"
+    ]
+  },
+  {
+    "questionText": "Wie viele Tage vorher soll zur Mitgliederversammlung geladen werden?",
+    "answerType": "number",
+    "answerOptions": []
+  },
+  {
+    "questionText": "Wann soll die Mitgliederversammlung beschlussfähig sein?",
+    "answerType": "radio",
+    "answerOptions": [
+      "jede ordnungsgemäß einberufene Mitgliederversammlung soll beschlussfähig sein",
+      "es muss eine bestimmte Anzahl an Mitgliedern anwesend sein"
+    ]
+  },
+  {
+    "questionText": "Wie häufig soll eine Mitgliederversammlung durchgeführt werden?",
+    "answerType": "radio",
+    "answerOptions": [
+      "monatlich",
+      "vierteljährlich",
+      "halbjährlich",
+      "jährlich"
+    ]
+  },
+  {
+    "questionText": "Mit welcher Mehrheit soll die Mitgliederversammlung ihre Beschlüsse fassen?",
+    "answerType": "radio",
+    "answerOptions": [
+      "monatlich",
+      "vierteljährlich",
+      "halbjährlich",
+      "jährlich"
+    ]
+  },
+  {
+    "questionText": "Mit welcher Mehrheit soll die Mitgliederversammlung ihre Beschlüsse fassen?",
+    "answerType": "radio",
+    "answerOptions": [
+      "einfache Mehrheit",
+      "zweidrittel Mehrheit",
+      "absolute Mehrheit"
+    ]
+  },
+  {
+    "questionText": "Wie ist der Vorstand zusammengesetzt?",
+    "answerType": "checkbox",
+    "answerOptions": ["2 Vorsitzende", "Schatzmeister", "Schriftführer"]
+  },
+  {
+    "questionText": "Wer soll den Verein nach außen vertreten?",
+    "answerType": "radio",
+    "answerOptions": [
+      "der 1. Vorsitzende",
+      "der 1. und der 2. Vorsitzende",
+      "die Mehrheit des Vorstandes",
+      "zwei Mitglieder des Vorstandes"
+    ]
+  },
+  {
+    "questionText": "Für welchen Zeitraum soll der Vorstand gewählt werden?",
+    "answerType": "radio",
+    "answerOptions": ["ein Jahr", "zwei Jahre", "drei Jahre", "vier Jahre"]
+  },
+  {
+    "questionText": "Soll eine Wiederwahl des Vorstandes möglich sein?",
+    "answerType": "radio",
+    "answerOptions": ["ja", "nein"]
+  },
+  {
+    "questionText": "Wie soll zur Vorstandssitzung geladen werden?",
+    "answerType": "checkbox",
+    "answerOptions": ["schriftlich", "per E-Mail"]
+  },
+  {
+    "questionText": "Wie viele Tage vorher soll zu einer Vorstandssitzung geladen werden?",
+    "answerType": "number",
+    "answerOptions": []
+  },
+  {
+    "questionText": "Bedarf es der Mitteilung einer Tagesordnung in der Einladung zur Vorstandssitzung?",
+    "answerType": "radio",
+    "answerOptions": ["ja", "nein"]
+  },
+  {
+    "questionText": "Sollen Arbeitsausschüsse gebildet werden?",
+    "answerType": "radio",
+    "answerOptions": ["ja", "nein"]
+  },
+  {
+    "questionText": "Welche Mehrheit ist erforderlich, sofern die Mitgliederversammlung über die Auflösung des Vereins entscheiden soll?",
+    "answerType": "radio",
+    "answerOptions": [
+      "einfache Mehrheit",
+      "Zwei-Drittel Mehrheit",
+      "absolute Mehrheit"
+    ]
+  },
+  {
+    "questionText": "An welchem Tag soll über die Satzung beschlossen werden?",
+    "answerType": "text",
+    "answerOptions": []
+  },
+  {
+    "questionText": "Wie viele Mitglieder sollen die Satzung unterschreiben?",
+    "answerType": "number",
+    "answerOptions": []
+  }
+]

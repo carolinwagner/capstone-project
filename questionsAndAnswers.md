@@ -25,7 +25,7 @@ Wer soll Mitglied in dem Verein werden können?
 Antwortmöglichkeit als `Checkboxen`:
 
 - natürliche Personen < 18
-- natürliche Personen > 18,
+- natürliche Personen > 18
 - Personengesellschaften
 - juristische Personen
 
@@ -65,7 +65,7 @@ Antwortmöglichkeit als `Checkboxen`:
 - Wahl des Vorstandes
 - Entlastung des Vorstandes
 - Haushaltsplan
-- Festsetzung der Höhe des Mitgliedsbeitrags (falls bei 6. JA angeklickt wurde)
+- Festsetzung der Höhe des Mitgliedsbeitrags
 - Entscheidung über eingereichte Anträge
 - Beschlussfassung über Satzungsänderungen
 - Beschlussfassung über Auflösung des Vereins
@@ -207,7 +207,7 @@ Antwortmöglichkeit als `Radio-Button`:
 
 An welchem Tag soll über die Satzung beschlossen werden?
 
-- Antwortmöglichkeit als Kalender
+- Antwortmöglichkeit als `input`
 
 ### 24.
 
