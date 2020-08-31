@@ -41,6 +41,7 @@ export default function QuestionsAndAnswerPossibilities() {
           </form>
         </>
       ))}
+      <button>Zusammenfassung anzeigen</button>
     </div>
   )
 }
