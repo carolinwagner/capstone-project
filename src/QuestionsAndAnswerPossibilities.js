@@ -1,5 +1,6 @@
 import React from 'react'
 import questions from './questions.json'
+import styled from 'styled-components/macro'
 
 export default function QuestionsAndAnswerPossibilities() {
   return (
@@ -41,7 +42,23 @@ export default function QuestionsAndAnswerPossibilities() {
           </form>
         </>
       ))}
-      <button>Zusammenfassung anzeigen</button>
+      <StyledContainer>
+        <StyledButton>Zusammenfassung anzeigen</StyledButton>
+      </StyledContainer>
     </div>
   )
 }
+
+const StyledContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+const StyledButton = styled.button`
+  margin: 100px;
+  padding: 20px;
+  color: var(--lightgrey);
+  background-color: var(--lightblue);
+  border-radius: 5px;
+  border: none;
+`

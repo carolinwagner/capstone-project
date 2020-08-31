@@ -6,17 +6,17 @@ export default createGlobalStyle`
   box-sizing: border-box;
 }
 
+body {
+  font-size: 112.5%;
+  font-family: 'Lato', sans-serif;
+  margin: 50px;
+}
+
 :root {
     --black-main: #292424;
-    --blue: #406E8F
+    --blue: #406E8F;
+    --lightblue: #8EBADC;
+    --lightgrey: #F2F2F2;
+    --white: #FFFFFF;
 }
-
-body {
-  margin: 50px;
-  font-family: 'Lato', sans-serif
-}
-
-
-
-
 `
