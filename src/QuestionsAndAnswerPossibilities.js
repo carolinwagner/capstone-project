@@ -9,9 +9,10 @@ import RadioInput from './RadioInput'
 export default function QuestionsAndAnswerPossibilities({ onClick }) {
   const [inputValues, setInputValues] = useState([])
 
-  const updateInputValues = (index, value) => {
+  function updateInputValues(index, newValue) {
     const clonedArray = [...inputValues]
-    clonedArray[index] = value
+    clonedArray[index] = newValue
+    console.log(clonedArray)
     setInputValues(clonedArray)
   }
 
@@ -25,17 +26,13 @@ export default function QuestionsAndAnswerPossibilities({ onClick }) {
           <p>{question.questionText}</p>
           {question.answerType === 'text' && (
             <TextInput
-              onChange={(event) =>
-                updateInputValues(index, String(event.target.value))
-              }
+              onChange={(event) => updateInputValues(index, event.target.value)}
               value={inputValues[index] || ''}
             />
           )}
           {question.answerType === 'number' && (
             <NumberInput
-              onChange={(event) =>
-                updateInputValues(index, String(event.target.value))
-              }
+              onChange={(event) => updateInputValues(index, event.target.value)}
               value={inputValues[index] || ''}
               key={index}
             />
@@ -43,6 +40,17 @@ export default function QuestionsAndAnswerPossibilities({ onClick }) {
 
           {question.answerType === 'checkbox' && (
             <CheckboxInput
+              onChange={(index2, checked) => {
+                const currentValue = inputValues[index]
+                let answerArray
+                if (!currentValue) {
+                  answerArray = Array(question.answerOptions.length).fill(false)
+                } else {
+                  answerArray = currentValue
+                }
+                answerArray[index2] = checked
+                updateInputValues(index, answerArray)
+              }}
               answerOptions={question.answerOptions}
               index={index}
             />
