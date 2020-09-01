@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useForm } from 'react-hook-form'
 import questions from './questions.json'
 import styled from 'styled-components/macro'
 import TextInput from './TextInput'
@@ -7,17 +8,15 @@ import CheckboxInput from './CheckboxInput'
 import RadioInput from './RadioInput'
 
 export default function QuestionsAndAnswerPossibilities({ onClick }) {
-  const [inputValues, setInputValues] = useState([])
+  const { register, handleSubmit } = useForm()
 
-  function updateInputValues(index, newValue) {
-    const clonedArray = [...inputValues]
-    clonedArray[index] = newValue
-    console.log(clonedArray)
-    setInputValues(clonedArray)
+  const onSubmit = (data) => {
+    console.log(data)
+    onClick(data)
   }
 
   return (
-    <div>
+    <form onSubmit={handleSubmit(onSubmit)}>
       {questions.map((question, index) => (
         <React.Fragment key={index}>
           <h2>
@@ -26,55 +25,40 @@ export default function QuestionsAndAnswerPossibilities({ onClick }) {
           <p>{question.questionText}</p>
           {question.answerType === 'text' && (
             <TextInput
-              onChange={(event) => updateInputValues(index, event.target.value)}
-              value={inputValues[index] || ''}
+              name={question.questionText || `text-${index}`}
+              ref={register}
             />
           )}
           {question.answerType === 'number' && (
             <NumberInput
-              onChange={(event) => updateInputValues(index, event.target.value)}
-              value={inputValues[index] || ''}
-              key={index}
+              name={question.questionText || `number-${index}`}
+              ref={register}
             />
           )}
 
           {question.answerType === 'checkbox' && (
             <CheckboxInput
-              onChange={(index2, checked) => {
-                const currentValue = inputValues[index]
-                let answerArray
-                if (!currentValue) {
-                  answerArray = Array(question.answerOptions.length).fill(false)
-                } else {
-                  answerArray = currentValue
-                }
-                answerArray[index2] = checked
-                updateInputValues(index, answerArray)
-              }}
+              ref={register}
+              name={question.questionText || `checkbox-${index}`}
               answerOptions={question.answerOptions}
               index={index}
             />
           )}
 
           {question.answerType === 'radio' && (
-            <RadioInput answerOptions={question.answerOptions} index={index} />
+            <RadioInput
+              ref={register}
+              name={question.questionText || `radio-${index}`}
+              answerOptions={question.answerOptions}
+              index={index}
+            />
           )}
         </React.Fragment>
       ))}
       <StyledContainer>
-        <StyledButton
-          onClick={() => {
-            if (inputValues !== []) {
-              console.log('Values: ', inputValues)
-              onClick(inputValues)
-              setInputValues([])
-            }
-          }}
-        >
-          Zusammenfassung anzeigen
-        </StyledButton>
+        <StyledButton type="submit">Zusammenfassung anzeigen</StyledButton>
       </StyledContainer>
-    </div>
+    </form>
   )
 }
 

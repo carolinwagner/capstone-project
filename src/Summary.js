@@ -1,11 +1,22 @@
 import React from 'react'
 
 export default function Summary({ answers }) {
+  const answersArray = Object.entries(answers)
+  console.log('Answers Array', answersArray)
   return (
-    <ol>
-      {answers.map((answer, index) => (
-        <li key={index}>{answer}</li>
-      ))}
-    </ol>
+    <ul>
+      {answersArray.map((answer, index) => {
+        return (
+          answer[1] && (
+            <li key={index}>
+              {answer[0]}:{' '}
+              {Array.isArray(answer[1])
+                ? JSON.stringify(answer[1].filter(Boolean))
+                : answer[1]}
+            </li>
+          )
+        )
+      })}
+    </ul>
   )
 }

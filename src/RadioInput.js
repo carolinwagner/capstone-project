@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
-export default function RadioInput({ index, answerOptions }) {
+const RadioInput = forwardRef(({ answerOptions }, ref) => {
   return (
     <div>
-      {answerOptions.map((answerOption, innerIndex) => (
-        <div key={`radio${index}${innerIndex}`}>
-          <input name={index} type="radio" />
-          <label>{answerOption}</label>
-        </div>
-      ))}
+      {answerOptions.map((answerOption) => {
+        return (
+          <div key={answerOption.name}>
+            <input ref={ref} name={answerOption.name} type="radio" />
+            <label>{answerOption.label}</label>
+          </div>
+        )
+      })}
     </div>
   )
-}
+})
+
+export default RadioInput

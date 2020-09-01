@@ -1,12 +1,7 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
-export default function NumberInput({ onChange, value, index }) {
-  return (
-    <input
-      onChange={onChange}
-      value={value}
-      type="number"
-      key={`number${index}`}
-    />
-  )
-}
+const NumberInput = forwardRef(({ name }, ref) => {
+  return <input type="number" ref={ref} name={name} />
+})
+
+export default NumberInput

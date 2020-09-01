@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
-export default function TextInput({ onChange, value }) {
-  return <input onChange={onChange} value={value} type="text" />
-}
+const TextInput = forwardRef(({ name }, ref) => {
+  return <input name={name} ref={ref} type="text" />
+})
+
+export default TextInput
