@@ -10,7 +10,7 @@ const CheckboxInput = forwardRef(({ answerOptions, name }, ref) => {
             <input
               name={inputName}
               id={answerOption.name}
-              value={answerOption.name}
+              value={answerOption.label}
               type="checkbox"
               ref={ref}
             />
