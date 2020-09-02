@@ -1,7 +1,17 @@
 import React, { forwardRef } from 'react'
+import styled from 'styled-components/macro'
 
 const NumberInput = forwardRef(({ name }, ref) => {
-  return <input type="number" ref={ref} name={name} />
+  return <StyledNumberInput type="number" ref={ref} name={name} />
 })
 
 export default NumberInput
+
+const StyledNumberInput = styled.input`
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--lightblue);
+  border-radius: 4px;
+`
