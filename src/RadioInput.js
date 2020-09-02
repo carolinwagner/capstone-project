@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-// import styled from 'styled-components/macro'
+import styled from 'styled-components/macro'
 
 const RadioInput = forwardRef(({ question }, ref) => {
   return (
@@ -7,7 +7,7 @@ const RadioInput = forwardRef(({ question }, ref) => {
       {question.answerOptions.map((answerOption) => {
         return (
           <div key={answerOption.name}>
-            <input
+            <StyledRadioInput
               name={question.questionText}
               value={answerOption.label}
               type="radio"
@@ -23,8 +23,6 @@ const RadioInput = forwardRef(({ question }, ref) => {
 
 export default RadioInput
 
-// const StyledRadioInput = styled.input`
-//   padding: 10px;
-//   margin-right: 10px;
-//   border: 1px solid var(--lightblue);
-// `
+const StyledRadioInput = styled.input`
+  margin-right: 10px;
+`

@@ -125,7 +125,7 @@
     "answerType": "checkbox",
     "name": "boardComposition",
     "answerOptions": [
-      { "label": "2 Vorsitzende", "name": "twoBoardMembers" },
+      { "label": "zwei Vorsitzende", "name": "twoBoardMembers" },
       { "label": "Schatzmeister", "name": "treasurer" },
       { "label": "Schriftführer", "name": "secretary" }
     ]
