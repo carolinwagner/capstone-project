@@ -2,7 +2,9 @@ import React, { forwardRef } from 'react'
 import styled from 'styled-components/macro'
 
 const NumberInput = forwardRef(({ question }, ref) => {
-  return <StyledNumberInput type="number" ref={ref} name={question.name} />
+  return (
+    <StyledNumberInput type="number" ref={ref} name={question.questionText} />
+  )
 })
 
 export default NumberInput

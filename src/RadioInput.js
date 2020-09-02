@@ -5,12 +5,10 @@ const RadioInput = forwardRef(({ question }, ref) => {
   return (
     <div>
       {question.answerOptions.map((answerOption) => {
-        const inputName = answerOption.name
         return (
-          <div key={inputName}>
+          <div key={answerOption.name}>
             <input
-              name={answerOption}
-              id={answerOption.name}
+              name={question.questionText}
               value={answerOption.label}
               type="radio"
               ref={ref}

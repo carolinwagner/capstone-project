@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import questions from './questions.json'
 import styled from 'styled-components/macro'
@@ -9,11 +9,6 @@ import RadioInput from './RadioInput'
 
 export default function QuestionsAndAnswerPossibilities({ onClick }) {
   const { register, handleSubmit } = useForm()
-  const [answers, setAnswers] = useState({})
-
-  const onAnswer = (name, value) => {
-    setAnswers({ [name]: value, ...answers })
-  }
 
   const onSubmit = (data) => {
     console.log(data)
@@ -29,24 +24,21 @@ export default function QuestionsAndAnswerPossibilities({ onClick }) {
           </h2>
           <p>{question.questionText}</p>
           {question.answerType === 'text' && (
-            <TextInput question={question} onAnswer={onAnswer} />
+            <TextInput question={question} ref={register} />
           )}
           {question.answerType === 'number' && (
-            <NumberInput question={question} onAnswer={onAnswer} />
+            <NumberInput question={question} ref={register} />
           )}
-
           {question.answerType === 'checkbox' && (
-            <CheckboxInput ref={register} question={question} />
+            <CheckboxInput question={question} ref={register} />
           )}
-
           {question.answerType === 'radio' && (
-            <RadioInput ref={register} question={question} />
+            <RadioInput question={question} ref={register} />
           )}
         </React.Fragment>
       ))}
       <StyledContainer>
         <StyledButton type="submit">Zusammenfassung anzeigen</StyledButton>
-        {JSON.stringify(answers)}
       </StyledContainer>
     </form>
   )
