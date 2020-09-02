@@ -1,14 +1,21 @@
 import React, { forwardRef } from 'react'
-import styled from 'styled-components/macro'
+// import styled from 'styled-components/macro'
 
-const RadioInput = forwardRef(({ answerOptions }, ref) => {
+const RadioInput = forwardRef(({ question }, ref) => {
   return (
     <div>
-      {answerOptions.map((answerOption) => {
+      {question.answerOptions.map((answerOption) => {
+        const inputName = answerOption.name
         return (
-          <div key={answerOption.name}>
-            <StyledRadioInput ref={ref} name={answerOption.name} type="radio" />
-            <label>{answerOption.label}</label>
+          <div key={inputName}>
+            <input
+              name={answerOption}
+              id={answerOption.name}
+              value={answerOption.label}
+              type="radio"
+              ref={ref}
+            />
+            <label htmlFor={answerOption.name}>{answerOption.label}</label>
           </div>
         )
       })}
@@ -18,8 +25,8 @@ const RadioInput = forwardRef(({ answerOptions }, ref) => {
 
 export default RadioInput
 
-const StyledRadioInput = styled.input`
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid var(--lightblue);
-`
+// const StyledRadioInput = styled.input`
+//   padding: 10px;
+//   margin-right: 10px;
+//   border: 1px solid var(--lightblue);
+// `

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import questions from './questions.json'
 import styled from 'styled-components/macro'
@@ -9,6 +9,11 @@ import RadioInput from './RadioInput'
 
 export default function QuestionsAndAnswerPossibilities({ onClick }) {
   const { register, handleSubmit } = useForm()
+  const [answers, setAnswers] = useState({})
+
+  const onAnswer = (name, value) => {
+    setAnswers({ [name]: value, ...answers })
+  }
 
   const onSubmit = (data) => {
     console.log(data)
@@ -24,39 +29,24 @@ export default function QuestionsAndAnswerPossibilities({ onClick }) {
           </h2>
           <p>{question.questionText}</p>
           {question.answerType === 'text' && (
-            <TextInput
-              name={question.questionText || `text-${index}`}
-              ref={register}
-            />
+            <TextInput question={question} onAnswer={onAnswer} />
           )}
           {question.answerType === 'number' && (
-            <NumberInput
-              name={question.questionText || `number-${index}`}
-              ref={register}
-            />
+            <NumberInput question={question} onAnswer={onAnswer} />
           )}
 
           {question.answerType === 'checkbox' && (
-            <CheckboxInput
-              ref={register}
-              name={question.questionText || `checkbox-${index}`}
-              answerOptions={question.answerOptions}
-              index={index}
-            />
+            <CheckboxInput ref={register} question={question} />
           )}
 
           {question.answerType === 'radio' && (
-            <RadioInput
-              ref={register}
-              name={question.questionText || `radio-${index}`}
-              answerOptions={question.answerOptions}
-              index={index}
-            />
+            <RadioInput ref={register} question={question} />
           )}
         </React.Fragment>
       ))}
       <StyledContainer>
         <StyledButton type="submit">Zusammenfassung anzeigen</StyledButton>
+        {JSON.stringify(answers)}
       </StyledContainer>
     </form>
   )

@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components/macro'
 
-const CheckboxInput = forwardRef(({ answerOptions, name }, ref) => {
+const CheckboxInput = forwardRef(({ question }, ref) => {
   return (
     <div>
-      {answerOptions.map((answerOption, innerIndex) => {
-        const inputName = `${name}[${innerIndex}]`
+      {question.answerOptions.map((answerOption, innerIndex) => {
+        const inputName = `${question.name}[${innerIndex}]`
         return (
           <div key={answerOption.name}>
             <StyledCheckboxInput
