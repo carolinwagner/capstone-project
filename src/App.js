@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from './Header'
-import QuestionsAndAnswerPossibilities from './QuestionsAndAnswerPossibilities'
+import QuestionsForm from './QuestionsForm'
 import Summary from './Summary'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <QuestionsAndAnswerPossibilities onClick={addAnswers} />
+      <QuestionsForm onClick={addAnswers} />
       <Summary answers={answers} />
     </>
   )
