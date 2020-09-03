@@ -18,7 +18,7 @@ export default function Summary({ answers }) {
           {answersArray.map(([question, answer], index) => {
             const isAnswerCheckbox = Array.isArray(answer)
 
-            // Don't show checkboxes with falsy values (haven't been checked)
+            // Don't show checkboxes with falsy values (not checked ones)
             const displayValue = isAnswerCheckbox
               ? answer.filter(Boolean).join(' und ')
               : answer
