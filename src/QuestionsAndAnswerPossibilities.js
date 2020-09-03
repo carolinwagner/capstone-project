@@ -6,6 +6,7 @@ import TextInput from './TextInput'
 import NumberInput from './NumberInput'
 import CheckboxInput from './CheckboxInput'
 import RadioInput from './RadioInput'
+import Button from './Button'
 
 export default function QuestionsAndAnswerPossibilities({ onClick }) {
   const { register, handleSubmit } = useForm()
@@ -38,7 +39,7 @@ export default function QuestionsAndAnswerPossibilities({ onClick }) {
         </React.Fragment>
       ))}
       <StyledContainer>
-        <StyledButton type="submit">Zusammenfassung anzeigen</StyledButton>
+        <Button type="submit">Zusammenfassung anzeigen</Button>
       </StyledContainer>
     </form>
   )
@@ -47,14 +48,5 @@ export default function QuestionsAndAnswerPossibilities({ onClick }) {
 const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
-`
-
-const StyledButton = styled.button`
-  margin: 100px;
-  padding: 20px;
-  color: var(--lightgrey);
-  background-color: var(--lightblue);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+  padding: 100px;
 `

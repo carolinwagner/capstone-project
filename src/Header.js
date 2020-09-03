@@ -18,7 +18,6 @@ export default function Header() {
 }
 
 const StyledHeader = styled.h1`
-  color: blue;
   font-family: 'Playfair Display', serif;
   font-size: 45px;
   color: var(--lightblue);
