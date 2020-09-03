@@ -10,7 +10,7 @@ const CheckboxInput = forwardRef(({ question }, ref) => {
           <div key={answerOption.name}>
             <StyledCheckboxInput
               type="checkbox"
-              name={inputName || 'defaultTextInput'}
+              name={inputName || 'defaultCheckboxInput'}
               id={answerOption.name}
               value={answerOption.label}
               ref={ref}

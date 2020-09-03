@@ -8,7 +8,7 @@ const RadioInput = forwardRef(({ question }, ref) => {
         return (
           <div key={answerOption.name}>
             <StyledRadioInput
-              name={question.questionText}
+              name={question?.questionText || 'defaulRadioInput'}
               value={answerOption.label}
               type="radio"
               ref={ref}
