@@ -5,12 +5,12 @@ const CheckboxInput = forwardRef(({ question }, ref) => {
   return (
     <div>
       {question.answerOptions.map((answerOption, innerIndex) => {
-        const inputName = `${question.questionText}[${innerIndex}]`
+        const inputName = `${question?.questionText}[${innerIndex}]`
         return (
           <div key={answerOption.name}>
             <StyledCheckboxInput
               type="checkbox"
-              name={inputName}
+              name={inputName || 'defaultTextInput'}
               id={answerOption.name}
               value={answerOption.label}
               ref={ref}
