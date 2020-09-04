@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxInput renders CheckboxInput correctly 1`] = `
+<div>
+  <div>
+    <input
+      className="CheckboxInput__StyledCheckboxInput-sc-131g3tm-0 brfjmz"
+      id="a"
+      name="undefined[0]"
+      type="checkbox"
+      value="a"
+    />
+    <label
+      htmlFor="a"
+    >
+      a
+    </label>
+  </div>
+  <div>
+    <input
+      className="CheckboxInput__StyledCheckboxInput-sc-131g3tm-0 brfjmz"
+      id="b"
+      name="undefined[1]"
+      type="checkbox"
+      value="b"
+    />
+    <label
+      htmlFor="b"
+    >
+      b
+    </label>
+  </div>
+  <div>
+    <input
+      className="CheckboxInput__StyledCheckboxInput-sc-131g3tm-0 brfjmz"
+      id="d"
+      name="undefined[2]"
+      type="checkbox"
+      value="c"
+    />
+    <label
+      htmlFor="d"
+    >
+      c
+    </label>
+  </div>
+  <div>
+    <input
+      className="CheckboxInput__StyledCheckboxInput-sc-131g3tm-0 brfjmz"
+      id="d"
+      name="undefined[3]"
+      type="checkbox"
+      value="d"
+    />
+    <label
+      htmlFor="d"
+    >
+      d
+    </label>
+  </div>
+</div>
+`;
