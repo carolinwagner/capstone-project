@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioInput renders RadioInput correctly 1`] = `
+<div>
+  <div>
+    <input
+      className="RadioInput__StyledRadioInput-zlk93r-0 jAuPYN"
+      name="defaulRadioInput"
+      type="radio"
+      value="a"
+    />
+    <label
+      htmlFor="a"
+    >
+      a
+    </label>
+  </div>
+  <div>
+    <input
+      className="RadioInput__StyledRadioInput-zlk93r-0 jAuPYN"
+      name="defaulRadioInput"
+      type="radio"
+      value="b"
+    />
+    <label
+      htmlFor="b"
+    >
+      b
+    </label>
+  </div>
+</div>
+`;
