@@ -1,6 +1,5 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import renderer from 'react-test-renderer'
 import Header from './Header'
 
 describe('Header', () => {
@@ -12,7 +11,7 @@ describe('Header', () => {
 
 describe('Header', () => {
   it('renders Header correctly', () => {
-    const tree = renderer.create(<Header />)
-    expect(tree).toMatchSnapshot()
+    const container = render(<Header />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

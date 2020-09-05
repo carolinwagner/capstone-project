@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NumberInput renders NumberInput correctly 1`] = `
-<input
-  className="NumberInput__StyledNumberInput-tk3tkh-0 lhAKbA"
-  name="defaultTextInput"
-  type="number"
-/>
-`;
+exports[`NumberInput renders NumberInput correctly 1`] = `undefined`;

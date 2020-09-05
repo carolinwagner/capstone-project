@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 import CheckboxInput from './CheckboxInput'
 
 const defaultQuestion = {
@@ -14,7 +14,7 @@ const defaultQuestion = {
 
 describe('CheckboxInput', () => {
   it('renders CheckboxInput correctly', () => {
-    const tree = renderer.create(<CheckboxInput question={defaultQuestion} />)
-    expect(tree).toMatchSnapshot()
+    const container = render(<CheckboxInput question={defaultQuestion} />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

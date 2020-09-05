@@ -1,11 +1,11 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 import TextInput from './TextInput'
 
 describe('TextInput', () => {
   it('renders TextInput correctly', () => {
-    const tree = renderer.create(<TextInput />)
-    expect(tree).toMatchSnapshot()
+    const container = render(<TextInput />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

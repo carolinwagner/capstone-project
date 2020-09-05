@@ -1,11 +1,11 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 import NumberInput from './NumberInput'
 
 describe('NumberInput', () => {
   it('renders NumberInput correctly', () => {
-    const tree = renderer.create(<NumberInput />)
-    expect(tree).toMatchSnapshot()
+    const container = render(<NumberInput />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

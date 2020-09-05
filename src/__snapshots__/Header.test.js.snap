@@ -1,17 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders Header correctly 1`] = `
-Array [
-  <h1
-    className="Header__StyledHeader-sc-1ueqsvc-0 iyTsTP"
-  >
-    Hello Bylaws
-  </h1>,
-  <p>
-    Jeder gemeinnützige Verein benötigt gemäß § 57 des Bürgerlichen Gesetzbuches eine Satzung.
-  </p>,
-  <p>
-    Die folgenden Fragen müssen im Voraus geklärt werden, damit du dir eine passende Satzung individuell zusammenbauen kannst.
-  </p>,
-]
-`;
+exports[`Header renders Header correctly 1`] = `undefined`;
