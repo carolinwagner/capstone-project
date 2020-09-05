@@ -13,7 +13,7 @@ body {
 }
 
 :root {
-    --black-main: #292424;
+    --darkgrey-main: #292424;
     --blue: #406E8F;
     --lightblue: #8EBADC;
     --lightgrey: #F2F2F2;

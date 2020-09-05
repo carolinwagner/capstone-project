@@ -13,7 +13,7 @@ const defaultQuestion = {
 }
 
 describe('CheckboxInput', () => {
-  it('renders CheckboxInput correctly', () => {
+  it('renders correctly', () => {
     const container = render(<CheckboxInput question={defaultQuestion} />)
     expect(container.firstChild).toMatchSnapshot()
   })

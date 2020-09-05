@@ -4,7 +4,7 @@ import { render } from '@testing-library/react'
 import TextInput from './TextInput'
 
 describe('TextInput', () => {
-  it('renders TextInput correctly', () => {
+  it('renders correctly', () => {
     const container = render(<TextInput />)
     expect(container.firstChild).toMatchSnapshot()
   })

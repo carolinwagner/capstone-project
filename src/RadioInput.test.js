@@ -10,7 +10,7 @@ const defaultQuestion = {
   ],
 }
 describe('RadioInput', () => {
-  it('renders RadioInput correctly', () => {
+  it('renders correctly', () => {
     const container = render(<RadioInput question={defaultQuestion} />)
     expect(container.firstChild).toMatchSnapshot()
   })
