@@ -65,10 +65,15 @@ Antwortmöglichkeit als `Checkboxen`:
 - Wahl des Vorstandes
 - Entlastung des Vorstandes
 - Haushaltsplan
-- Festsetzung der Höhe des Mitgliedsbeitrags
+  <<<<<<< HEAD
+- # Festsetzung der Höhe des Mitgliedsbeitrags
+- Festsetzung der Höhe des Mitgliedsbeitrags (falls bei 6. JA angeklickt wurde)
+  > > > > > > > master
 - Entscheidung über eingereichte Anträge
 - Beschlussfassung über Satzungsänderungen
 - Beschlussfassung über Auflösung des Vereins
+
+<<<<<<< HEAD
 
 ### 9.
 
@@ -100,6 +105,12 @@ Antwortmöglichkeit als `Radio-Button`:
 
 ### 12.
 
+=======
+
+### 8.
+
+> > > > > > > master
+
 Wie häufig soll eine Mitgliederversammlung durchgeführt werden?
 
 Antwortmöglichkeit als `Radio-Button`:
@@ -109,7 +120,15 @@ Antwortmöglichkeit als `Radio-Button`:
 - halbjährlich
 - jährlich
 
+<<<<<<< HEAD
+
 ### 13.
+
+=======
+
+### 9.
+
+> > > > > > > master
 
 Mit welcher Mehrheit soll die Mitgliederversammlung ihre Beschlüsse fassen?
 
@@ -118,6 +137,8 @@ Antwortmöglichkeit als `Radio-Button`:
 - einfache Mehrheit
 - zweidrittel Mehrheit
 - absolute Mehrheit
+
+<<<<<<< HEAD
 
 ### 14.
 
@@ -142,16 +163,29 @@ Antwortmöglichkeit als `Radio-Button`:
 
 ### 16.
 
+=======
+
+### 10.
+
+> > > > > > > master
+
 Für welchen Zeitraum soll der Vorstand gewählt werden?
 
 Antwortmöglichkeit als `Radio-Button`:
 
 - ein Jahr
 - zwei Jahre
+  <<<<<<< HEAD
 - drei Jahre
 - vier Jahre
 
 ### 17.
+
+=======
+
+### 11.
+
+> > > > > > > master
 
 Soll eine Wiederwahl des Vorstandes möglich sein?
 
@@ -159,6 +193,8 @@ Antwortmöglichkeit als `Radio-Button`:
 
 - ja
 - nein
+
+<<<<<<< HEAD
 
 ### 18.
 
@@ -186,6 +222,33 @@ Antwortmöglichkeit als `Radio-Button`:
 
 ### 21.
 
+=======
+
+### 12.
+
+Aus welchen Organen soll der Vorstand bestehen?
+
+Antwortmöglichkeit als `Checkboxen`:
+
+- Vorstand
+- Schatzmeister
+- sonstige Person (`Input-Feld`)
+
+### 13.
+
+Wer soll den Verein nach außen vertreten?
+
+Antwortmöglichkeit als `Radio-Button`:
+
+- der 1. Vorsitzende
+- der 1. und der 2. Vorsitzende
+- die Mehrheit des Vorstandes
+- zwei Mitglieder des Vorstandes
+
+### 14.
+
+> > > > > > > master
+
 Sollen Arbeitsausschüsse gebildet werden?
 
 Antwortmöglichkeit als `Radio-Button`:
@@ -193,13 +256,22 @@ Antwortmöglichkeit als `Radio-Button`:
 - ja (wenn ja: 'Input-Feld' mit einzutragenden verpflichtenden Arbeitsstunden)
 - nein
 
+<<<<<<< HEAD
+
 ### 22.
+
+=======
+
+### 15.
+
+> > > > > > > master
 
 Welche Mehrheit ist erforderlich, sofern die Mitgliederversammlung über die Auflösung des Vereins entscheiden soll?
 
 Antwortmöglichkeit als `Radio-Button`:
 
 - einfache Mehrheit
+  <<<<<<< HEAD
 - Zwei-Drittel Mehrheit
 - absolute Mehrheit
 
@@ -213,4 +285,14 @@ An welchem Tag soll über die Satzung beschlossen werden?
 
 Wie viele Mitglieder sollen die Satzung unterschreiben?
 
-- Antwortmöglichkeit als Feld mit up and down Button, voreingestellt 7 (kann nicht unterschritten werden)
+- # Antwortmöglichkeit als Feld mit up and down Button, voreingestellt 7 (kann nicht unterschritten werden)
+- zweidrittel Mehrheit
+- absolute Mehrheit
+
+### 16.
+
+An wen oder an welche Organisation soll bei Auflösung des Vereins oder bei WEgfall seines bisherigen Zweckes das Vereinsvermögen fallen?
+
+Antwortmöglichkeit als `Input-Feld`
+
+> > > > > > > master
