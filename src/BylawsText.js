@@ -1,5 +1,15 @@
 import React from 'react'
 
 export default function BylawsText({ answers }) {
-  return <p>{`Mein Verein heißt ${answers.clubName}`}</p>
+  const firstParagraph = `Mein Verein heißt ${answers.clubName}. ${
+    answers.clubLocation
+      ? `Der Sitz des Vereins ist in ${answers.clubLocation}`
+      : ''
+  }.`
+
+  return (
+    <>
+      <p>{firstParagraph}</p>
+    </>
+  )
 }
