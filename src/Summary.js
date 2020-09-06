@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function Summary({ answers }) {
   const answersArray = Object.entries(answers)
-  console.log(answersArray)
   const anyAnswerGiven = answersArray.some((oneAnswer) => {
     const isAnswerCheckbox = Array.isArray(oneAnswer[1])
     return isAnswerCheckbox

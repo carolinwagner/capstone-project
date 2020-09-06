@@ -6,7 +6,7 @@ const NumberInput = forwardRef(({ question }, ref) => {
     <StyledNumberInput
       type="number"
       ref={ref}
-      name={question?.questionText || 'defaultTextInput'}
+      name={question?.name || 'defaultTextInput'}
     />
   )
 })

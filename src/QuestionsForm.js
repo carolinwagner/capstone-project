@@ -11,13 +11,13 @@ import Button from './Button'
 export default function QuestionsForm({ onClick }) {
   const { register, handleSubmit } = useForm()
 
-  const onSubmit = (data) => {
+  const onFormSubmit = (data) => {
     console.log(data)
     onClick(data)
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onFormSubmit)}>
       {questions.map((question, index) => (
         <React.Fragment key={index}>
           <h2>

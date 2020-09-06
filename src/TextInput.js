@@ -5,7 +5,7 @@ const TextInput = forwardRef(({ question }, ref) => {
   return (
     <StyledTextInput
       type="text"
-      name={question?.questionText || 'defaultTextInput'}
+      name={question?.name || 'defaultTextInput'}
       ref={ref}
     />
   )
