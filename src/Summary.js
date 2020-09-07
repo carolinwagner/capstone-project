@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components/macro'
 
 export default function Summary({ answers }) {
   const answersArray = Object.entries(answers)
@@ -26,7 +27,7 @@ export default function Summary({ answers }) {
               displayValue && (
                 <li key={index}>
                   {question}
-                  <br /> <strong>{displayValue}</strong>
+                  <StyledDisplayValue>{displayValue}</StyledDisplayValue>
                 </li>
               )
             )
@@ -36,3 +37,8 @@ export default function Summary({ answers }) {
     )
   )
 }
+
+const StyledDisplayValue = styled.p`
+  font-weight: bold;
+  word-wrap: break-word;
+`

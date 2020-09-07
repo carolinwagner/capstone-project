@@ -24,5 +24,5 @@ const RadioInput = forwardRef(({ question }, ref) => {
 export default RadioInput
 
 const StyledRadioInput = styled.input`
-  margin-right: 10px;
+  margin: 10px 10px 10px 0;
 `

@@ -39,7 +39,9 @@ export default function QuestionsForm({ onClick }) {
         </React.Fragment>
       ))}
       <StyledContainer>
-        <Button type="submit">Zusammenfassung anzeigen</Button>
+        <Button type="submit">
+          <StyledButtonText>Zusammenfassung anzeigen</StyledButtonText>
+        </Button>
       </StyledContainer>
     </form>
   )
@@ -49,4 +51,8 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 100px;
+`
+
+const StyledButtonText = styled.p`
+  font-size: 1.5em;
 `

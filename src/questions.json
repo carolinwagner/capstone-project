@@ -115,7 +115,7 @@
     "answerType": "radio",
     "answerOptions": [
       { "label": "absolute Mehrheit", "name": "absoluteMajority" },
-      { "label": "zweidrittel Mehrheit", "name": "twoThirdsMajority" },
+      { "label": "Zweidrittel Mehrheit", "name": "twoThirdsMajority" },
       { "label": "einfache Mehrheit", "name": "simpleMajority" }
     ]
   },
@@ -203,7 +203,7 @@
     "answerType": "radio",
     "answerOptions": [
       { "label": "absolute Mehrheit", "name": "absoluteMajority" },
-      { "label": "zweidrittel Mehrheit", "name": "twoThirdsMajority" },
+      { "label": "Zweidrittel Mehrheit", "name": "twoThirdsMajority" },
       { "label": "einfache Mehrheit", "name": "simpleMajority" }
     ]
   },
