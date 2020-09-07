@@ -10,6 +10,7 @@ const RadioInput = forwardRef(({ question }, ref) => {
             <StyledRadioInput
               name={question?.questionText || 'defaulRadioInput'}
               value={answerOption.label}
+              id={answerOption.name}
               type="radio"
               ref={ref}
             />
@@ -24,5 +25,5 @@ const RadioInput = forwardRef(({ question }, ref) => {
 export default RadioInput
 
 const StyledRadioInput = styled.input`
-  margin-right: 10px;
+  margin: 5px 10px 5px 0;
 `

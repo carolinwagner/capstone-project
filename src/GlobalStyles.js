@@ -9,7 +9,7 @@ export default createGlobalStyle`
 body {
   font-size: 112.5%;
   font-family: 'Lato', sans-serif;
-  margin: 50px;
+  margin: 25px;
 }
 
 :root {

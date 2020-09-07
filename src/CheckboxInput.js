@@ -26,5 +26,5 @@ const CheckboxInput = forwardRef(({ question }, ref) => {
 export default CheckboxInput
 
 const StyledCheckboxInput = styled.input`
-  margin-right: 10px;
+  margin: 5px 10px 5px 0;
 `
