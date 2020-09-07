@@ -47,7 +47,9 @@ export default function QuestionsForm({ onClick }) {
           )}
           {errors[question?.name] &&
             errors[question?.name].type === 'required' && (
-              <p>This is required</p>
+              <StyledErrorMessage>
+                Dieses Frage muss beantwortet werden
+              </StyledErrorMessage>
             )}
         </React.Fragment>
       ))}
@@ -68,4 +70,14 @@ const StyledContainer = styled.div`
 
 const StyledButtonText = styled.p`
   font-size: 1.5em;
+`
+
+const StyledErrorMessage = styled.p`
+  color: red;
+  font-size: 75%;
+
+  ::before {
+    display: inline;
+    content: '⚠ ';
+  }
 `
