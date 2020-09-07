@@ -9,7 +9,7 @@ import RadioInput from './RadioInput'
 import Button from './Button'
 
 export default function QuestionsForm({ onClick }) {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, errors } = useForm()
 
   const onFormSubmit = (data) => {
     console.log(data)
@@ -25,17 +25,30 @@ export default function QuestionsForm({ onClick }) {
           </h2>
           <p>{question.questionText}</p>
           {question.answerType === 'text' && (
-            <TextInput question={question} ref={register} />
+            <TextInput
+              name={question?.name}
+              ref={register({ required: true })}
+            />
           )}
           {question.answerType === 'number' && (
-            <NumberInput question={question} ref={register} />
+            <NumberInput
+              name={question?.name}
+              ref={register({ required: true })}
+            />
           )}
           {question.answerType === 'checkbox' && (
             <CheckboxInput question={question} ref={register} />
           )}
           {question.answerType === 'radio' && (
-            <RadioInput question={question} ref={register} />
+            <RadioInput
+              question={question}
+              ref={register({ required: true })}
+            />
           )}
+          {errors[question?.name] &&
+            errors[question?.name].type === 'required' && (
+              <p>This is required</p>
+            )}
         </React.Fragment>
       ))}
       <StyledContainer>
