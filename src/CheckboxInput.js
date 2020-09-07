@@ -15,7 +15,9 @@ const CheckboxInput = forwardRef(({ question }, ref) => {
               value={answerOption.label}
               ref={ref}
             />
-            <label htmlFor={answerOption.name}>{answerOption.label}</label>
+            <StyledLabel htmlFor={answerOption.name}>
+              {answerOption.label}
+            </StyledLabel>
           </div>
         )
       })}
@@ -26,5 +28,8 @@ const CheckboxInput = forwardRef(({ question }, ref) => {
 export default CheckboxInput
 
 const StyledCheckboxInput = styled.input`
-  margin: 10px 10px 10px 0;
+  margin: 15px 10px 10px 0;
+`
+const StyledLabel = styled.label`
+  line-height: 1.6;
 `

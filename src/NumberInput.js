@@ -14,7 +14,7 @@ const NumberInput = forwardRef(({ question }, ref) => {
 export default NumberInput
 
 const StyledNumberInput = styled.input`
-  width: 25%;
+  width: 35%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;

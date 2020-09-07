@@ -14,7 +14,9 @@ const RadioInput = forwardRef(({ question }, ref) => {
               type="radio"
               ref={ref}
             />
-            <label htmlFor={answerOption.name}>{answerOption.label}</label>
+            <StyledLabel htmlFor={answerOption.name}>
+              {answerOption.label}
+            </StyledLabel>
           </div>
         )
       })}
@@ -26,4 +28,8 @@ export default RadioInput
 
 const StyledRadioInput = styled.input`
   margin: 10px 10px 10px 0;
+`
+
+const StyledLabel = styled.label`
+  line-height: 1.6;
 `
