@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Header from './Header'
+import QuestionsForm from './QuestionsForm'
+import Summary from './Summary'
 
 function App() {
-  return <h1>Test</h1>
+  const [answers, setAnswers] = useState([])
+
+  return (
+    <>
+      <Header />
+      <QuestionsForm onClick={addAnswers} />
+      <Summary answers={answers} />
+    </>
+  )
+
+  function addAnswers(newAnswers) {
+    setAnswers(newAnswers)
+  }
 }
 
 export default App
