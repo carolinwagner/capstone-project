@@ -12,7 +12,6 @@ function App() {
       <Header />
       <QuestionsForm onClick={addAnswers} />
       <Summary answers={answers} />
-      <BylawsText answers={answers} />
     </>
   )
 
