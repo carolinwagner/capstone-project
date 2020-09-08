@@ -10,7 +10,7 @@ import DateInput from './DateInput'
 import Button from './Button'
 
 export default function QuestionsForm({ onClick }) {
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, watch, errors } = useForm()
 
   const onFormSubmit = (data) => {
     console.log(data)
@@ -32,7 +32,13 @@ export default function QuestionsForm({ onClick }) {
             <NumberInput question={question} ref={register} />
           )}
           {question.answerType === 'checkbox' && (
-            <CheckboxInput question={question} ref={register} />
+            <CheckboxInput
+              question={question}
+              ref={register({
+                validate: () =>
+                  watch(question.name).some((checkbox) => checkbox),
+              })}
+            />
           )}
           {question.answerType === 'radio' && (
             <RadioInput question={question} ref={register} />
@@ -41,12 +47,11 @@ export default function QuestionsForm({ onClick }) {
             <DateInput question={question} ref={register} />
           )}
 
-          {/* {errors[question?.name] &&
-            errors[question?.name].type === 'required' && (
-              <StyledErrorMessage>
-                Dieses Frage muss beantwortet werden
-              </StyledErrorMessage>
-            )} */}
+          {errors[question?.name] && (
+            <StyledErrorMessage>
+              Mindestens eine Option muss ausgewählt werden
+            </StyledErrorMessage>
+          )}
         </React.Fragment>
       ))}
       <StyledContainer>
