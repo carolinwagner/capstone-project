@@ -7,6 +7,8 @@ const NumberInput = forwardRef(({ name }, ref) => {
       type="number"
       ref={ref}
       name={name || 'defaultTextInput'}
+      min="1"
+      max="365"
     />
   )
 })

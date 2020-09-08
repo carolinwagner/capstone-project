@@ -27,7 +27,7 @@ export default function QuestionsForm({ onClick }) {
           {question.answerType === 'text' && (
             <TextInput
               name={question?.name}
-              ref={register({ required: true })}
+              ref={register({ required: true, maxLength: 20 })}
             />
           )}
           {question.answerType === 'number' && (
