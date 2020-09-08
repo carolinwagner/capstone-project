@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import styled from 'styled-components/macro'
 
 const DateInput = forwardRef(({ question }, ref) => {
-  const minToday = question?.validation?.minToday
+  const minToday = question?.validationNative?.minToday
   const getToday = () => new Date().toISOString().split('T')[0]
   return (
     <label>

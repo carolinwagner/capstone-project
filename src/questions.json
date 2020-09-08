@@ -4,21 +4,21 @@
     "name": "clubName",
     "answerType": "text",
     "answerOptions": [],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "In welcher Stadt soll dein Verein sitzen?",
     "name": "clubLocation",
     "answerType": "text",
     "answerOptions": [],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Welchen Zweck verfolgt der Verein?",
     "name": "clubPurpose",
     "answerType": "text",
     "answerOptions": [],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wer soll Mitglied in dem Verein werden können?",
@@ -30,7 +30,7 @@
       { "label": "juristische Personen", "name": "juristische Personen" },
       { "label": "Personengesellschaften", "name": "Unternehmen" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Auf welchem Wege sollen potentielle Mitglieder einen Mitgliedsantrag stellen?",
@@ -40,7 +40,7 @@
       { "label": "schriftlich", "name": "schriftlich" },
       { "label": "per E-Mail", "name": "email" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Sollen die Mitglieder eine Aufnahmegebühr zahlen?",
@@ -50,7 +50,7 @@
       { "label": "ja", "name": "ja zur Aufnahmegebühr" },
       { "label": "nein", "name": "nein zur Aufnahmegebühr" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Für welche Belange soll die Mitgliedsversammlung als oberstes Vereinsorgan zuständig sein?",
@@ -73,7 +73,7 @@
         "name": "Auflösungsbeschluss"
       }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie soll die Einladung zur Mitgliederversammlung erfolgen?",
@@ -83,14 +83,15 @@
       { "label": "schriftlich", "name": "schriftliche Einladung" },
       { "label": "per E-Mail", "name": "Einladung per eMail" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie viele Tage vorher soll zur Mitgliederversammlung geladen werden?",
     "name": "generalMeetingDeadline",
     "answerType": "number",
     "answerOptions": [],
-    "validation": { "required": false, "min": "1", "max": "365" }
+    "validationHookForm": { "required": true },
+    "validationNative": { "min": "1", "max": "365" }
   },
   {
     "questionText": "Wann soll die Mitgliederversammlung beschlussfähig sein?",
@@ -106,7 +107,7 @@
         "name": "Anwesenheit der Hälfte der Mitglieder"
       }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie häufig soll eine Mitgliederversammlung durchgeführt werden?",
@@ -118,7 +119,7 @@
       { "label": "halbjährlich", "name": "halbjährlich" },
       { "label": "jährlich", "name": "jährlich" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Mit welcher Mehrheit soll die Mitgliederversammlung ihre Beschlüsse fassen?",
@@ -129,7 +130,7 @@
       { "label": "Zweidrittel Mehrheit", "name": "zweidrittel" },
       { "label": "einfache Mehrheit", "name": "einfache" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
 
   {
@@ -141,7 +142,7 @@
       { "label": "Schatzmeister", "name": "Schatzmeister" },
       { "label": "Schriftführer", "name": "Schriftführer" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wer soll den Verein nach außen vertreten?",
@@ -162,7 +163,7 @@
         "name": "zwei Vorstandsmitglieder"
       }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Für welchen Zeitraum soll der Vorstand gewählt werden?",
@@ -174,7 +175,7 @@
       { "label": "drei Jahre", "name": "drei Jahre" },
       { "label": "vier Jahre", "name": "vier Jahre" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Soll eine Wiederwahl des Vorstandes möglich sein?",
@@ -184,7 +185,7 @@
       { "label": "ja", "name": "Ja zur Wiederwahl" },
       { "label": "nein", "name": "Nein zur Wiederwahl" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie soll zur Vorstandssitzung geladen werden?",
@@ -194,14 +195,15 @@
       { "label": "schriftlich", "name": "schritfliche Ladung" },
       { "label": "per E-Mail", "name": "Ladung per eMail" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie viele Tage vorher soll zu einer Vorstandssitzung geladen werden?",
     "name": "boardMeetingDeadline",
     "answerType": "number",
     "answerOptions": [],
-    "validation": { "required": false, "min": "1", "max": "365" }
+    "validationHookForm": { "required": true },
+    "validationNative": { "min": "1", "max": "365" }
   },
   {
     "questionText": "Bedarf es der Mitteilung einer Tagesordnung in der Einladung zur Vorstandssitzung?",
@@ -211,7 +213,7 @@
       { "label": "ja", "name": "Ja zur Mitteilung" },
       { "label": "nein", "name": "Nein zur Mitteilung" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Sollen Arbeitsausschüsse gebildet werden?",
@@ -221,7 +223,7 @@
       { "label": "ja", "name": "Ja zu Arbeitsausschüssen" },
       { "label": "nein", "name": "Nein zu Arbeitsausschüssen" }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Welche Mehrheit ist erforderlich, sofern die Mitgliederversammlung über die Auflösung des Vereins entscheiden soll?",
@@ -241,20 +243,22 @@
         "name": "einfache Mehrheit zur Auflösung"
       }
     ],
-    "validation": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "An welchem Tag soll über die Satzung beschlossen werden?",
     "name": "decisionDate",
     "answerType": "date",
     "answerOptions": [],
-    "validation": { "required": false, "minToday": true }
+    "validationHookForm": { "required": true },
+    "validationNative": { "minToday": true }
   },
   {
     "questionText": "Wie viele Mitglieder sollen die Satzung unterschreiben?",
     "name": "signaturesNumber",
     "answerType": "number",
     "answerOptions": [],
-    "validation": { "required": false, "min": "7" }
+    "validationHookForm": { "required": true },
+    "validationNative": { "min": "7" }
   }
 ]

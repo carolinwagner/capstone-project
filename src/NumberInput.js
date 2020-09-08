@@ -7,7 +7,7 @@ const NumberInput = forwardRef(({ question }, ref) => {
       type="number"
       ref={ref}
       name={question?.name || 'defaultTextInput'}
-      {...question?.validation}
+      {...question?.validationNative}
     />
   )
 })

@@ -26,10 +26,16 @@ export default function QuestionsForm({ onClick }) {
           </h2>
           <p>{question.questionText}</p>
           {question.answerType === 'text' && (
-            <TextInput question={question} ref={register} />
+            <TextInput
+              question={question}
+              ref={register(question.validationHookForm)}
+            />
           )}
           {question.answerType === 'number' && (
-            <NumberInput question={question} ref={register} />
+            <NumberInput
+              question={question}
+              ref={register(question.validationHookForm)}
+            />
           )}
           {question.answerType === 'checkbox' && (
             <CheckboxInput
@@ -41,15 +47,21 @@ export default function QuestionsForm({ onClick }) {
             />
           )}
           {question.answerType === 'radio' && (
-            <RadioInput question={question} ref={register} />
+            <RadioInput
+              question={question}
+              ref={register(question.validationHookForm)}
+            />
           )}
           {question.answerType === 'date' && (
-            <DateInput question={question} ref={register} />
+            <DateInput
+              question={question}
+              ref={register(question.validationHookForm)}
+            />
           )}
 
           {errors[question?.name] && (
             <StyledErrorMessage>
-              Mindestens eine Option muss ausgewählt werden
+              Diese Frage muss beantwortet werden
             </StyledErrorMessage>
           )}
         </React.Fragment>

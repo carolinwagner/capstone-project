@@ -13,7 +13,7 @@ const RadioInput = forwardRef(({ question }, ref) => {
               id={answerOption.name}
               type="radio"
               ref={ref}
-              {...question?.validation}
+              {...question?.validationNative}
             />
             <label htmlFor={answerOption.name}>{answerOption.label}</label>
           </div>
