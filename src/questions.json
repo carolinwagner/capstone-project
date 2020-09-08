@@ -30,7 +30,7 @@
       { "label": "juristische Personen", "name": "juristische Personen" },
       { "label": "Personengesellschaften", "name": "Unternehmen" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Auf welchem Wege sollen potentielle Mitglieder einen Mitgliedsantrag stellen?",
@@ -40,7 +40,7 @@
       { "label": "schriftlich", "name": "schriftlich" },
       { "label": "per E-Mail", "name": "email" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Sollen die Mitglieder eine Aufnahmegebühr zahlen?",
@@ -73,7 +73,7 @@
         "name": "Auflösungsbeschluss"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Wie soll die Einladung zur Mitgliederversammlung erfolgen?",
@@ -142,7 +142,7 @@
       { "label": "Schatzmeister", "name": "Schatzmeister" },
       { "label": "Schriftführer", "name": "Schriftführer" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Wer soll den Verein nach außen vertreten?",
@@ -195,7 +195,7 @@
       { "label": "schriftlich", "name": "schritfliche Ladung" },
       { "label": "per E-Mail", "name": "Ladung per eMail" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Wie viele Tage vorher soll zu einer Vorstandssitzung geladen werden?",

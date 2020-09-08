@@ -10,7 +10,9 @@ import DateInput from './DateInput'
 import Button from './Button'
 
 export default function QuestionsForm({ onClick }) {
-  const { register, handleSubmit, watch, errors } = useForm()
+  const { register, handleSubmit, watch, errors } = useForm({
+    reValidateMode: 'onSubmit',
+  })
 
   const onFormSubmit = (data) => {
     console.log(data)
@@ -26,37 +28,23 @@ export default function QuestionsForm({ onClick }) {
           </h2>
           <p>{question.questionText}</p>
           {question.answerType === 'text' && (
-            <TextInput
-              question={question}
-              ref={register(question.validationHookForm)}
-            />
+            <TextInput question={question} register={register} />
           )}
           {question.answerType === 'number' && (
-            <NumberInput
-              question={question}
-              ref={register(question.validationHookForm)}
-            />
+            <NumberInput question={question} register={register} />
           )}
           {question.answerType === 'checkbox' && (
             <CheckboxInput
               question={question}
-              ref={register({
-                validate: () =>
-                  watch(question.name).some((checkbox) => checkbox),
-              })}
+              register={register}
+              watch={watch}
             />
           )}
           {question.answerType === 'radio' && (
-            <RadioInput
-              question={question}
-              ref={register(question.validationHookForm)}
-            />
+            <RadioInput question={question} register={register} />
           )}
           {question.answerType === 'date' && (
-            <DateInput
-              question={question}
-              ref={register(question.validationHookForm)}
-            />
+            <DateInput question={question} register={register} />
           )}
 
           {errors[question?.name] && (

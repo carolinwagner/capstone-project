@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
-const CheckboxInput = forwardRef(({ question }, ref) => {
+const CheckboxInput = ({ question, register, watch }) => {
   return (
     <div>
       {question.answerOptions.map((answerOption, innerIndex) => {
@@ -13,7 +13,12 @@ const CheckboxInput = forwardRef(({ question }, ref) => {
               name={inputName || 'defaultCheckboxInput'}
               id={answerOption.name}
               value={answerOption.name}
-              ref={ref}
+              ref={register(
+                question.validationHookForm?.oneOfGroupRequired && {
+                  validate: () =>
+                    watch(question.name).some((checkbox) => checkbox),
+                }
+              )}
             />
             <StyledLabel htmlFor={answerOption.name}>
               {answerOption.label}
@@ -23,7 +28,7 @@ const CheckboxInput = forwardRef(({ question }, ref) => {
       })}
     </div>
   )
-})
+}
 
 export default CheckboxInput
 

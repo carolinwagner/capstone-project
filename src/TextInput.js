@@ -1,16 +1,16 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
-const TextInput = forwardRef(({ question }, ref) => {
+const TextInput = ({ question, register }) => {
   return (
     <StyledTextInput
       type="text"
       name={question?.name || 'defaultTextInput'}
-      ref={ref}
+      ref={register(question.validationHookForm)}
       {...question?.validationNative}
     />
   )
-})
+}
 
 export default TextInput
 

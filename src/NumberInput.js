@@ -1,16 +1,16 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
-const NumberInput = forwardRef(({ question }, ref) => {
+const NumberInput = ({ question, register }) => {
   return (
     <StyledNumberInput
       type="number"
-      ref={ref}
+      ref={register(question.validationHookForm)}
       name={question?.name || 'defaultTextInput'}
       {...question?.validationNative}
     />
   )
-})
+}
 
 export default NumberInput
 

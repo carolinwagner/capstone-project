@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
-const RadioInput = forwardRef(({ question }, ref) => {
+const RadioInput = ({ question, register }) => {
   return (
     <div>
       {question.answerOptions.map((answerOption) => {
@@ -12,7 +12,7 @@ const RadioInput = forwardRef(({ question }, ref) => {
               value={answerOption.name}
               id={answerOption.name}
               type="radio"
-              ref={ref}
+              ref={register(question.validationHookForm)}
               {...question?.validationNative}
             />
             <label htmlFor={answerOption.name}>{answerOption.label}</label>
@@ -21,7 +21,7 @@ const RadioInput = forwardRef(({ question }, ref) => {
       })}
     </div>
   )
-})
+}
 
 export default RadioInput
 

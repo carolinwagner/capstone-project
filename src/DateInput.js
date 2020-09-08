@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
-const DateInput = forwardRef(({ question }, ref) => {
+const DateInput = ({ question, register }) => {
   const minToday = question?.validationNative?.minToday
   const getToday = () => new Date().toISOString().split('T')[0]
   return (
@@ -9,12 +9,12 @@ const DateInput = forwardRef(({ question }, ref) => {
       <StyledDateInput
         type="date"
         name={question?.name || 'defaultDateInput'}
-        ref={ref}
-        {...(minToday ? { min: getToday() } : {})}
+        ref={register(question.validationHookForm)}
+        {...(minToday && { min: getToday() })}
       />
     </label>
   )
-})
+}
 
 export default DateInput
 
