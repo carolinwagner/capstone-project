@@ -8,7 +8,7 @@ const DateInput = forwardRef(({ question }, ref) => {
     <label>
       <StyledDateInput
         type="date"
-        name={question.name || 'defaultDateInput'}
+        name={question?.name || 'defaultDateInput'}
         ref={ref}
         {...(minToday ? { min: getToday() } : {})}
       />
