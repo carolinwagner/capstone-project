@@ -1,9 +1,14 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components/macro'
 
-const TextInput = forwardRef(({ name }, ref) => {
+const TextInput = forwardRef(({ question }, ref) => {
   return (
-    <StyledTextInput type="text" name={name || 'defaultTextInput'} ref={ref} />
+    <StyledTextInput
+      type="text"
+      name={question?.name || 'defaultTextInput'}
+      ref={ref}
+      {...question?.validation}
+    />
   )
 })
 

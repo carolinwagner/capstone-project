@@ -6,6 +6,7 @@ import TextInput from './TextInput'
 import NumberInput from './NumberInput'
 import CheckboxInput from './CheckboxInput'
 import RadioInput from './RadioInput'
+import DateInput from './DateInput'
 import Button from './Button'
 
 export default function QuestionsForm({ onClick }) {
@@ -25,32 +26,27 @@ export default function QuestionsForm({ onClick }) {
           </h2>
           <p>{question.questionText}</p>
           {question.answerType === 'text' && (
-            <TextInput
-              name={question?.name}
-              ref={register({ required: true, maxLength: 20 })}
-            />
+            <TextInput question={question} ref={register} />
           )}
           {question.answerType === 'number' && (
-            <NumberInput
-              name={question?.name}
-              ref={register({ required: true })}
-            />
+            <NumberInput question={question} ref={register} />
           )}
           {question.answerType === 'checkbox' && (
             <CheckboxInput question={question} ref={register} />
           )}
           {question.answerType === 'radio' && (
-            <RadioInput
-              question={question}
-              ref={register({ required: true })}
-            />
+            <RadioInput question={question} ref={register} />
           )}
-          {errors[question?.name] &&
+          {question.answerType === 'date' && (
+            <DateInput question={question} ref={register} />
+          )}
+
+          {/* {errors[question?.name] &&
             errors[question?.name].type === 'required' && (
               <StyledErrorMessage>
                 Dieses Frage muss beantwortet werden
               </StyledErrorMessage>
-            )}
+            )} */}
         </React.Fragment>
       ))}
       <StyledContainer>

@@ -1,14 +1,13 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components/macro'
 
-const NumberInput = forwardRef(({ name }, ref) => {
+const NumberInput = forwardRef(({ question }, ref) => {
   return (
     <StyledNumberInput
       type="number"
       ref={ref}
-      name={name || 'defaultTextInput'}
-      min="1"
-      max="365"
+      name={question?.name || 'defaultTextInput'}
+      {...question?.validation}
     />
   )
 })
