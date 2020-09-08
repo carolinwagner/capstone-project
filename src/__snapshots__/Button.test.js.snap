@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button renders Button correctly 1`] = `undefined`;
+
+exports[`Button renders correctly 1`] = `undefined`;

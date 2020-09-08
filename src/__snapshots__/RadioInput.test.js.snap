@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioInput renders RadioInput correctly 1`] = `undefined`;
+
+exports[`RadioInput renders correctly 1`] = `undefined`;
