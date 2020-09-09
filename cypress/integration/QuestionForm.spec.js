@@ -3,7 +3,7 @@
 context('QuestionForm', () => {
   beforeEach(() => {
     cy.log('hallo')
-    cy.visit('http://localhost:3000')
+    cy.visit('/')
   })
 
   it('has the right App title', () => {
@@ -18,11 +18,11 @@ context('QuestionForm', () => {
     cy.get('button').contains('Zusammenfassung anzeigen')
   })
 
-  it('has some inputs', () => {
-    cy.get('input').should('have.length', 54)
-  })
-
   it('has questions', () => {
     cy.get('h2').should('have.length.gt', 20)
+  })
+
+  it('has some inputs', () => {
+    cy.get('input').should('have.length', 54)
   })
 })
