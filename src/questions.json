@@ -11,14 +11,14 @@
     "name": "clubLocation",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
   },
   {
     "questionText": "Welchen Zweck verfolgt der Verein?",
     "name": "clubPurpose",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
   },
   {
     "questionText": "Wer soll Mitglied in dem Verein werden können?",
