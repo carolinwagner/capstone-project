@@ -91,7 +91,7 @@
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "1", "max": "365" }
+    "validationNative": { "min": "14", "max": "365" }
   },
   {
     "questionText": "Wann soll die Mitgliederversammlung beschlussfähig sein?",
@@ -203,7 +203,7 @@
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "1", "max": "365" }
+    "validationNative": { "min": "14", "max": "365" }
   },
   {
     "questionText": "Bedarf es der Mitteilung einer Tagesordnung in der Einladung zur Vorstandssitzung?",
