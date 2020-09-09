@@ -6,7 +6,10 @@ const TextInput = ({ question, register }) => {
     <StyledTextInput
       type="text"
       name={question?.name || 'defaultTextInput'}
-      ref={register(question.validationHookForm)}
+      ref={register({
+        required: true,
+        pattern: /.*\S.*/,
+      })}
       {...question?.validationNative}
     />
   )
