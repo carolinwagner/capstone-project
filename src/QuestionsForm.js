@@ -15,7 +15,6 @@ export default function QuestionsForm({ onClick }) {
   })
 
   const onFormSubmit = (data) => {
-    console.log(data)
     onClick(data)
   }
 
