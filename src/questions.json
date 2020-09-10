@@ -4,86 +4,137 @@
     "name": "clubName",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 1
   },
   {
     "questionText": "In welcher Stadt soll dein Verein sitzen?",
     "name": "clubLocation",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 2
   },
   {
     "questionText": "Welchen Zweck verfolgt der Verein?",
     "name": "clubPurpose",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 3
   },
   {
     "questionText": "Wer soll Mitglied in dem Verein werden können?",
     "answerType": "checkbox",
     "name": "typeOfMembers",
     "answerOptions": [
-      { "label": "natürliche Personen < 18", "name": "Personen < 18" },
-      { "label": "natürliche Personen > 18", "name": "Personen > 18" },
-      { "label": "juristische Personen", "name": "juristische Personen" },
-      { "label": "Personengesellschaften", "name": "Unternehmen" }
+      {
+        "innerId": "inner1",
+        "label": "natürliche Personen < 18",
+        "name": "Personen < 18"
+      },
+      {
+        "innerId": "inner2",
+        "label": "natürliche Personen > 18",
+        "name": "Personen > 18"
+      },
+      {
+        "innerId": "inner3",
+        "label": "juristische Personen",
+        "name": "juristische Personen"
+      },
+      {
+        "innerId": "inner4",
+        "label": "Personengesellschaften",
+        "name": "Unternehmen"
+      }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "id": 4
   },
   {
     "questionText": "Auf welchem Wege sollen potentielle Mitglieder einen Mitgliedsantrag stellen?",
     "name": "typeOfRequests",
     "answerType": "checkbox",
     "answerOptions": [
-      { "label": "schriftlich", "name": "schriftlich" },
-      { "label": "per E-Mail", "name": "email" }
+      { "innerId": "inner5", "label": "schriftlich", "name": "schriftlich" },
+      { "innerId": "inner6", "label": "per E-Mail", "name": "email" }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "id": 5
   },
   {
     "questionText": "Sollen die Mitglieder eine Aufnahmegebühr zahlen?",
     "name": "memberFee",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ja", "name": "ja zur Aufnahmegebühr" },
-      { "label": "nein", "name": "nein zur Aufnahmegebühr" }
+      { "innerId": "inner7", "label": "ja", "name": "ja zur Aufnahmegebühr" },
+      {
+        "innerId": "inner8",
+        "label": "nein",
+        "name": "nein zur Aufnahmegebühr"
+      }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 6
   },
   {
     "questionText": "Für welche Belange soll die Mitgliedsversammlung als oberstes Vereinsorgan zuständig sein?",
     "name": "generalMeetingDuties",
     "answerType": "checkbox",
     "answerOptions": [
-      { "label": "Wahl des Vorstandes", "name": "Vorstandswahl" },
-      { "label": "Entlastung des Vorstandes", "name": "Vorstandsentlastung" },
-      { "label": "Haushaltsplan", "name": "Haushaltsplan" },
       {
+        "innerId": "inner9",
+        "label": "Wahl des Vorstandes",
+        "name": "Vorstandswahl"
+      },
+      {
+        "innerId": "inner10",
+        "label": "Entlastung des Vorstandes",
+        "name": "Vorstandsentlastung"
+      },
+      {
+        "innerId": "inner11",
+        "label": "Haushaltsplan",
+        "name": "Haushaltsplan"
+      },
+      {
+        "innerId": "inner12",
         "label": "Festsetzung der Höhe des Mitgliedsbeitrags",
         "name": "Mitgliedsbeitragsfestsetzung"
       },
       {
+        "innerId": "inner13",
         "label": "Entscheidung über eingereichte Anträge",
         "name": "Antragsentscheidung"
       },
       {
+        "innerId": "inner14",
         "label": "Beschlussfassung über Auflösung des Vereins",
         "name": "Auflösungsbeschluss"
       }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "id": 7
   },
   {
     "questionText": "Wie soll die Einladung zur Mitgliederversammlung erfolgen?",
     "name": "typeOfInvitationGeneralMeeting",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "schriftlich", "name": "schriftliche Einladung" },
-      { "label": "per E-Mail", "name": "Einladung per eMail" }
+      {
+        "innerId": "inner15",
+        "label": "schriftlich",
+        "name": "schriftliche Einladung"
+      },
+      {
+        "innerId": "inner16",
+        "label": "per E-Mail",
+        "name": "Einladung per eMail"
+      }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 8
   },
   {
     "questionText": "Wie viele Tage vorher soll zur Mitgliederversammlung geladen werden?",
@@ -91,7 +142,8 @@
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "14", "max": "365" }
+    "validationNative": { "min": "14", "max": "365" },
+    "id": 9
   },
   {
     "questionText": "Wann soll die Mitgliederversammlung beschlussfähig sein?",
@@ -99,38 +151,55 @@
     "answerType": "radio",
     "answerOptions": [
       {
+        "innerId": "inner17",
         "label": "jede ordnungsgemäß einberufene Mitgliederversammlung soll beschlussfähig sein",
         "name": "Immer"
       },
       {
+        "innerId": "inner18",
         "label": "mindestens die Hälfte der Mitglieder muss anwesend sein",
         "name": "Anwesenheit der Hälfte der Mitglieder"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 10
   },
   {
     "questionText": "Wie häufig soll eine Mitgliederversammlung durchgeführt werden?",
     "name": "generalMeetingFrequency",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "monatlich", "name": "monatlich" },
-      { "label": "vierteljährlich", "name": "vierteljährlich" },
-      { "label": "halbjährlich", "name": "halbjährlich" },
-      { "label": "jährlich", "name": "jährlich" }
+      { "innerId": "inner19", "label": "monatlich", "name": "monatlich" },
+      {
+        "innerId": "inner20",
+        "label": "vierteljährlich",
+        "name": "vierteljährlich"
+      },
+      { "innerId": "inner21", "label": "halbjährlich", "name": "halbjährlich" },
+      { "innerId": "inner22", "label": "jährlich", "name": "jährlich" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 11
   },
   {
     "questionText": "Mit welcher Mehrheit soll die Mitgliederversammlung ihre Beschlüsse fassen?",
     "name": "generalMeetingMajority",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "absolute Mehrheit", "name": "absolute" },
-      { "label": "Zweidrittel Mehrheit", "name": "zweidrittel" },
-      { "label": "einfache Mehrheit", "name": "einfache" }
+      {
+        "innerId": "inner23",
+        "label": "absolute Mehrheit",
+        "name": "absolute"
+      },
+      {
+        "innerId": "inner24",
+        "label": "Zweidrittel Mehrheit",
+        "name": "zweidrittel"
+      },
+      { "innerId": "inner25", "label": "einfache Mehrheit", "name": "einfache" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 12
   },
 
   {
@@ -138,64 +207,96 @@
     "answerType": "checkbox",
     "name": "boardComposition",
     "answerOptions": [
-      { "label": "zwei Vorsitzende", "name": "zwei Vorsitzende" },
-      { "label": "Schatzmeister", "name": "Schatzmeister" },
-      { "label": "Schriftführer", "name": "Schriftführer" }
+      {
+        "innerId": "inner26",
+        "label": "zwei Vorsitzende",
+        "name": "zwei Vorsitzende"
+      },
+      {
+        "innerId": "inner27",
+        "label": "Schatzmeister",
+        "name": "Schatzmeister"
+      },
+      {
+        "innerId": "inner28",
+        "label": "Schriftführer",
+        "name": "Schriftführer"
+      }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "id": 13
   },
   {
     "questionText": "Wer soll den Verein nach außen vertreten?",
     "answerType": "radio",
     "name": "clubRepresentation",
     "answerOptions": [
-      { "label": "der 1. Vorsitzende", "name": "erster Vorsitzender" },
       {
+        "innerId": "inner29",
+        "label": "der 1. Vorsitzende",
+        "name": "erster Vorsitzender"
+      },
+      {
+        "innerId": "inner30",
         "label": "der 1. und der 2. Vorsitzende",
         "name": "erster und zweiter Vorsitzender"
       },
       {
+        "innerId": "inner31",
         "label": "die Mehrheit des Vorstandes",
         "name": "Vorstandsmehrheit"
       },
       {
+        "innerId": "inner32",
         "label": "zwei Mitglieder des Vorstandes",
         "name": "zwei Vorstandsmitglieder"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 14
   },
   {
     "questionText": "Für welchen Zeitraum soll der Vorstand gewählt werden?",
     "name": "boardPeriod",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ein Jahr", "name": "ein Jahr" },
-      { "label": "zwei Jahre", "name": "zwei Jahre" },
-      { "label": "drei Jahre", "name": "drei Jahre" },
-      { "label": "vier Jahre", "name": "vier Jahre" }
+      { "innerId": "inner33", "label": "ein Jahr", "name": "ein Jahr" },
+      { "innerId": "inner34", "label": "zwei Jahre", "name": "zwei Jahre" },
+      { "innerId": "inner35", "label": "drei Jahre", "name": "drei Jahre" },
+      { "innerId": "inner36", "label": "vier Jahre", "name": "vier Jahre" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 15
   },
   {
     "questionText": "Soll eine Wiederwahl des Vorstandes möglich sein?",
     "name": "boardReelection",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ja", "name": "Ja zur Wiederwahl" },
-      { "label": "nein", "name": "Nein zur Wiederwahl" }
+      { "innerId": "inner37", "label": "ja", "name": "Ja zur Wiederwahl" },
+      { "innerId": "inner38", "label": "nein", "name": "Nein zur Wiederwahl" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 16
   },
   {
     "questionText": "Wie soll zur Vorstandssitzung geladen werden?",
     "name": "boardInvitation",
     "answerType": "checkbox",
     "answerOptions": [
-      { "label": "schriftlich", "name": "schritfliche Ladung" },
-      { "label": "per E-Mail", "name": "Ladung per eMail" }
+      {
+        "innerId": "inner39",
+        "label": "schriftlich",
+        "name": "schritfliche Ladung"
+      },
+      {
+        "innerId": "inner40",
+        "label": "per E-Mail",
+        "name": "Ladung per eMail"
+      }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "id": 17
   },
   {
     "questionText": "Wie viele Tage vorher soll zu einer Vorstandssitzung geladen werden?",
@@ -203,27 +304,38 @@
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "14", "max": "365" }
+    "validationNative": { "min": "14", "max": "365" },
+    "id": 18
   },
   {
     "questionText": "Bedarf es der Mitteilung einer Tagesordnung in der Einladung zur Vorstandssitzung?",
     "name": "agendaNotice",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ja", "name": "Ja zur Mitteilung" },
-      { "label": "nein", "name": "Nein zur Mitteilung" }
+      { "innerId": "inner41", "label": "ja", "name": "Ja zur Mitteilung" },
+      { "innerId": "inner42", "label": "nein", "name": "Nein zur Mitteilung" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 19
   },
   {
     "questionText": "Sollen Arbeitsausschüsse gebildet werden?",
     "name": "committees",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ja", "name": "Ja zu Arbeitsausschüssen" },
-      { "label": "nein", "name": "Nein zu Arbeitsausschüssen" }
+      {
+        "innerId": "inner43",
+        "label": "ja",
+        "name": "Ja zu Arbeitsausschüssen"
+      },
+      {
+        "innerId": "inner44",
+        "label": "nein",
+        "name": "Nein zu Arbeitsausschüssen"
+      }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 20
   },
   {
     "questionText": "Welche Mehrheit ist erforderlich, sofern die Mitgliederversammlung über die Auflösung des Vereins entscheiden soll?",
@@ -231,19 +343,23 @@
     "answerType": "radio",
     "answerOptions": [
       {
+        "innerId": "inner45",
         "label": "absolute Mehrheit",
         "name": "absolute Mehrheit zur Auflösung"
       },
       {
+        "innerId": "inner46",
         "label": "Zweidrittel Mehrheit",
         "name": "Zweidrittel Mehrheit zur Auflösung"
       },
       {
+        "innerId": "inner47",
         "label": "einfache Mehrheit",
         "name": "einfache Mehrheit zur Auflösung"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "id": 21
   },
   {
     "questionText": "An welchem Tag soll über die Satzung beschlossen werden?",
@@ -251,7 +367,8 @@
     "answerType": "date",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "minToday": true }
+    "validationNative": { "minToday": true },
+    "id": 22
   },
   {
     "questionText": "Wie viele Mitglieder sollen die Satzung unterschreiben?",
@@ -259,6 +376,7 @@
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "7" }
+    "validationNative": { "min": "7" },
+    "id": 23
   }
 ]
