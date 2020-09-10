@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 const NumberInput = ({ question, register }) => {
   return (
     <StyledNumberInput
-      id={question.name}
+      id={question.id}
       type="number"
       ref={register(question.validationHookForm)}
       name={question?.name || 'defaultTextInput'}

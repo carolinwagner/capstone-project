@@ -11,7 +11,7 @@ const CheckboxInput = ({ question, register, watch }) => {
             <StyledCheckboxInput
               type="checkbox"
               name={inputName || 'defaultCheckboxInput'}
-              id={answerOption.name}
+              id={answerOption.innerId}
               value={answerOption.name}
               ref={register(
                 question.validationHookForm?.oneOfGroupRequired && {
@@ -20,7 +20,7 @@ const CheckboxInput = ({ question, register, watch }) => {
                 }
               )}
             />
-            <StyledLabel htmlFor={answerOption.name}>
+            <StyledLabel htmlFor={answerOption.innerId}>
               {answerOption.label}
             </StyledLabel>
           </StyledCheckboxContainer>

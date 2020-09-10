@@ -5,7 +5,7 @@ const TextInput = ({ question, register }) => {
   return (
     <StyledTextInput
       type="text"
-      id={question.name}
+      id={question.id}
       name={question?.name || 'defaultTextInput'}
       ref={register(question.validationHookForm)}
       {...question?.validationNative}

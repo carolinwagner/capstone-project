@@ -7,7 +7,7 @@ const DateInput = ({ question, register }) => {
   return (
     <label>
       <StyledDateInput
-        id={question.name}
+        id={question.id}
         type="date"
         name={question?.name || 'defaultDateInput'}
         ref={register(question.validationHookForm)}

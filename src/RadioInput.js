@@ -10,12 +10,12 @@ const RadioInput = ({ question, register }) => {
             <StyledRadioInput
               name={question?.name || 'defaultRadioInput'}
               value={answerOption.name}
-              id={answerOption.name}
+              id={answerOption.innerId}
               type="radio"
               ref={register(question.validationHookForm)}
               {...question?.validationNative}
             />
-            <StyledLabel htmlFor={answerOption.name}>
+            <StyledLabel htmlFor={answerOption.innerId}>
               {answerOption.label}
             </StyledLabel>
           </StyledRadioContainer>
