@@ -26,7 +26,7 @@ export default function QuestionsForm({ onClick }) {
             <h2>
               Frage {index + 1} von {questions.length}
             </h2>
-            <label htmlFor={question.id}>{question.questionText}</label>
+            <label htmlFor={question.name}>{question.questionText}</label>
             {question.answerType === 'text' && (
               <TextInput question={question} register={register} />
             )}

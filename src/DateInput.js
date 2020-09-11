@@ -5,15 +5,13 @@ const DateInput = ({ question, register }) => {
   const minToday = question?.validationNative?.minToday
   const getToday = () => new Date().toISOString().split('T')[0]
   return (
-    <label>
-      <StyledDateInput
-        id={question.id}
-        type="date"
-        name={question?.name || 'defaultDateInput'}
-        ref={register(question.validationHookForm)}
-        {...(minToday && { min: getToday() })}
-      />
-    </label>
+    <StyledDateInput
+      id={question.name}
+      type="date"
+      name={question?.name || 'defaultDateInput'}
+      ref={register(question.validationHookForm)}
+      {...(minToday && { min: getToday() })}
+    />
   )
 }
 
