@@ -25,10 +25,22 @@
     "answerType": "checkbox",
     "name": "typeOfMembers",
     "answerOptions": [
-      { "label": "natürliche Personen < 18", "name": "Personen < 18" },
-      { "label": "natürliche Personen > 18", "name": "Personen > 18" },
-      { "label": "juristische Personen", "name": "juristische Personen" },
-      { "label": "Personengesellschaften", "name": "Unternehmen" }
+      {
+        "label": "natürliche Personen < 18",
+        "name": "Personen < 18"
+      },
+      {
+        "label": "natürliche Personen > 18",
+        "name": "Personen > 18"
+      },
+      {
+        "label": "juristische Personen",
+        "name": "juristische Personen"
+      },
+      {
+        "label": "Personengesellschaften",
+        "name": "Unternehmen"
+      }
     ],
     "validationHookForm": { "oneOfGroupRequired": true }
   },
@@ -48,7 +60,10 @@
     "answerType": "radio",
     "answerOptions": [
       { "label": "ja", "name": "ja zur Aufnahmegebühr" },
-      { "label": "nein", "name": "nein zur Aufnahmegebühr" }
+      {
+        "label": "nein",
+        "name": "nein zur Aufnahmegebühr"
+      }
     ],
     "validationHookForm": { "required": true }
   },
@@ -57,9 +72,18 @@
     "name": "generalMeetingDuties",
     "answerType": "checkbox",
     "answerOptions": [
-      { "label": "Wahl des Vorstandes", "name": "Vorstandswahl" },
-      { "label": "Entlastung des Vorstandes", "name": "Vorstandsentlastung" },
-      { "label": "Haushaltsplan", "name": "Haushaltsplan" },
+      {
+        "label": "Wahl des Vorstandes",
+        "name": "Vorstandswahl"
+      },
+      {
+        "label": "Entlastung des Vorstandes",
+        "name": "Vorstandsentlastung"
+      },
+      {
+        "label": "Haushaltsplan",
+        "name": "Haushaltsplan"
+      },
       {
         "label": "Festsetzung der Höhe des Mitgliedsbeitrags",
         "name": "Mitgliedsbeitragsfestsetzung"
@@ -80,8 +104,14 @@
     "name": "typeOfInvitationGeneralMeeting",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "schriftlich", "name": "schriftliche Einladung" },
-      { "label": "per E-Mail", "name": "Einladung per eMail" }
+      {
+        "label": "schriftlich",
+        "name": "schriftliche Einladung"
+      },
+      {
+        "label": "per E-Mail",
+        "name": "Einladung per eMail"
+      }
     ],
     "validationHookForm": { "required": true }
   },
@@ -115,7 +145,10 @@
     "answerType": "radio",
     "answerOptions": [
       { "label": "monatlich", "name": "monatlich" },
-      { "label": "vierteljährlich", "name": "vierteljährlich" },
+      {
+        "label": "vierteljährlich",
+        "name": "vierteljährlich"
+      },
       { "label": "halbjährlich", "name": "halbjährlich" },
       { "label": "jährlich", "name": "jährlich" }
     ],
@@ -126,8 +159,14 @@
     "name": "generalMeetingMajority",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "absolute Mehrheit", "name": "absolute" },
-      { "label": "Zweidrittel Mehrheit", "name": "zweidrittel" },
+      {
+        "label": "absolute Mehrheit",
+        "name": "absolute"
+      },
+      {
+        "label": "Zweidrittel Mehrheit",
+        "name": "zweidrittel"
+      },
       { "label": "einfache Mehrheit", "name": "einfache" }
     ],
     "validationHookForm": { "required": true }
@@ -138,9 +177,18 @@
     "answerType": "checkbox",
     "name": "boardComposition",
     "answerOptions": [
-      { "label": "zwei Vorsitzende", "name": "zwei Vorsitzende" },
-      { "label": "Schatzmeister", "name": "Schatzmeister" },
-      { "label": "Schriftführer", "name": "Schriftführer" }
+      {
+        "label": "zwei Vorsitzende",
+        "name": "zwei Vorsitzende"
+      },
+      {
+        "label": "Schatzmeister",
+        "name": "Schatzmeister"
+      },
+      {
+        "label": "Schriftführer",
+        "name": "Schriftführer"
+      }
     ],
     "validationHookForm": { "oneOfGroupRequired": true }
   },
@@ -149,7 +197,10 @@
     "answerType": "radio",
     "name": "clubRepresentation",
     "answerOptions": [
-      { "label": "der 1. Vorsitzende", "name": "erster Vorsitzender" },
+      {
+        "label": "der 1. Vorsitzende",
+        "name": "erster Vorsitzender"
+      },
       {
         "label": "der 1. und der 2. Vorsitzende",
         "name": "erster und zweiter Vorsitzender"
@@ -192,8 +243,14 @@
     "name": "boardInvitation",
     "answerType": "checkbox",
     "answerOptions": [
-      { "label": "schriftlich", "name": "schritfliche Ladung" },
-      { "label": "per E-Mail", "name": "Ladung per eMail" }
+      {
+        "label": "schriftlich",
+        "name": "schritfliche Ladung"
+      },
+      {
+        "label": "per E-Mail",
+        "name": "Ladung per eMail"
+      }
     ],
     "validationHookForm": { "oneOfGroupRequired": true }
   },
@@ -220,8 +277,14 @@
     "name": "committees",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ja", "name": "Ja zu Arbeitsausschüssen" },
-      { "label": "nein", "name": "Nein zu Arbeitsausschüssen" }
+      {
+        "label": "ja",
+        "name": "Ja zu Arbeitsausschüssen"
+      },
+      {
+        "label": "nein",
+        "name": "Nein zu Arbeitsausschüssen"
+      }
     ],
     "validationHookForm": { "required": true }
   },

@@ -4,11 +4,11 @@ import questions from './questions.json'
 
 export default function Summary({ answers }) {
   const answersArray = Object.entries(answers)
-  const anyAnswerGiven = answersArray.some((oneAnswer) => {
-    const isAnswerCheckbox = Array.isArray(oneAnswer[1])
+  const anyAnswerGiven = answersArray.some(([_, answer]) => {
+    const isAnswerCheckbox = Array.isArray(answer)
     return isAnswerCheckbox
-      ? oneAnswer[1].filter(Boolean).length > 0
-      : oneAnswer[1].length > 0
+      ? answer.filter(Boolean).length > 0
+      : answer.length > 0
   })
 
   return (
@@ -17,7 +17,7 @@ export default function Summary({ answers }) {
         <h2>Bitte überprüfe noch einmal deine Antworten:</h2>
         <ul>
           {answersArray.map(([questionName, answer], index) => {
-            const questionObj = questions.filter(
+            const questionObj = questions.find(
               (question) => question.name === questionName
             )
             const isAnswerCheckbox = Array.isArray(answer)
@@ -30,7 +30,7 @@ export default function Summary({ answers }) {
             return (
               displayValue && (
                 <li key={index}>
-                  {questionObj[0].questionText}
+                  {questionObj.questionText}
                   <StyledDisplayValue>{displayValue}</StyledDisplayValue>
                 </li>
               )

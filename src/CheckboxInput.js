@@ -7,7 +7,7 @@ const CheckboxInput = ({ question, register, watch }) => {
       {question.answerOptions.map((answerOption, index) => {
         const inputName = `${question?.name}[${index}]`
         return (
-          <div key={answerOption.name}>
+          <StyledCheckboxContainer key={answerOption.name}>
             <StyledCheckboxInput
               type="checkbox"
               name={inputName || 'defaultCheckboxInput'}
@@ -23,7 +23,7 @@ const CheckboxInput = ({ question, register, watch }) => {
             <StyledLabel htmlFor={answerOption.name}>
               {answerOption.label}
             </StyledLabel>
-          </div>
+          </StyledCheckboxContainer>
         )
       })}
     </div>
@@ -32,8 +32,14 @@ const CheckboxInput = ({ question, register, watch }) => {
 
 export default CheckboxInput
 
+const StyledCheckboxContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+`
+
 const StyledCheckboxInput = styled.input`
-  margin: 15px 10px 10px 0;
+  align-self: start;
+  margin: 10px 10px 0;
 `
 const StyledLabel = styled.label`
   line-height: 1.6;

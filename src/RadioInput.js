@@ -6,7 +6,7 @@ const RadioInput = ({ question, register }) => {
     <div>
       {question.answerOptions.map((answerOption) => {
         return (
-          <div key={answerOption.name}>
+          <StyledRadioContainer key={answerOption.name}>
             <StyledRadioInput
               name={question?.name || 'defaultRadioInput'}
               value={answerOption.name}
@@ -15,8 +15,10 @@ const RadioInput = ({ question, register }) => {
               ref={register(question.validationHookForm)}
               {...question?.validationNative}
             />
-            <label htmlFor={answerOption.name}>{answerOption.label}</label>
-          </div>
+            <StyledLabel htmlFor={answerOption.name}>
+              {answerOption.label}
+            </StyledLabel>
+          </StyledRadioContainer>
         )
       })}
     </div>
@@ -25,6 +27,15 @@ const RadioInput = ({ question, register }) => {
 
 export default RadioInput
 
+const StyledRadioContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+`
+
 const StyledRadioInput = styled.input`
-  margin: 10px 10px 10px 0;
+  align-self: start;
+  margin: 10px 10px 0;
+`
+const StyledLabel = styled.label`
+  line-height: 1.6;
 `
