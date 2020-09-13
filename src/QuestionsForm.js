@@ -48,7 +48,7 @@ export default function QuestionsForm({ onClick }) {
             )}
 
             {errors[question?.name] && (
-              <StyledErrorMessage>
+              <StyledErrorMessage data-cy={'errorMessage'}>
                 Diese Frage muss beantwortet werden
               </StyledErrorMessage>
             )}
