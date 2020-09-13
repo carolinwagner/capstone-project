@@ -1,34 +1,45 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
-const CheckboxInput = forwardRef(({ question }, ref) => {
+const CheckboxInput = ({ question, register, watch }) => {
   return (
     <div>
-      {question.answerOptions.map((answerOption, innerIndex) => {
-        const inputName = `${question?.name}[${innerIndex}]`
+      {question.answerOptions.map((answerOption, index) => {
+        const inputName = `${question?.name}[${index}]`
         return (
-          <div key={answerOption.name}>
+          <StyledCheckboxContainer key={answerOption.name}>
             <StyledCheckboxInput
               type="checkbox"
               name={inputName || 'defaultCheckboxInput'}
               id={answerOption.name}
-              value={answerOption.label}
-              ref={ref}
+              value={answerOption.name}
+              ref={register(
+                question.validationHookForm?.oneOfGroupRequired && {
+                  validate: () =>
+                    watch(question.name).some((checkbox) => checkbox),
+                }
+              )}
             />
             <StyledLabel htmlFor={answerOption.name}>
               {answerOption.label}
             </StyledLabel>
-          </div>
+          </StyledCheckboxContainer>
         )
       })}
     </div>
   )
-})
+}
 
 export default CheckboxInput
 
+const StyledCheckboxContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+`
+
 const StyledCheckboxInput = styled.input`
-  margin: 15px 10px 10px 0;
+  align-self: start;
+  margin: 10px 10px 0;
 `
 const StyledLabel = styled.label`
   line-height: 1.6;

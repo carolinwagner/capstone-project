@@ -6,13 +6,15 @@ import TextInput from './TextInput'
 import NumberInput from './NumberInput'
 import CheckboxInput from './CheckboxInput'
 import RadioInput from './RadioInput'
+import DateInput from './DateInput'
 import Button from './Button'
 
 export default function QuestionsForm({ onClick }) {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, watch, errors } = useForm({
+    reValidateMode: 'onSubmit',
+  })
 
   const onFormSubmit = (data) => {
-    console.log(data)
     onClick(data)
   }
 
@@ -20,22 +22,37 @@ export default function QuestionsForm({ onClick }) {
     <form onSubmit={handleSubmit(onFormSubmit)}>
       {questions.map((question, index) => (
         <React.Fragment key={index}>
-          <h2>
-            Frage {index + 1} von {questions.length}
-          </h2>
-          <p>{question.questionText}</p>
-          {question.answerType === 'text' && (
-            <TextInput question={question} ref={register} />
-          )}
-          {question.answerType === 'number' && (
-            <NumberInput question={question} ref={register} />
-          )}
-          {question.answerType === 'checkbox' && (
-            <CheckboxInput question={question} ref={register} />
-          )}
-          {question.answerType === 'radio' && (
-            <RadioInput question={question} ref={register} />
-          )}
+          <StyledQuestionContainer>
+            <h2>
+              Frage {index + 1} von {questions.length}
+            </h2>
+            <label htmlFor={question.name}>{question.questionText}</label>
+            {question.answerType === 'text' && (
+              <TextInput question={question} register={register} />
+            )}
+            {question.answerType === 'number' && (
+              <NumberInput question={question} register={register} />
+            )}
+            {question.answerType === 'checkbox' && (
+              <CheckboxInput
+                question={question}
+                register={register}
+                watch={watch}
+              />
+            )}
+            {question.answerType === 'radio' && (
+              <RadioInput question={question} register={register} />
+            )}
+            {question.answerType === 'date' && (
+              <DateInput question={question} register={register} />
+            )}
+
+            {errors[question?.name] && (
+              <StyledErrorMessage data-cy={'errorMessage'}>
+                Diese Frage muss beantwortet werden
+              </StyledErrorMessage>
+            )}
+          </StyledQuestionContainer>
         </React.Fragment>
       ))}
       <StyledContainer>
@@ -47,6 +64,11 @@ export default function QuestionsForm({ onClick }) {
   )
 }
 
+const StyledQuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -55,4 +77,14 @@ const StyledContainer = styled.div`
 
 const StyledButtonText = styled.p`
   font-size: 1.5em;
+`
+
+const StyledErrorMessage = styled.p`
+  color: red;
+  font-size: 75%;
+
+  ::before {
+    display: inline;
+    content: '⚠ ';
+  }
 `

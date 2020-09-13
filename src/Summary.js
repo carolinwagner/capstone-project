@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import questions from './questions.json'
 
 export default function Summary({ answers }) {
   const answersArray = Object.entries(answers)
-  const anyAnswerGiven = answersArray.some((oneAnswer) => {
-    const isAnswerCheckbox = Array.isArray(oneAnswer[1])
+  const anyAnswerGiven = answersArray.some(([_, answer]) => {
+    const isAnswerCheckbox = Array.isArray(answer)
     return isAnswerCheckbox
-      ? oneAnswer[1].filter(Boolean).length > 0
-      : oneAnswer[1].length > 0
+      ? answer.filter(Boolean).length > 0
+      : answer.length > 0
   })
 
   return (
@@ -15,7 +16,10 @@ export default function Summary({ answers }) {
       <>
         <h2>Bitte überprüfe noch einmal deine Antworten:</h2>
         <ul>
-          {answersArray.map(([question, answer], index) => {
+          {answersArray.map(([questionName, answer], index) => {
+            const questionObj = questions.find(
+              (question) => question.name === questionName
+            )
             const isAnswerCheckbox = Array.isArray(answer)
 
             // Don't show checkboxes with falsy values (not checked ones)
@@ -26,7 +30,7 @@ export default function Summary({ answers }) {
             return (
               displayValue && (
                 <li key={index}>
-                  {question}
+                  {questionObj.questionText}
                   <StyledDisplayValue>{displayValue}</StyledDisplayValue>
                 </li>
               )

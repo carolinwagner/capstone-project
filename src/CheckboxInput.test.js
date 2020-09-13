@@ -7,7 +7,7 @@ const defaultQuestion = {
   answerOptions: [
     { label: 'a', name: 'a' },
     { label: 'b', name: 'b' },
-    { label: 'c', name: 'd' },
+    { label: 'c', name: 'c' },
     { label: 'd', name: 'd' },
   ],
 }
