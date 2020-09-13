@@ -14,7 +14,7 @@ context('QuestionForm', () => {
   })
 
   it('has a button', () => {
-    cy.get('button').contains('Zusammenfassung anzeigen').click()
+    cy.get('button').contains('Zusammenfassung anzeigen')
   })
 
   it('has more than 20 questions', () => {
@@ -262,10 +262,22 @@ context('QuestionForm', () => {
     cy.get('p').contains('10')
   })
 
-  it.only('shows error messages if no input is set', () => {
+  it('shows error messages if no input is set', () => {
     cy.get('button')
       .click()
       .get('[data-cy=errorMessage]')
       .should('have.length', 23)
+  })
+
+  it('check browser number validation message on invalid input', () => {
+    cy.get('[type="number"]').first().type('-2')
+    cy.get('button').contains('Zusammenfassung anzeigen').click()
+    cy.get('input:invalid').should('have.length', 1)
+  })
+
+  it('check browser date validation message on invalid input', () => {
+    cy.get('[type="date"]').first().type('2010-12-31')
+    cy.get('button').contains('Zusammenfassung anzeigen').click()
+    cy.get('input:invalid').should('have.length', 1)
   })
 })
