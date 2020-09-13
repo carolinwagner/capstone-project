@@ -31,8 +31,6 @@ const StyledRadioContainer = styled.div`
   margin-top: 20px;
   display: flex;
 `
-<<<<<<< HEAD
-=======
 
 const StyledRadioInput = styled.input`
   align-self: start;
@@ -41,4 +39,3 @@ const StyledRadioInput = styled.input`
 const StyledLabel = styled.label`
   line-height: 1.6;
 `
->>>>>>> master
