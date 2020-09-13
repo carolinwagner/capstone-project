@@ -4,8 +4,8 @@ import styled from 'styled-components/macro'
 const CheckboxInput = ({ question, register, watch }) => {
   return (
     <div>
-      {question.answerOptions.map((answerOption, innerIndex) => {
-        const inputName = `${question?.name}[${innerIndex}]`
+      {question.answerOptions.map((answerOption, index) => {
+        const inputName = `${question?.name}[${index}]`
         return (
           <StyledCheckboxContainer key={answerOption.name}>
             <StyledCheckboxInput
