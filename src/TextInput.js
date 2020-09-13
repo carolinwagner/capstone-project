@@ -2,14 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 const TextInput = ({ question, register }) => {
-<<<<<<< HEAD
-  return (
-    <StyledTextInput
-      type="text"
-      id={question.name}
-      name={question?.name || 'defaultTextInput'}
-      ref={register(question.validationHookForm)}
-=======
   const regex =
     question?.validationHookForm?.pattern &&
     new RegExp(question?.validationHookForm?.pattern)
@@ -24,7 +16,6 @@ const TextInput = ({ question, register }) => {
       type="text"
       name={question?.name || 'defaultTextInput'}
       ref={register(validationClone)}
->>>>>>> master
       {...question?.validationNative}
     />
   )
