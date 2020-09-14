@@ -10,8 +10,8 @@ export default function Header() {
         Gesetzbuches eine Satzung.
       </p>
       <p>
-        Die folgenden Fragen müssen im Voraus geklärt werden, damit du dir eine
-        passende Satzung individuell zusammenbauen kannst.
+        Beantworte einfach die folgenden Fragen und dir wird im Anschluss eine
+        individuell auf deinen Verein abgestimmte Satzung generiert.
       </p>
     </>
   )
