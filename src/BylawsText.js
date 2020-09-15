@@ -204,7 +204,7 @@ export default function BylawsText({ answers }) {
     )
   }
 
-  const boardInvitation = () => {
+  const boardInvitationParagraph = () => {
     return (
       <section>
         <h3>§ 11 Vorstandssitzung</h3>
@@ -223,7 +223,7 @@ export default function BylawsText({ answers }) {
     )
   }
 
-  const committees = () => {
+  const committeesParagraph = () => {
     return answers.committees === 'yesCommittees' ? (
       <section>
         <h3>§ 12 Arbeitsausschüsse</h3>
@@ -239,7 +239,7 @@ export default function BylawsText({ answers }) {
     )
   }
 
-  const dissolutionMajority = () => {
+  const dissolutionMajorityParagraph = () => {
     const getDissolutionMajority = (majority) => {
       if (majority === 'absoluteMajorityDissolution')
         return 'absoluter Mehrheit'
@@ -277,9 +277,9 @@ export default function BylawsText({ answers }) {
         {memberMeetingParagraph()}
         {boardCompositionParagraph()}
         {clubRepresentationParagraph()}
-        {boardInvitation()}
-        {committees()}
-        {dissolutionMajority()}
+        {boardInvitationParagraph()}
+        {committeesParagraph()}
+        {dissolutionMajorityParagraph()}
 
         <h4>
           {location}, {date}
