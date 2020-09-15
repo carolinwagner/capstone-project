@@ -13,7 +13,7 @@ export default function BylawsText({ answers }) {
   console.log('answers:', answers)
 
   const nameAndLocationParagraph = (
-    <section>
+    <section id="nameAndLocation">
       <h3>§ 1 Name und Sitz des Vereins</h3>
       <p>
         Der Name des Vereins lautet {answers.clubName} e.V. Der Verein hat
@@ -23,14 +23,14 @@ export default function BylawsText({ answers }) {
   )
 
   const businessYearParagraph = (
-    <section>
+    <section id="businessYear">
       <h3>§ 2 Geschäftsjahr</h3>
       <p>Geschäftsjahr ist das Kalenderjahr.</p>
     </section>
   )
 
   const clubPurposeParagraph = (
-    <section>
+    <section id="clubPurpose">
       <h3>§ 3 Zweck des Vereins</h3>
       <p>
         Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke
@@ -40,8 +40,8 @@ export default function BylawsText({ answers }) {
     </section>
   )
 
-  const nonprofitParagraph = (
-    <section>
+  const nonProfitParagraph = (
+    <section id="nonProfit">
       <h3>§ 4 Gemeinnützigkeit</h3>
       <p>
         Der Verein ist selbstlos tätig. Er verfolgt nicht in erster Linie
@@ -51,7 +51,7 @@ export default function BylawsText({ answers }) {
   )
 
   const useOfFundsParagraph = (
-    <section>
+    <section id="useOfFunds">
       <h3>§ 5 Mittelverwendung</h3>
       <p>
         Mittel des Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet
@@ -61,7 +61,7 @@ export default function BylawsText({ answers }) {
     </section>
   )
 
-  const memberParagraph = () => {
+  const membersParagraph = () => {
     const members = join({
       array: answers?.typeOfMembers?.filter(Boolean),
       last: ' und ',
@@ -73,7 +73,7 @@ export default function BylawsText({ answers }) {
     })
 
     return (
-      <section>
+      <section id="members">
         <h3>§ 6 Erwerb der Mitgliedschaft</h3>
         <p>
           {members} können Vereinsmitglieder werden. Der Aufnahmeantrag kann{' '}
@@ -88,7 +88,7 @@ export default function BylawsText({ answers }) {
 
   const admissionFeeParagraph = () => {
     return (
-      <section>
+      <section id="admissionFee">
         <h3>§ 7 Aufnahmegebühr</h3>
         {answers.admissionFee === 'yesAdmissionFee' ? (
           <p>
@@ -104,7 +104,7 @@ export default function BylawsText({ answers }) {
 
   const memberFeeParagraph = () => {
     return (
-      <section>
+      <section id="memberFee">
         <h3>§ 8 Mitgliedsbeiträge</h3>
         {answers.memberFee === 'yesMemberFee' ? (
           <p>
@@ -138,7 +138,7 @@ export default function BylawsText({ answers }) {
     }
 
     return (
-      <section>
+      <section id="memberMeeting">
         <h3>§ 9 Mitgliederversammlung</h3>
         <p>
           Die Mitgliederversammlung ist das oberste Vereinsorgan. Die
@@ -175,14 +175,12 @@ export default function BylawsText({ answers }) {
     }
 
     return (
-      <section>
+      <section id="boardComposition">
         <h3>§ 10 Zusammensetzung des Vorstandes</h3>
         <p>
           Der Vorstand setzt sich zusammen aus {boardComposition}. Er wird für
-          einen Zeitraum von {getBoardPeriod(answers.boardPeriod)} gewählt.
-        </p>
-        <p>
-          Eine Wiederwahl ist
+          einen Zeitraum von {getBoardPeriod(answers.boardPeriod)} gewählt. Eine
+          Wiederwahl ist
           {answers.boardReelection === 'yesReelection' ? '' : ' nicht'} möglich.
         </p>
       </section>
@@ -198,7 +196,7 @@ export default function BylawsText({ answers }) {
         return 'der Mehrheit des Vorstandes'
     }
     return (
-      <section>
+      <section id="clubRepresentation">
         <h3>§ 11 Vertretung des Vereins</h3>
         <p>
           Der Verein wird vertreten von{' '}
@@ -208,9 +206,9 @@ export default function BylawsText({ answers }) {
     )
   }
 
-  const boardInvitationParagraph = () => {
+  const boardMeetingParagraph = () => {
     return (
-      <section>
+      <section id="boardMeeting">
         <h3>§ 11 Vorstandssitzung</h3>
         <p>
           {answers.boardMeetingDeadline} Tage vor der Vorstandssitzung muss zu
@@ -228,31 +226,33 @@ export default function BylawsText({ answers }) {
   }
 
   const committeesParagraph = () => {
-    return answers.committees === 'yesCommittees' ? (
-      <section>
+    return (
+      <section id="committees">
         <h3>§ 12 Arbeitsausschüsse</h3>
-        <p>
-          Zur sachverständigen Beratung des Vereins bei der Verfolgung seiner
-          Ziele kann der Vorstand Mitglieder des Vereins mit besonderen
-          Fachkenntnissen in Arbeitsausschüsse berufen, ihre Arbeitsbereiche
-          bestimmen und ihnen für ihre Arbeit Richtlinien geben.
-        </p>
+        {answers.committees === 'yesCommittees' ? (
+          <p>
+            Zur sachverständigen Beratung des Vereins bei der Verfolgung seiner
+            Ziele kann der Vorstand Mitglieder des Vereins mit besonderen
+            Fachkenntnissen in Arbeitsausschüsse berufen, ihre Arbeitsbereiche
+            bestimmen und ihnen für ihre Arbeit Richtlinien geben.
+          </p>
+        ) : (
+          <p>Arbeitsausschüsse werden nicht gebildet.</p>
+        )}
       </section>
-    ) : (
-      ''
     )
   }
 
   const dissolutionMajorityParagraph = () => {
     const getDissolutionMajority = (majority) => {
       if (majority === 'absoluteMajorityDissolution')
-        return 'absoluter Mehrheit'
+        return 'absoluten Mehrheit'
       if (majority === 'twoThirdsMajorityDissolution')
         return 'Zweidrittelmehrheit'
-      if (majority === 'simpleMajorityDissolution') return 'einfacher Mehrheit'
+      if (majority === 'simpleMajorityDissolution') return 'einfachen Mehrheit'
     }
     return (
-      <section>
+      <section id="dissolutionMajority">
         <h3>§ 12 Auflösung des Vereins</h3>
         <p>
           Die Auflösung des Vereins kann nur mit einer{' '}
@@ -263,9 +263,9 @@ export default function BylawsText({ answers }) {
     )
   }
 
-  const location = `${answers.clubLocation}`
+  const location = <p id="location">{answers.clubLocation}</p>
 
-  const date = `${answers.decisionDate}`
+  const date = <p id="date">{answers.decisionDate}</p>
 
   return (
     anyAnswerGiven && (
@@ -273,15 +273,15 @@ export default function BylawsText({ answers }) {
         {nameAndLocationParagraph}
         {businessYearParagraph}
         {clubPurposeParagraph}
-        {nonprofitParagraph}
+        {nonProfitParagraph}
         {useOfFundsParagraph}
-        {memberParagraph()}
+        {membersParagraph()}
         {admissionFeeParagraph()}
         {memberFeeParagraph()}
         {memberMeetingParagraph()}
         {boardCompositionParagraph()}
         {clubRepresentationParagraph()}
-        {boardInvitationParagraph()}
+        {boardMeetingParagraph()}
         {committeesParagraph()}
         {dissolutionMajorityParagraph()}
 
