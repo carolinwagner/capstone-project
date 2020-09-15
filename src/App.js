@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
+import BylawsText from './BylawsText'
 import Header from './Header'
 import QuestionsForm from './QuestionsForm'
-import Summary from './Summary'
-import BylawsText from './BylawsText'
 
 function App() {
   const [answers, setAnswers] = useState([])
@@ -11,7 +10,6 @@ function App() {
     <>
       <Header />
       <QuestionsForm onClick={addAnswers} />
-      {/* <Summary answers={answers} /> */}
       <BylawsText answers={answers} />
     </>
   )
