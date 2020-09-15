@@ -87,30 +87,34 @@ export default function BylawsText({ answers }) {
   }
 
   const admissionFeeParagraph = () => {
-    return answers.admissionFee === 'yesAdmissionFee' ? (
+    return (
       <section>
         <h3>§ 7 Aufnahmegebühr</h3>
-        <p>
-          Vor dem Eintritt wird eine Aufnahmegebühr fällig. Die Höhe bestimmt
-          die Mitgliederversammlung.
-        </p>
+        {answers.admissionFee === 'yesAdmissionFee' ? (
+          <p>
+            Vor dem Eintritt wird eine Aufnahmegebühr fällig. Die Höhe bestimmt
+            die Mitgliederversammlung.
+          </p>
+        ) : (
+          <p>Eine Aufnahmegebühr wird nicht erhoben.</p>
+        )}
       </section>
-    ) : (
-      ''
     )
   }
 
   const memberFeeParagraph = () => {
-    return answers.memberFee === 'yesMemberFee' ? (
+    return (
       <section>
-        <h3>§ 8 Mitgliedsgebühr</h3>
-        <p>
-          Von den Mitgliedern werden Beiträge erhoben. Die Höhe der Beiträge und
-          deren Fälligkeit bestimmt die Mitgliederversammlung.
-        </p>
+        <h3>§ 8 Mitgliedsbeiträge</h3>
+        {answers.memberFee === 'yesMemberFee' ? (
+          <p>
+            Von den Mitgliedern werden Beiträge erhoben. Die Höhe der Beiträge
+            und deren Fälligkeit bestimmt die Mitgliederversammlung.
+          </p>
+        ) : (
+          <p>Mitgliedsbeiträge werden nicht erhoben.</p>
+        )}
       </section>
-    ) : (
-      ''
     )
   }
 
