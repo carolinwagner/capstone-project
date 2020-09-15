@@ -10,8 +10,6 @@ export default function BylawsText({ answers }) {
       : answer.length > 0
   })
 
-  console.log('answers:', answers)
-
   const nameAndLocationParagraph = (
     <section id="nameAndLocation">
       <h3>§ 1 Name und Sitz des Vereins</h3>
@@ -270,6 +268,9 @@ export default function BylawsText({ answers }) {
   return (
     anyAnswerGiven && (
       <>
+        <p>
+          Die folgende Satzung wurde basierend auf deinen Antworten erstellt.
+        </p>
         {nameAndLocationParagraph}
         {businessYearParagraph}
         {clubPurposeParagraph}
