@@ -7,7 +7,7 @@ import NumberInput from './NumberInput'
 import CheckboxInput from './CheckboxInput'
 import RadioInput from './RadioInput'
 import DateInput from './DateInput'
-import Button from './Button'
+import StyledButton from './StyledButton'
 
 export default function QuestionsForm({ onClick }) {
   const { register, handleSubmit, watch, errors } = useForm({
@@ -56,7 +56,7 @@ export default function QuestionsForm({ onClick }) {
         </React.Fragment>
       ))}
       <StyledContainer>
-        <Button type="submit">Satzungstext anzeigen</Button>
+        <StyledButton type="submit">Satzungstext anzeigen</StyledButton>
       </StyledContainer>
     </form>
   )
