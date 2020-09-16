@@ -22,8 +22,11 @@ export default function BylawsText({ answers }) {
       ? answer.filter(Boolean).length > 0
       : answer.length > 0
   })
-  const location = <p id="location">{answers.clubLocation}</p>
-  const date = <p id="date">{answers.decisionDate}</p>
+  const locationAndDate = (
+    <p id="locationAndDate">
+      {answers.clubLocation}, {answers.decisionDate}
+    </p>
+  )
 
   return (
     anyAnswerGiven && (
@@ -46,9 +49,8 @@ export default function BylawsText({ answers }) {
         <CommitteesParagraph answers={answers} />
         <DissolutionMajorityParagraph answers={answers} />
 
-        <h4>
-          {location}, {date}
-        </h4>
+        <h4>{locationAndDate}</h4>
+
         <h4>__________________________________</h4>
         <p>Unterschrift der Gründungsmitglieder</p>
       </>
