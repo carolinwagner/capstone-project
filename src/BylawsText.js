@@ -15,15 +15,15 @@ import NonProfitParagraph from './paragraphs/NonProfitParagraph'
 import UseOfFundsParagraph from './paragraphs/UseOfFundsParagraph'
 
 export default function BylawsText({ answers }) {
-  const answersArray = Object.entries(answers)
+  const answersArray = Object.entries(answers || {})
   const anyAnswerGiven = answersArray.some(([_, answer]) => {
     const isAnswerCheckbox = Array.isArray(answer)
     return isAnswerCheckbox
       ? answer.filter(Boolean).length > 0
       : answer.length > 0
   })
-  const location = <p id="location">{answers.clubLocation}</p>
-  const date = <p id="date">{answers.decisionDate}</p>
+  const location = <p id="location">{answers?.clubLocation}</p>
+  const date = <p id="date">{answers?.decisionDate}</p>
 
   return (
     anyAnswerGiven && (

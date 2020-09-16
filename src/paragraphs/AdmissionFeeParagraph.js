@@ -7,7 +7,7 @@ const AdmissionFeeParagraph = ({ answers }) => {
       id="admissionFee"
       headline="§ 7 Aufnahmegebühr"
       text={
-        answers.admissionFee === 'yesAdmissionFee'
+        answers?.admissionFee === 'yesAdmissionFee'
           ? 'Vor dem Eintritt wird eine Aufnahmegebühr fällig. Die Höhe bestimmt die Mitgliederversammlung.'
           : 'Eine Aufnahmegebühr wird nicht erhoben.'
       }

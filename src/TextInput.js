@@ -13,6 +13,7 @@ const TextInput = ({ question, register }) => {
 
   return (
     <StyledTextInput
+      id={question.name}
       type="text"
       name={question?.name || 'defaultTextInput'}
       ref={register(validationClone)}
