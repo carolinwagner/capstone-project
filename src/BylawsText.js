@@ -7,7 +7,7 @@ import ClubPurposeParagraph from './paragraphs/ClubPurposeParagraph'
 import ClubRepresentationParagraph from './paragraphs/ClubRepresentationParagraph'
 import CommitteesParagraph from './paragraphs/CommitteesParagraph'
 import DissolutionMajorityParagraph from './paragraphs/DissolutionMajorityParagraph'
-import MemberFeeParagraph from './paragraphs/MembersParagraph'
+import MemberFeeParagraph from './paragraphs/MemberFeeParagraph'
 import MemberMeetingParagraph from './paragraphs/MemberMeetingParagraph'
 import MembersParagraph from './paragraphs/MembersParagraph'
 import NameAndLocationParagraph from './paragraphs/NameAndLocationParagraph'
@@ -22,7 +22,6 @@ export default function BylawsText({ answers }) {
       ? answer.filter(Boolean).length > 0
       : answer.length > 0
   })
-
   const location = <p id="location">{answers.clubLocation}</p>
   const date = <p id="date">{answers.decisionDate}</p>
 
@@ -50,7 +49,6 @@ export default function BylawsText({ answers }) {
         <h4>
           {location}, {date}
         </h4>
-
         <h4>__________________________________</h4>
         <p>Unterschrift der Gründungsmitglieder</p>
       </>

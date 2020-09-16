@@ -19,7 +19,7 @@ const MembersParagraph = ({ answers }) => {
       headline="§ 6 Erwerb der Mitgliedschaft"
       text={`${members} können Vereinsmitglieder werden. Der Aufnahmeantrag kann 
    ${typeOfRequest} gestellt werden. Über den Aufnahmeantrag entscheidet
-    der Vorstand.Gegen die Ablehnung, die keiner Begründung bedarf, steht
+    der Vorstand. Gegen die Ablehnung, die keiner Begründung bedarf, steht
     dem/der Bewerber/in die Berufung an die Mitgliederversammlung zu,
     welche dann endgültig entscheidet.`}
     />

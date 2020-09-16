@@ -20,7 +20,7 @@ const BoardMeetingParagraph = ({ answers }) => {
       answers.agendaNotice === 'yesAgendaNotice'
         ? 'In der Einladung zur Vorstandssitzung muss die Tagesordnung mitgeteilt werden.'
         : ''
-    }.`}
+    }`}
     />
   )
 }

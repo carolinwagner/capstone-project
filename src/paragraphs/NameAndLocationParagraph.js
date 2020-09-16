@@ -6,7 +6,7 @@ const NameAndLocationParagraph = ({ answers }) => {
     <Paragraph
       id="nameAndLocation"
       headline="§ 1 Name und Sitz des Vereins"
-      text={`Der Name des Vereins lautet ${answers.clubName} e.V. Der Verein hat
+      text={`Der Name des Vereins lautet ${answers.clubName} e. V. Der Verein hat
 seinen Sitz in ${answers.clubLocation}.`}
     />
   )
