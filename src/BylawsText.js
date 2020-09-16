@@ -22,10 +22,10 @@ export default function BylawsText({ answers }) {
       ? answer.filter(Boolean).length > 0
       : answer.length > 0
   })
-  const locationAndDate = (
-    <p id="locationAndDate">
+  const LocationAndDate = (
+    <h4 id="locationAndDate">
       {answers.clubLocation}, {answers.decisionDate}
-    </p>
+    </h4>
   )
 
   return (
@@ -49,7 +49,7 @@ export default function BylawsText({ answers }) {
         <CommitteesParagraph answers={answers} />
         <DissolutionMajorityParagraph answers={answers} />
 
-        <h4>{locationAndDate}</h4>
+        {LocationAndDate}
 
         <h4>__________________________________</h4>
         <p>Unterschrift der Gründungsmitglieder</p>
