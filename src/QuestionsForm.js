@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
 import questions from './questions.json'
 import styled from 'styled-components/macro'
 import TextInput from './TextInput'
@@ -10,12 +11,14 @@ import DateInput from './DateInput'
 import StyledButton from './StyledButton'
 
 export default function QuestionsForm({ onClick }) {
+  const history = useHistory()
   const { register, handleSubmit, watch, errors } = useForm({
     reValidateMode: 'onSubmit',
   })
 
   const onFormSubmit = (data) => {
     onClick(data)
+    history.push('/bylawstext')
   }
 
   return (
@@ -56,7 +59,7 @@ export default function QuestionsForm({ onClick }) {
         </React.Fragment>
       ))}
       <StyledContainer>
-        <StyledButton type="submit">Satzungstext anzeigen</StyledButton>
+        <StyledButton>Satzungstext anzeigen</StyledButton>
       </StyledContainer>
     </form>
   )

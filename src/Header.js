@@ -11,6 +11,7 @@ export default function Header() {
 
 const StyledHeader = styled.h1`
   font-family: 'Playfair Display', serif;
+  text-align: center;
   font-size: 45px;
-  color: var(--lightblue);
+  color: var(--blue);
 `

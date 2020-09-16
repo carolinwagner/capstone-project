@@ -1,28 +1,25 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import BylawsText from './BylawsText'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './Header'
-import Start from './Start'
+import BylawsText from './BylawsText'
 import QuestionsForm from './QuestionsForm'
+import Start from './Start'
 
 function App() {
   const [answers, setAnswers] = useState([])
 
   return (
     <Router>
-      {/* <Header />
-      <QuestionsForm onClick={addAnswers} />
-      <BylawsText answers={answers} /> */}
-
+      <Header />
       <Switch>
-        <Route path="/start">
+        <Route exact path="/">
           <Start />
         </Route>
         <Route path="/questions">
-          <QuestionsForm />
+          <QuestionsForm onClick={addAnswers} />
         </Route>
         <Route path="/bylawstext">
-          <BylawsText />
+          <BylawsText answers={answers} />
         </Route>
       </Switch>
     </Router>
