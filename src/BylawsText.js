@@ -1,4 +1,6 @@
 import React from 'react'
+import styled from 'styled-components/macro'
+import StyledButton from './StyledButton'
 import AdmissionFeeParagraph from './paragraphs/AdmissionFeeParagraph'
 import BoardCompositionParagraph from './paragraphs/BoardCompositionParagraph'
 import BoardMeetingParagraph from './paragraphs/BoardMeetingParagraph'
@@ -29,31 +31,42 @@ export default function BylawsText({ answers }) {
   )
 
   return (
-    anyAnswerGiven && (
-      <>
-        <p>
-          Die folgende Satzung wurde basierend auf deinen Antworten erstellt.
-        </p>
-        <NameAndLocationParagraph answers={answers} />
-        <BusinessYearParagraph />
-        <ClubPurposeParagraph answers={answers} />
-        <NonProfitParagraph />
-        <UseOfFundsParagraph />
-        <MembersParagraph answers={answers} />
-        <AdmissionFeeParagraph answers={answers} />
-        <MemberFeeParagraph answers={answers} />
-        <MemberMeetingParagraph answers={answers} />
-        <BoardCompositionParagraph answers={answers} />
-        <ClubRepresentationParagraph answers={answers} />
-        <BoardMeetingParagraph answers={answers} />
-        <CommitteesParagraph answers={answers} />
-        <DissolutionMajorityParagraph answers={answers} />
+    <>
+      {anyAnswerGiven && (
+        <>
+          <p>
+            Die folgende Satzung wurde basierend auf deinen Antworten erstellt.
+          </p>
+          <NameAndLocationParagraph answers={answers} />
+          <BusinessYearParagraph />
+          <ClubPurposeParagraph answers={answers} />
+          <NonProfitParagraph />
+          <UseOfFundsParagraph />
+          <MembersParagraph answers={answers} />
+          <AdmissionFeeParagraph answers={answers} />
+          <MemberFeeParagraph answers={answers} />
+          <MemberMeetingParagraph answers={answers} />
+          <BoardCompositionParagraph answers={answers} />
+          <ClubRepresentationParagraph answers={answers} />
+          <BoardMeetingParagraph answers={answers} />
+          <CommitteesParagraph answers={answers} />
+          <DissolutionMajorityParagraph answers={answers} />
 
-        {LocationAndDate}
+          {LocationAndDate}
 
-        <h4>__________________________________</h4>
-        <p>Unterschrift der Gründungsmitglieder</p>
-      </>
-    )
+          <h4>__________________________________</h4>
+          <p>Unterschrift der Gründungsmitglieder</p>
+        </>
+      )}
+      <StyledContainer>
+        <StyledButton>Zurück zu den Fragen</StyledButton>
+      </StyledContainer>
+    </>
   )
 }
+
+const StyledContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+`
