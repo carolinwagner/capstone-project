@@ -1,11 +1,11 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
-import Button from './Button'
+import StyledButton from './StyledButton'
 
-describe('Button', () => {
+describe('StyledButton', () => {
   it('renders correctly', () => {
-    const container = render(<Button />)
+    const container = render(<StyledButton />)
     expect(container.firstChild).toMatchSnapshot()
   })
 })

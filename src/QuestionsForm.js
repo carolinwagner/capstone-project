@@ -7,7 +7,7 @@ import NumberInput from './NumberInput'
 import CheckboxInput from './CheckboxInput'
 import RadioInput from './RadioInput'
 import DateInput from './DateInput'
-import Button from './Button'
+import StyledButton from './StyledButton'
 
 export default function QuestionsForm({ onClick }) {
   const { register, handleSubmit, watch, errors } = useForm({
@@ -56,9 +56,7 @@ export default function QuestionsForm({ onClick }) {
         </React.Fragment>
       ))}
       <StyledContainer>
-        <Button type="submit">
-          <StyledButtonText>Zusammenfassung anzeigen</StyledButtonText>
-        </Button>
+        <StyledButton type="submit">Satzungstext anzeigen</StyledButton>
       </StyledContainer>
     </form>
   )
@@ -73,10 +71,6 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 100px;
-`
-
-const StyledButtonText = styled.p`
-  font-size: 1.5em;
 `
 
 const StyledErrorMessage = styled.p`

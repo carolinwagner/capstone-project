@@ -25,48 +25,50 @@
     "answerType": "checkbox",
     "name": "typeOfMembers",
     "answerOptions": [
-      {
-        "label": "natürliche Personen < 18",
-        "name": "Personen < 18"
-      },
-      {
-        "label": "natürliche Personen > 18",
-        "name": "Personen > 18"
-      },
-      {
-        "label": "juristische Personen",
-        "name": "juristische Personen"
-      },
-      {
-        "label": "Personengesellschaften",
-        "name": "Unternehmen"
-      }
+      { "label": "natürliche Personen < 18", "name": "Minderjährige" },
+      { "label": "natürliche Personen > 18", "name": "Volljährige" },
+      { "label": "juristische Personen", "name": "Juristische Personen" },
+      { "label": "Personengesellschaften", "name": "Personengesellschaften" }
     ],
     "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Auf welchem Wege sollen potentielle Mitglieder einen Mitgliedsantrag stellen?",
-    "name": "typeOfRequests",
+    "name": "typeOfRequest",
     "answerType": "checkbox",
     "answerOptions": [
       { "label": "schriftlich", "name": "schriftlich" },
-      { "label": "per E-Mail", "name": "email" }
+      { "label": "per E-Mail", "name": "per E-Mail" }
     ],
     "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Sollen die Mitglieder eine Aufnahmegebühr zahlen?",
-    "name": "memberFee",
+    "name": "admissionFee",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ja", "name": "ja zur Aufnahmegebühr" },
+      { "label": "ja", "name": "yesAdmissionFee" },
       {
         "label": "nein",
-        "name": "nein zur Aufnahmegebühr"
+        "name": "noAdmissionFee"
       }
     ],
     "validationHookForm": { "required": true }
   },
+  {
+    "questionText": "Sollen die Mitglieder einen Mitgliedsbeitrag zahlen?",
+    "name": "memberFee",
+    "answerType": "radio",
+    "answerOptions": [
+      { "label": "ja", "name": "yesMemberFee" },
+      {
+        "label": "nein",
+        "name": "noFee"
+      }
+    ],
+    "validationHookForm": { "required": true }
+  },
+
   {
     "questionText": "Für welche Belange soll die Mitgliedsversammlung als oberstes Vereinsorgan zuständig sein?",
     "name": "generalMeetingDuties",
@@ -74,27 +76,23 @@
     "answerOptions": [
       {
         "label": "Wahl des Vorstandes",
-        "name": "Vorstandswahl"
+        "name": "die Wahl des Vorstandes"
       },
       {
         "label": "Entlastung des Vorstandes",
-        "name": "Vorstandsentlastung"
+        "name": "die Entlastung des Vorstandes"
       },
       {
         "label": "Haushaltsplan",
-        "name": "Haushaltsplan"
-      },
-      {
-        "label": "Festsetzung der Höhe des Mitgliedsbeitrags",
-        "name": "Mitgliedsbeitragsfestsetzung"
+        "name": "den Haushaltsplan"
       },
       {
         "label": "Entscheidung über eingereichte Anträge",
-        "name": "Antragsentscheidung"
+        "name": "eingereichte Anträge"
       },
       {
         "label": "Beschlussfassung über Auflösung des Vereins",
-        "name": "Auflösungsbeschluss"
+        "name": "die Beschlussfassung über die Auflösung des Vereins"
       }
     ],
     "validationHookForm": { "oneOfGroupRequired": true }
@@ -106,11 +104,11 @@
     "answerOptions": [
       {
         "label": "schriftlich",
-        "name": "schriftliche Einladung"
+        "name": " writtenInvitation"
       },
       {
         "label": "per E-Mail",
-        "name": "Einladung per eMail"
+        "name": "emailInvitation"
       }
     ],
     "validationHookForm": { "required": true }
@@ -130,11 +128,11 @@
     "answerOptions": [
       {
         "label": "jede ordnungsgemäß einberufene Mitgliederversammlung soll beschlussfähig sein",
-        "name": "Immer"
+        "name": "quorum"
       },
       {
         "label": "mindestens die Hälfte der Mitglieder muss anwesend sein",
-        "name": "Anwesenheit der Hälfte der Mitglieder"
+        "name": "minHalf"
       }
     ],
     "validationHookForm": { "required": true }
@@ -144,13 +142,13 @@
     "name": "generalMeetingFrequency",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "monatlich", "name": "monatlich" },
+      { "label": "monatlich", "name": "monthly" },
       {
         "label": "vierteljährlich",
-        "name": "vierteljährlich"
+        "name": "quarterly"
       },
-      { "label": "halbjährlich", "name": "halbjährlich" },
-      { "label": "jährlich", "name": "jährlich" }
+      { "label": "halbjährlich", "name": "everySixMonths" },
+      { "label": "jährlich", "name": "yearly" }
     ],
     "validationHookForm": { "required": true }
   },
@@ -161,13 +159,13 @@
     "answerOptions": [
       {
         "label": "absolute Mehrheit",
-        "name": "absolute"
+        "name": "absoluteMajority"
       },
       {
-        "label": "Zweidrittel Mehrheit",
-        "name": "zweidrittel"
+        "label": "Zweidrittelmehrheit",
+        "name": "twoThirdsMajority"
       },
-      { "label": "einfache Mehrheit", "name": "einfache" }
+      { "label": "einfache Mehrheit", "name": "simpleMajority" }
     ],
     "validationHookForm": { "required": true }
   },
@@ -179,15 +177,15 @@
     "answerOptions": [
       {
         "label": "zwei Vorsitzende",
-        "name": "zwei Vorsitzende"
+        "name": "zwei Vorsitzenden"
       },
       {
         "label": "Schatzmeister",
-        "name": "Schatzmeister"
+        "name": "dem Schatzmeister"
       },
       {
         "label": "Schriftführer",
-        "name": "Schriftführer"
+        "name": "dem Schriftführer"
       }
     ],
     "validationHookForm": { "oneOfGroupRequired": true }
@@ -199,19 +197,19 @@
     "answerOptions": [
       {
         "label": "der 1. Vorsitzende",
-        "name": "erster Vorsitzender"
+        "name": "firstBoardMember"
       },
       {
         "label": "der 1. und der 2. Vorsitzende",
-        "name": "erster und zweiter Vorsitzender"
+        "name": "firstAndSecondBoardMember"
       },
       {
         "label": "die Mehrheit des Vorstandes",
-        "name": "Vorstandsmehrheit"
+        "name": "boardMajority"
       },
       {
         "label": "zwei Mitglieder des Vorstandes",
-        "name": "zwei Vorstandsmitglieder"
+        "name": "twoBoardMembers"
       }
     ],
     "validationHookForm": { "required": true }
@@ -221,10 +219,10 @@
     "name": "boardPeriod",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ein Jahr", "name": "ein Jahr" },
-      { "label": "zwei Jahre", "name": "zwei Jahre" },
-      { "label": "drei Jahre", "name": "drei Jahre" },
-      { "label": "vier Jahre", "name": "vier Jahre" }
+      { "label": "ein Jahr", "name": "oneYear" },
+      { "label": "zwei Jahre", "name": "twoYears" },
+      { "label": "drei Jahre", "name": "threeYears" },
+      { "label": "vier Jahre", "name": "fourYears" }
     ],
     "validationHookForm": { "required": true }
   },
@@ -233,26 +231,26 @@
     "name": "boardReelection",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ja", "name": "Ja zur Wiederwahl" },
-      { "label": "nein", "name": "Nein zur Wiederwahl" }
+      { "label": "ja", "name": "yesReelection" },
+      { "label": "nein", "name": "noReelection" }
     ],
     "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie soll zur Vorstandssitzung geladen werden?",
     "name": "boardInvitation",
-    "answerType": "checkbox",
+    "answerType": "radio",
     "answerOptions": [
       {
         "label": "schriftlich",
-        "name": "schritfliche Ladung"
+        "name": "writtenBoardInvitation"
       },
       {
         "label": "per E-Mail",
-        "name": "Ladung per eMail"
+        "name": "emailBoardInvitation"
       }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie viele Tage vorher soll zu einer Vorstandssitzung geladen werden?",
@@ -267,8 +265,8 @@
     "name": "agendaNotice",
     "answerType": "radio",
     "answerOptions": [
-      { "label": "ja", "name": "Ja zur Mitteilung" },
-      { "label": "nein", "name": "Nein zur Mitteilung" }
+      { "label": "ja", "name": "yesAgendaNotice" },
+      { "label": "nein", "name": "noAgendaNotice" }
     ],
     "validationHookForm": { "required": true }
   },
@@ -279,11 +277,11 @@
     "answerOptions": [
       {
         "label": "ja",
-        "name": "Ja zu Arbeitsausschüssen"
+        "name": "yesCommittees"
       },
       {
         "label": "nein",
-        "name": "Nein zu Arbeitsausschüssen"
+        "name": "noCommittees"
       }
     ],
     "validationHookForm": { "required": true }
@@ -295,15 +293,15 @@
     "answerOptions": [
       {
         "label": "absolute Mehrheit",
-        "name": "absolute Mehrheit zur Auflösung"
+        "name": "absoluteMajorityDissolution"
       },
       {
         "label": "Zweidrittel Mehrheit",
-        "name": "Zweidrittel Mehrheit zur Auflösung"
+        "name": "twoThirdsMajorityDissolution"
       },
       {
         "label": "einfache Mehrheit",
-        "name": "einfache Mehrheit zur Auflösung"
+        "name": "simpleMajorityDissolution"
       }
     ],
     "validationHookForm": { "required": true }

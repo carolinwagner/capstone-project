@@ -7,6 +7,7 @@ const StyledButton = styled.button`
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  font-size: 1em;
 `
 
 export default StyledButton
