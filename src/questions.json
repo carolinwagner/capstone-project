@@ -4,21 +4,21 @@
     "name": "clubName",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": false, "pattern": ".*\\S.*" }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
   },
   {
     "questionText": "In welcher Stadt soll dein Verein sitzen?",
     "name": "clubLocation",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": false, "pattern": ".*\\S.*" }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
   },
   {
     "questionText": "Welchen Zweck verfolgt der Verein?",
     "name": "clubPurpose",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": false, "pattern": ".*\\S.*" }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
   },
   {
     "questionText": "Wer soll Mitglied in dem Verein werden können?",
@@ -30,7 +30,7 @@
       { "label": "juristische Personen", "name": "Juristische Personen" },
       { "label": "Personengesellschaften", "name": "Personengesellschaften" }
     ],
-    "validationHookForm": { "oneOfGroupRequired": false }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Auf welchem Wege sollen potentielle Mitglieder einen Mitgliedsantrag stellen?",
@@ -40,7 +40,7 @@
       { "label": "schriftlich", "name": "schriftlich" },
       { "label": "per E-Mail", "name": "per E-Mail" }
     ],
-    "validationHookForm": { "oneOfGroupRequired": false }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Sollen die Mitglieder eine Aufnahmegebühr zahlen?",
@@ -53,7 +53,7 @@
         "name": "noAdmissionFee"
       }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Sollen die Mitglieder einen Mitgliedsbeitrag zahlen?",
@@ -66,7 +66,7 @@
         "name": "noFee"
       }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
 
   {
@@ -95,7 +95,7 @@
         "name": "die Beschlussfassung über die Auflösung des Vereins"
       }
     ],
-    "validationHookForm": { "oneOfGroupRequired": false }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Wie soll die Einladung zur Mitgliederversammlung erfolgen?",
@@ -111,14 +111,14 @@
         "name": "emailInvitation"
       }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie viele Tage vorher soll zur Mitgliederversammlung geladen werden?",
     "name": "generalMeetingDeadline",
     "answerType": "number",
     "answerOptions": [],
-    "validationHookForm": { "required": false },
+    "validationHookForm": { "required": true },
     "validationNative": { "min": "14", "max": "365" }
   },
   {
@@ -135,7 +135,7 @@
         "name": "minHalf"
       }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie häufig soll eine Mitgliederversammlung durchgeführt werden?",
@@ -150,7 +150,7 @@
       { "label": "halbjährlich", "name": "everySixMonths" },
       { "label": "jährlich", "name": "yearly" }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Mit welcher Mehrheit soll die Mitgliederversammlung ihre Beschlüsse fassen?",
@@ -167,7 +167,7 @@
       },
       { "label": "einfache Mehrheit", "name": "simpleMajority" }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
 
   {
@@ -188,7 +188,7 @@
         "name": "dem Schriftführer"
       }
     ],
-    "validationHookForm": { "oneOfGroupRequired": false }
+    "validationHookForm": { "oneOfGroupRequired": true }
   },
   {
     "questionText": "Wer soll den Verein nach außen vertreten?",
@@ -212,7 +212,7 @@
         "name": "twoBoardMembers"
       }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Für welchen Zeitraum soll der Vorstand gewählt werden?",
@@ -224,7 +224,7 @@
       { "label": "drei Jahre", "name": "threeYears" },
       { "label": "vier Jahre", "name": "fourYears" }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Soll eine Wiederwahl des Vorstandes möglich sein?",
@@ -234,7 +234,7 @@
       { "label": "ja", "name": "yesReelection" },
       { "label": "nein", "name": "noReelection" }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie soll zur Vorstandssitzung geladen werden?",
@@ -250,14 +250,14 @@
         "name": "emailBoardInvitation"
       }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Wie viele Tage vorher soll zu einer Vorstandssitzung geladen werden?",
     "name": "boardMeetingDeadline",
     "answerType": "number",
     "answerOptions": [],
-    "validationHookForm": { "required": false },
+    "validationHookForm": { "required": true },
     "validationNative": { "min": "14", "max": "365" }
   },
   {
@@ -268,7 +268,7 @@
       { "label": "ja", "name": "yesAgendaNotice" },
       { "label": "nein", "name": "noAgendaNotice" }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Sollen Arbeitsausschüsse gebildet werden?",
@@ -284,7 +284,7 @@
         "name": "noCommittees"
       }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "Welche Mehrheit ist erforderlich, sofern die Mitgliederversammlung über die Auflösung des Vereins entscheiden soll?",
@@ -304,22 +304,22 @@
         "name": "simpleMajorityDissolution"
       }
     ],
-    "validationHookForm": { "required": false }
+    "validationHookForm": { "required": true }
   },
   {
     "questionText": "An welchem Tag soll über die Satzung beschlossen werden?",
     "name": "decisionDate",
     "answerType": "date",
     "answerOptions": [],
-    "validationHookForm": { "required": false },
-    "validationNative": { "minToday": false }
+    "validationHookForm": { "required": true },
+    "validationNative": { "minToday": true }
   },
   {
     "questionText": "Wie viele Mitglieder sollen die Satzung unterschreiben?",
     "name": "signaturesNumber",
     "answerType": "number",
     "answerOptions": [],
-    "validationHookForm": { "required": false },
+    "validationHookForm": { "required": true },
     "validationNative": { "min": "7" }
   }
 ]
