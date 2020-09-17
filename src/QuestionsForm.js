@@ -59,7 +59,7 @@ export default function QuestionsForm({ onClick }) {
         </React.Fragment>
       ))}
       <StyledContainer>
-        <StyledButton>Satzungstext anzeigen</StyledButton>
+        <StyledButton>Satzung anzeigen</StyledButton>
       </StyledContainer>
     </form>
   )
