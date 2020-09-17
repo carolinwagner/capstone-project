@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Header from './Header'
 import BylawsText from './BylawsText'
 import QuestionsForm from './QuestionsForm'
@@ -9,7 +9,7 @@ function App() {
   const [answers, setAnswers] = useState([])
 
   return (
-    <Router>
+    <>
       <Header />
       <Switch>
         <Route exact path="/">
@@ -22,7 +22,7 @@ function App() {
           <BylawsText answers={answers} />
         </Route>
       </Switch>
-    </Router>
+    </>
   )
 
   function addAnswers(newAnswers) {

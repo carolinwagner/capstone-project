@@ -31,6 +31,8 @@ export default function BylawsText({ answers }) {
     </h4>
   )
 
+  const FoundingMembers = answers.signaturesNumber
+
   return (
     <>
       {anyAnswerGiven && (
@@ -55,8 +57,7 @@ export default function BylawsText({ answers }) {
 
           {LocationAndDate}
 
-          <h4>__________________________________</h4>
-          <p>Unterschrift der Gründungsmitglieder</p>
+          <p>Unterschriften der {FoundingMembers} Gründungsmitglieder:</p>
         </>
       )}
       <StyledContainer>
