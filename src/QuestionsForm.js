@@ -26,9 +26,9 @@ export default function QuestionsForm({ onClick }) {
       {questions.map((question, index) => (
         <React.Fragment key={index}>
           <StyledQuestionContainer>
-            <h2>
+            <StyledQuestionHeadline>
               Frage {index + 1} von {questions.length}
-            </h2>
+            </StyledQuestionHeadline>
             <label htmlFor={question.name}>{question.questionText}</label>
             {question.answerType === 'text' && (
               <TextInput question={question} register={register} />
@@ -74,6 +74,10 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 100px;
+`
+
+const StyledQuestionHeadline = styled.h1`
+  color: var(--darkgrey-main);
 `
 
 const StyledErrorMessage = styled.p`
