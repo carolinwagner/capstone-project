@@ -8,11 +8,11 @@ const BoardCompositionParagraph = ({ answers }) => {
     last: ' und ',
   })
 
-  const getBoardPeriod = (period) => {
-    if (period === 'oneYear') return 'einem Jahr'
-    if (period === 'twoYears') return 'zwei Jahren'
-    if (period === 'threeYears') return 'drei Jahren'
-    if (period === 'fourYears') return 'vier Jahren'
+  const boardPeriod = {
+    oneYear: 'einem Jahr',
+    twoYears: 'zwei Jahren',
+    threeYears: 'drei Jahren',
+    fourYears: 'vier Jahren',
   }
 
   return (
@@ -20,7 +20,7 @@ const BoardCompositionParagraph = ({ answers }) => {
       id="boardComposition"
       headline="§ 10 Zusammensetzung des Vorstandes"
       text={` Der Vorstand setzt sich zusammen aus ${boardComposition}. Er wird für
-      einen Zeitraum von ${getBoardPeriod(answers.boardPeriod)} gewählt. Eine
+      einen Zeitraum von ${boardPeriod[answers.boardPeriod]} gewählt. Eine
       Wiederwahl ist
       ${answers.boardReelection === 'yesReelection' ? '' : ' nicht'} möglich.`}
     />

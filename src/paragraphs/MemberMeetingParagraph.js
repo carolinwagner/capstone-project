@@ -8,17 +8,17 @@ const MemberMeetingParagraph = ({ answers }) => {
     last: ' und ',
   })
 
-  const getGeneralMeetingFrequency = (frequency) => {
-    if (frequency === 'monthly') return 'monatlich '
-    if (frequency === 'quarterly') return 'vierteljährlich '
-    if (frequency === 'everySixMonths') return 'halbjährlich '
-    if (frequency === 'yearly') return 'jährlich '
+  const generalMeetingFrequency = {
+    monthly: 'monatlich',
+    quarterly: 'vierteljährlich',
+    everySixMonths: 'halbjährlich',
+    yearly: 'jährlich',
   }
 
-  const getGeneralMeetingMajority = (majority) => {
-    if (majority === 'absoluteMajority') return 'absoluten Mehrheit'
-    if (majority === 'twoThirdsMajority') return 'Zweidrittelmehrheit'
-    if (majority === 'simpleMajority') return 'einfachen Mehrheit'
+  const generalMeetingMajority = {
+    absoluteMajority: 'absoluten Mehrheit',
+    twoThirdsMajority: 'Zweidrittelmehrheit',
+    simpleMajority: 'einfachen Mehrheit',
   }
 
   return (
@@ -40,9 +40,9 @@ const MemberMeetingParagraph = ({ answers }) => {
             : 'Die Mitgliederversammlung ist beschlussfähig, wenn mindestens die Hälfte der Mitglieder anwesend ist.'
         }
       Die Mitgliederversammlung wird 
-      ${getGeneralMeetingFrequency(answers.generalMeetingFrequency)}
+      ${generalMeetingFrequency[answers.generalMeetingFrequency]}
       durchgeführt. Die Mitgliederversammlung fasst ihre Beschlüsse mit
-      einer ${getGeneralMeetingMajority(answers.generalMeetingMajority)}.`}
+      einer ${generalMeetingMajority[answers.generalMeetingMajority]}.`}
     />
   )
 }
