@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import StyledButton from './StyledButton'
 import AdmissionFeeParagraph from './paragraphs/AdmissionFeeParagraph'
@@ -59,7 +60,9 @@ export default function BylawsText({ answers }) {
         </>
       )}
       <StyledContainer>
-        <StyledButton>Zurück zu den Fragen</StyledButton>
+        <Link to="/questions">
+          <StyledButton>Zurück zu den Fragen</StyledButton>
+        </Link>
       </StyledContainer>
     </>
   )

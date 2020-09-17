@@ -76,7 +76,7 @@ const StyledContainer = styled.div`
   padding: 100px;
 `
 
-const StyledQuestionHeadline = styled.h1`
+const StyledQuestionHeadline = styled.h2`
   color: var(--darkgrey-main);
 `
 

@@ -15,7 +15,7 @@ export default function Start() {
         individuell auf deinen Verein abgestimmte Satzung generiert.
       </p>
       <StyledContainer>
-        <Link exact to="/questions">
+        <Link to="/questions">
           <StyledButton>Zu den Fragen</StyledButton>
         </Link>
       </StyledContainer>
