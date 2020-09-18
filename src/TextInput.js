@@ -13,6 +13,7 @@ const TextInput = ({ question, register }) => {
 
   return (
     <StyledTextInput
+      tabindex="0"
       id={question.name}
       type="text"
       name={question?.name || 'defaultTextInput'}

@@ -9,6 +9,7 @@ const CheckboxInput = ({ question, register, watch }) => {
         return (
           <StyledCheckboxContainer key={answerOption.name}>
             <StyledCheckboxInput
+              tabindex="0"
               type="checkbox"
               name={inputName || 'defaultCheckboxInput'}
               id={answerOption.name}
