@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
 import questions from './questions.json'
 import styled from 'styled-components/macro'
 import TextInput from './TextInput'
@@ -10,12 +11,14 @@ import DateInput from './DateInput'
 import StyledButton from './StyledButton'
 
 export default function QuestionsForm({ onClick }) {
+  const history = useHistory()
   const { register, handleSubmit, watch, errors } = useForm({
     reValidateMode: 'onSubmit',
   })
 
   const onFormSubmit = (data) => {
     onClick(data)
+    history.push('/bylawstext')
   }
 
   return (
@@ -23,9 +26,9 @@ export default function QuestionsForm({ onClick }) {
       {questions.map((question, index) => (
         <React.Fragment key={index}>
           <StyledQuestionContainer>
-            <h2>
+            <StyledQuestionHeadline>
               Frage {index + 1} von {questions.length}
-            </h2>
+            </StyledQuestionHeadline>
             <label htmlFor={question.name}>{question.questionText}</label>
             {question.answerType === 'text' && (
               <TextInput question={question} register={register} />
@@ -56,7 +59,7 @@ export default function QuestionsForm({ onClick }) {
         </React.Fragment>
       ))}
       <StyledContainer>
-        <StyledButton type="submit">Satzungstext anzeigen</StyledButton>
+        <StyledButton>Satzung anzeigen</StyledButton>
       </StyledContainer>
     </form>
   )
@@ -71,6 +74,10 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 100px;
+`
+
+const StyledQuestionHeadline = styled.h2`
+  color: var(--darkgrey-main);
 `
 
 const StyledErrorMessage = styled.p`

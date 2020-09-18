@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import BylawsText from './BylawsText'
+import { Route, Switch } from 'react-router-dom'
 import Header from './Header'
+import BylawsText from './BylawsText'
 import QuestionsForm from './QuestionsForm'
+import Start from './Start'
 
 function App() {
   const [answers, setAnswers] = useState([])
@@ -9,8 +11,17 @@ function App() {
   return (
     <>
       <Header />
-      <QuestionsForm onClick={addAnswers} />
-      <BylawsText answers={answers} />
+      <Switch>
+        <Route exact path="/">
+          <Start />
+        </Route>
+        <Route path="/questions">
+          <QuestionsForm onClick={addAnswers} />
+        </Route>
+        <Route path="/bylawstext">
+          <BylawsText answers={answers} />
+        </Route>
+      </Switch>
     </>
   )
 

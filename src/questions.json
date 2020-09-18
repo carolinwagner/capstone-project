@@ -114,7 +114,7 @@
     "validationHookForm": { "required": true }
   },
   {
-    "questionText": "Wie viele Tage vorher soll zur Mitgliederversammlung geladen werden?",
+    "questionText": "Wie viele Tage vorher (zwischen 14 und 365) soll zur Mitgliederversammlung geladen werden?",
     "name": "generalMeetingDeadline",
     "answerType": "number",
     "answerOptions": [],
@@ -253,7 +253,7 @@
     "validationHookForm": { "required": true }
   },
   {
-    "questionText": "Wie viele Tage vorher soll zu einer Vorstandssitzung geladen werden?",
+    "questionText": "Wie viele Tage (zwischen 14 und 365) vorher soll zu einer Vorstandssitzung geladen werden?",
     "name": "boardMeetingDeadline",
     "answerType": "number",
     "answerOptions": [],
@@ -315,8 +315,7 @@
     "validationNative": { "minToday": true }
   },
   {
-    "questionText": "Wie viele Mitglieder sollen die Satzung unterschreiben?",
-    "name": "signaturesNumber",
+    "questionText": "Wie viele Mitglieder (min. 7) sollen die Satzung unterschreiben?",
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
