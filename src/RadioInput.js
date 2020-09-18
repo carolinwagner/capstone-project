@@ -8,7 +8,6 @@ const RadioInput = ({ question, register }) => {
         return (
           <StyledRadioContainer key={answerOption.name}>
             <StyledRadioInput
-              tabindex="0"
               name={question?.name || 'defaultRadioInput'}
               value={answerOption.name}
               id={answerOption.name}
