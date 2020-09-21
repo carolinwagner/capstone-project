@@ -16,7 +16,7 @@ function App() {
           <Start />
         </Route>
         <Route path="/questions">
-          <QuestionsForm onClick={addAnswers} />
+          <QuestionsForm onFinish={addAnswers} />
         </Route>
         <Route path="/bylawstext">
           <BylawsText answers={answers} />
