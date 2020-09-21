@@ -27,7 +27,7 @@ export default function BylawsText({ answers }) {
   })
   const LocationAndDate = (
     <h4 id="locationAndDate">
-      {answers.clubLocation},{' '}
+      {answers.clubLocation},{' den '}
       {new Date(answers.decisionDate).toLocaleDateString('de-DE', {
         year: 'numeric',
         month: 'long',
@@ -76,6 +76,7 @@ export default function BylawsText({ answers }) {
 
 const StyledContainer = styled.div`
   padding: 20px;
+  overflow-y: scroll;
 `
 
 const StyledButtonContainer = styled.div`

@@ -24,6 +24,9 @@ body {
 
 #root {
   height: 100%;
+  background: rgb(237,242,245);
+  background: linear-gradient(185deg, rgba(237,242,245,1) 0%, rgba(248,251,251,1) 100%) 
+    fixed no-repeat; 
 }
 
 input, select {

@@ -6,7 +6,7 @@ export default function Header() {
 }
 
 const StyledHeader = styled.h1`
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 0;
   font-family: 'Playfair Display', serif;
   text-align: center;
