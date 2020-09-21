@@ -27,7 +27,12 @@ export default function BylawsText({ answers }) {
   })
   const LocationAndDate = (
     <h4 id="locationAndDate">
-      {answers.clubLocation}, {answers.decisionDate}
+      {answers.clubLocation},{' '}
+      {new Date(answers.decisionDate).toLocaleDateString('de-DE', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })}
     </h4>
   )
 

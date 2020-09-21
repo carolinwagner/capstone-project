@@ -25,4 +25,8 @@ body {
 #root {
   height: 100%;
 }
+
+input, select {
+  font-size: 16px;
+}
 `
