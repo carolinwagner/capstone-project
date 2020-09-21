@@ -61,8 +61,8 @@ export default function BylawsText({ answers }) {
         </>
       )}
       <StyledContainer>
-        <Link to="/questions">
-          <StyledButton>Zurück zu den Fragen</StyledButton>
+        <Link to="/questions/1">
+          <StyledButton>Fragen neu starten</StyledButton>
         </Link>
       </StyledContainer>
     </>

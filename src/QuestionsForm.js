@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory, Route, Link } from 'react-router-dom'
 import questions from './questions.json'
@@ -11,6 +11,7 @@ import DateInput from './DateInput'
 import StyledButton from './StyledButton'
 
 export default function QuestionsForm({ onClick }) {
+  const [partialAnswers, setPartialAnswers] = useState([])
   const history = useHistory()
   const { register, handleSubmit, watch, errors } = useForm({
     reValidateMode: 'onSubmit',
@@ -18,71 +19,70 @@ export default function QuestionsForm({ onClick }) {
 
   const onFormSubmit = (data) => {
     onClick(data)
-    history.push('/bylawstext')
+    // history.push('/bylawstext')
   }
 
   return (
-    <form onSubmit={handleSubmit(onFormSubmit)}>
+    <>
       {questions.map((question, index) => {
-        const nextQuestionPath =
+        const buttonNext =
           index === questions.length - 1
-            ? '/bylawstext'
-            : `/questions/${index + 2}`
+            ? { path: '/bylawstext', caption: 'Satzung anzeigen' }
+            : { path: `/questions/${index + 2}`, caption: 'weiter' }
 
-        const previousQuestionPath = index === 0 ? '/' : `/questions/${index}`
-
-        const buttonNextCaption =
-          index === questions.length - 1 ? 'Satzung anzeigen' : 'weiter'
-
-        const buttonPreviousCaption =
-          index === 0 ? 'zurück zur Startseite' : `zurück`
+        const buttonPrevious =
+          index === 0
+            ? { path: '/', caption: 'zurück zur Startseite' }
+            : { path: `/questions/${index}`, caption: 'zurück' }
 
         return (
-          <React.Fragment key={index}>
-            <Route exact path={`/questions/${index + 1}`}>
-              <StyledQuestionContainer>
-                <StyledQuestionHeadline>
-                  Frage {index + 1} von {questions.length}
-                </StyledQuestionHeadline>
-                <label htmlFor={question.name}>{question.questionText}</label>
-                {question.answerType === 'text' && (
-                  <TextInput question={question} register={register} />
-                )}
-                {question.answerType === 'number' && (
-                  <NumberInput question={question} register={register} />
-                )}
-                {question.answerType === 'checkbox' && (
-                  <CheckboxInput
-                    question={question}
-                    register={register}
-                    watch={watch}
-                  />
-                )}
-                {question.answerType === 'radio' && (
-                  <RadioInput question={question} register={register} />
-                )}
-                {question.answerType === 'date' && (
-                  <DateInput question={question} register={register} />
-                )}
+          <form onSubmit={handleSubmit(onFormSubmit)}>
+            <React.Fragment key={index}>
+              <Route exact path={`/questions/${index + 1}`}>
+                <StyledQuestionContainer>
+                  <StyledQuestionHeadline>
+                    Frage {index + 1} von {questions.length}
+                  </StyledQuestionHeadline>
+                  <label htmlFor={question.name}>{question.questionText}</label>
+                  {question.answerType === 'text' && (
+                    <TextInput question={question} register={register} />
+                  )}
+                  {question.answerType === 'number' && (
+                    <NumberInput question={question} register={register} />
+                  )}
+                  {question.answerType === 'checkbox' && (
+                    <CheckboxInput
+                      question={question}
+                      register={register}
+                      watch={watch}
+                    />
+                  )}
+                  {question.answerType === 'radio' && (
+                    <RadioInput question={question} register={register} />
+                  )}
+                  {question.answerType === 'date' && (
+                    <DateInput question={question} register={register} />
+                  )}
 
-                {errors[question?.name] && (
-                  <StyledErrorMessage data-cy={'errorMessage'}>
-                    Diese Frage muss beantwortet werden
-                  </StyledErrorMessage>
-                )}
+                  {errors[question?.name] && (
+                    <StyledErrorMessage data-cy={'errorMessage'}>
+                      Diese Frage muss beantwortet werden
+                    </StyledErrorMessage>
+                  )}
 
-                <Link to={nextQuestionPath}>
-                  <StyledButton>{buttonNextCaption}</StyledButton>
-                </Link>
-                <Link to={previousQuestionPath}>
-                  <StyledButton>{buttonPreviousCaption}</StyledButton>
-                </Link>
-              </StyledQuestionContainer>
-            </Route>
-          </React.Fragment>
+                  <Link to={buttonNext.path}>
+                    <StyledButton>{buttonNext.caption}</StyledButton>
+                  </Link>
+                  <Link to={buttonPrevious.path}>
+                    <StyledButton>{buttonPrevious.caption}</StyledButton>
+                  </Link>
+                </StyledQuestionContainer>
+              </Route>
+            </React.Fragment>
+          </form>
         )
       })}
-    </form>
+    </>
   )
 }
 
