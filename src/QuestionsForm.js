@@ -10,8 +10,7 @@ import RadioInput from './RadioInput'
 import DateInput from './DateInput'
 import StyledButton from './StyledButton'
 
-export default function QuestionsForm({ onFinish }) {
-  const [partialAnswers, setPartialAnswers] = useState([])
+export default function QuestionsForm({ onAddAnswer }) {
   const history = useHistory()
   const { register, handleSubmit, watch, errors } = useForm({
     reValidateMode: 'onSubmit',
@@ -32,15 +31,14 @@ export default function QuestionsForm({ onFinish }) {
           : { path: `/questions/${index}`, caption: 'zurück' }
 
         const onFormSubmit = (data) => {
-          setPartialAnswers({ ...partialAnswers, ...data })
-          isLastQuestion && onFinish(partialAnswers)
+          onAddAnswer(data)
           history.push(buttonNext.path)
         }
 
         return (
-          <form onSubmit={handleSubmit(onFormSubmit)} key={index}>
-            <Route exact path={`/questions/${index + 1}`}>
-              <StyledQuestionContainer>
+          <Route key={index} exact path={`/questions/${index + 1}`}>
+            <StyledForm onSubmit={handleSubmit(onFormSubmit)}>
+              <StyledQuestionAndInputContainer>
                 <StyledQuestionHeadline>
                   Frage {index + 1} von {questions.length}
                 </StyledQuestionHeadline>
@@ -70,32 +68,36 @@ export default function QuestionsForm({ onFinish }) {
                     Diese Frage muss beantwortet werden
                   </StyledErrorMessage>
                 )}
-                <StyledContainer>
-                  <Link to={buttonPrevious.path}>
-                    <StyledButton>{buttonPrevious.caption}</StyledButton>
-                  </Link>
-                  <StyledButton type="submit">
-                    {buttonNext.caption}
-                  </StyledButton>
-                </StyledContainer>
-              </StyledQuestionContainer>
-            </Route>
-          </form>
+              </StyledQuestionAndInputContainer>
+              <StyledFooterContainer>
+                <Link to={buttonPrevious.path}>
+                  <StyledButton>{buttonPrevious.caption}</StyledButton>
+                </Link>
+                <StyledButton type="submit">{buttonNext.caption}</StyledButton>
+              </StyledFooterContainer>
+            </StyledForm>
+          </Route>
         )
       })}
     </>
   )
 }
 
-const StyledQuestionContainer = styled.div`
+const StyledForm = styled.form`
+  height: 100%;
   display: flex;
   flex-direction: column;
 `
 
-const StyledContainer = styled.div`
+const StyledQuestionAndInputContainer = styled.div`
+  padding: 20px 20px 0 20px;
+  flex: 1;
+`
+
+const StyledFooterContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 100px;
+  padding: 20px;
 `
 
 const StyledQuestionHeadline = styled.h2`

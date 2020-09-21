@@ -6,6 +6,7 @@ const DateInput = ({ question, register }) => {
   const getToday = () => new Date().toISOString().split('T')[0]
   return (
     <StyledDateInput
+      autoFocus
       id={question.name}
       type="date"
       name={question?.name || 'defaultDateInput'}

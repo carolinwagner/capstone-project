@@ -32,7 +32,7 @@ export default function BylawsText({ answers }) {
   )
 
   return (
-    <>
+    <StyledContainer>
       {anyAnswerGiven && (
         <>
           <p>
@@ -60,17 +60,21 @@ export default function BylawsText({ answers }) {
           </p>
         </>
       )}
-      <StyledContainer>
+      <StyledButtonContainer>
         <Link to="/questions/1">
           <StyledButton>Fragen neu starten</StyledButton>
         </Link>
-      </StyledContainer>
-    </>
+      </StyledButtonContainer>
+    </StyledContainer>
   )
 }
 
 const StyledContainer = styled.div`
+  padding: 20px;
+`
+
+const StyledButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 80px;
+  padding: 20px;
 `

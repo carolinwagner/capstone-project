@@ -316,6 +316,7 @@
   },
   {
     "questionText": "Wie viele Mitglieder (min. 7) sollen die Satzung unterschreiben?",
+    "name": "signaturesNumber",
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },

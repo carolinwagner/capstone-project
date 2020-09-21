@@ -13,6 +13,7 @@ const TextInput = ({ question, register }) => {
 
   return (
     <StyledTextInput
+      autoFocus
       id={question.name}
       type="text"
       name={question?.name || 'defaultTextInput'}
