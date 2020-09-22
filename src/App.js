@@ -9,8 +9,6 @@ import styled from 'styled-components/macro'
 function App() {
   const [answers, setAnswers] = useState([])
 
-  // useEffect(() => console.log('Answers:', answers), [answers])
-
   return (
     <StyledCenterOnDesktop>
       <StyledMainContainer>
