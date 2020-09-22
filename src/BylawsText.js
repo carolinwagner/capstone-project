@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import StyledButton from './StyledButton'
 import AdmissionFeeParagraph from './paragraphs/AdmissionFeeParagraph'
 import BoardCompositionParagraph from './paragraphs/BoardCompositionParagraph'
 import BoardMeetingParagraph from './paragraphs/BoardMeetingParagraph'
@@ -16,8 +15,10 @@ import MembersParagraph from './paragraphs/MembersParagraph'
 import NameAndLocationParagraph from './paragraphs/NameAndLocationParagraph'
 import NonProfitParagraph from './paragraphs/NonProfitParagraph'
 import UseOfFundsParagraph from './paragraphs/UseOfFundsParagraph'
+import StyledButton from './StyledButton'
 
 export default function BylawsText({ answers }) {
+  const bylawsRef = useRef(null)
   const answersArray = Object.entries(answers || {})
   const anyAnswerGiven = answersArray.some(([_, answer]) => {
     const isAnswerCheckbox = Array.isArray(answer)
@@ -25,6 +26,16 @@ export default function BylawsText({ answers }) {
       ? answer.filter(Boolean).length > 0
       : answer.length > 0
   })
+  const [isTextCopied, setIsTextCopied] = useState(false)
+
+  const copyBylawsToClipboard = () => {
+    const text = bylawsRef.current?.innerText
+    text &&
+      navigator.clipboard
+        .writeText(bylawsRef.current?.innerText)
+        .then(() => setIsTextCopied(true))
+  }
+
   const LocationAndDate = (
     <h4 id="locationAndDate">
       {answers.clubLocation},{' den '}
@@ -43,33 +54,35 @@ export default function BylawsText({ answers }) {
           <p>
             Die folgende Satzung wurde basierend auf deinen Antworten erstellt.
           </p>
-          <NameAndLocationParagraph answers={answers} />
-          <BusinessYearParagraph />
-          <ClubPurposeParagraph answers={answers} />
-          <NonProfitParagraph />
-          <UseOfFundsParagraph />
-          <MembersParagraph answers={answers} />
-          <AdmissionFeeParagraph answers={answers} />
-          <MemberFeeParagraph answers={answers} />
-          <MemberMeetingParagraph answers={answers} />
-          <BoardCompositionParagraph answers={answers} />
-          <ClubRepresentationParagraph answers={answers} />
-          <BoardMeetingParagraph answers={answers} />
-          <CommitteesParagraph answers={answers} />
-          <DissolutionMajorityParagraph answers={answers} />
+          <div ref={bylawsRef}>
+            <NameAndLocationParagraph answers={answers} />
+            <BusinessYearParagraph />
+            <ClubPurposeParagraph answers={answers} />
+            <NonProfitParagraph />
+            <UseOfFundsParagraph />
+            <MembersParagraph answers={answers} />
+            <AdmissionFeeParagraph answers={answers} />
+            <MemberFeeParagraph answers={answers} />
+            <MemberMeetingParagraph answers={answers} />
+            <BoardCompositionParagraph answers={answers} />
+            <ClubRepresentationParagraph answers={answers} />
+            <BoardMeetingParagraph answers={answers} />
+            <CommitteesParagraph answers={answers} />
+            <DissolutionMajorityParagraph answers={answers} />
 
-          {LocationAndDate}
+            {LocationAndDate}
 
-          <p>
-            Unterschriften der {answers.signaturesNumber} Gründungsmitglieder:
-          </p>
+            <p>
+              Unterschriften der {answers.signaturesNumber} Gründungsmitglieder:
+            </p>
+          </div>
         </>
       )}
       <StyledButtonContainer>
-        <StyledButton>Satzungstext kopieren</StyledButton>
-        <Link to="/questions/1">
-          <StyledButton>Fragen neu starten</StyledButton>
-        </Link>
+        <StyledButton onClick={copyBylawsToClipboard}>
+          Satzungstext kopieren {isTextCopied ? ' ✅' : ''}
+        </StyledButton>
+        <StyledLink to="/questions/1">Fragen neu starten</StyledLink>
       </StyledButtonContainer>
     </StyledContainer>
   )
@@ -85,4 +98,16 @@ const StyledButtonContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 20px;
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  padding: 20px;
+  color: var(--lightgrey);
+  background-color: var(--blue);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 20px;
+  text-align: center;
 `
