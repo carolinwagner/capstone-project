@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from './Header'
 import BylawsText from './BylawsText'
@@ -9,7 +9,7 @@ import styled from 'styled-components/macro'
 function App() {
   const [answers, setAnswers] = useState([])
 
-  useEffect(() => console.log('Answers:', answers), [answers])
+  // useEffect(() => console.log('Answers:', answers), [answers])
 
   return (
     <StyledCenterOnDesktop>
