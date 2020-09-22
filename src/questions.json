@@ -38,7 +38,10 @@
     "answerType": "checkbox",
     "answerOptions": [
       { "label": "schriftlich", "name": "schriftlich" },
-      { "label": "per E-Mail", "name": "per E-Mail" }
+      { "label": "per E-Mail", "name": "per E-Mail" },
+      { "label": "per Fax", "name": "per Fax" },
+      { "label": "Brieftaube", "name": "per Brieftaube" },
+      { "label": "Flaschenpost", "name": "per Flaschenpost" }
     ],
     "validationHookForm": { "oneOfGroupRequired": true }
   },
@@ -109,6 +112,10 @@
       {
         "label": "per E-Mail",
         "name": "emailInvitation"
+      },
+      {
+        "label": "per Fax",
+        "name": "faxInvitation"
       }
     ],
     "validationHookForm": { "required": true }
@@ -248,6 +255,10 @@
       {
         "label": "per E-Mail",
         "name": "emailBoardInvitation"
+      },
+      {
+        "label": "per Fax",
+        "name": "faxBoardInvitation"
       }
     ],
     "validationHookForm": { "required": true }
