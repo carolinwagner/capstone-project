@@ -66,6 +66,7 @@ export default function BylawsText({ answers }) {
         </>
       )}
       <StyledButtonContainer>
+        <StyledButton>Satzungstext kopieren</StyledButton>
         <Link to="/questions/1">
           <StyledButton>Fragen neu starten</StyledButton>
         </Link>
@@ -81,6 +82,7 @@ const StyledContainer = styled.div`
 
 const StyledButtonContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 20px;
 `
