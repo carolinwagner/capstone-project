@@ -69,6 +69,9 @@ export default function QuestionsForm({ onAddAnswer }) {
                   </StyledErrorMessage>
                 )}
               </StyledQuestionAndInputContainer>
+              <StledInfoContainer>
+                <StyledButton>Mehr Infos</StyledButton>
+              </StledInfoContainer>
               <StyledFooterContainer>
                 <Link to={buttonPrevious.path}>
                   <StyledButton type="button">
@@ -94,6 +97,12 @@ const StyledForm = styled.form`
 const StyledQuestionAndInputContainer = styled.div`
   padding: 20px 20px 0 20px;
   flex: 1;
+`
+
+const StledInfoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 `
 
 const StyledFooterContainer = styled.div`

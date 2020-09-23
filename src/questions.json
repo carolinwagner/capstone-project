@@ -4,7 +4,8 @@
     "name": "clubName",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
+    "info": "Der Name muss unmissverständlich gewählt werden."
   },
   {
     "questionText": "In welcher Stadt soll dein Verein sitzen?",
