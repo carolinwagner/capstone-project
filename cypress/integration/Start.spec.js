@@ -19,6 +19,6 @@ context('Start', () => {
 
   it('checks navigation to questions page when clicking on button', () => {
     cy.get('button').click()
-    cy.url().should('eq', 'http://localhost:3000/questions')
+    cy.url().should('eq', 'http://localhost:3000/questions/1')
   })
 })

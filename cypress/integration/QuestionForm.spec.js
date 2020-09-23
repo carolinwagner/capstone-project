@@ -2,7 +2,7 @@
 
 context('QuestionForm', () => {
   beforeEach(() => {
-    cy.visit('/questions')
+    cy.visit('/questions/1')
   })
 
   it('has the right App title', () => {
@@ -14,15 +14,8 @@ context('QuestionForm', () => {
   })
 
   it('has a button', () => {
-    cy.get('button').contains('Satzungstext anzeigen')
-  })
-
-  it('has more than 20 questions', () => {
-    cy.get('h2').should('have.length.gt', 20)
-  })
-
-  it('has some inputs', () => {
-    cy.get('input').should('have.length.gt', 20)
+    cy.get('button').contains('weiter')
+    cy.get('button').contains('zur Startseite')
   })
 
   it('can fill out and answer all inputs', () => {
@@ -31,12 +24,15 @@ context('QuestionForm', () => {
       .contains('Name des Vereins')
       .siblings('input')
       .type('Carolin')
+    cy.get('button').contains('weiter').click()
 
     //Question 2
     cy.get('label').contains('Stadt').siblings('input').type('Hamburg')
+    cy.get('button').contains('weiter').click()
 
     //Question 3
     cy.get('label').contains('Zweck').siblings('input').type('testen')
+    cy.get('button').contains('weiter').click()
 
     //Question 4
     cy.get('label')
@@ -45,6 +41,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('Personengesellschaften')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 5
     cy.get('label')
@@ -53,9 +50,8 @@ context('QuestionForm', () => {
       .find('label')
       .contains('schriftlich')
       .click()
-      .parent()
-      .parent()
     cy.get('label').contains('per E-Mail').click()
+    cy.get('button').contains('weiter').click()
 
     //Question 6
     cy.get('label')
@@ -64,6 +60,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('ja')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 7
     cy.get('label')
@@ -72,6 +69,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('ja')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 8
     cy.get('label')
@@ -80,9 +78,8 @@ context('QuestionForm', () => {
       .find('label')
       .contains('Entlastung')
       .click()
-      .parent()
-      .parent()
     cy.get('label').contains('Haushaltsplan').click()
+    cy.get('button').contains('weiter').click()
 
     //Question 9
     cy.get('label')
@@ -91,12 +88,12 @@ context('QuestionForm', () => {
       .find('label')
       .contains('per E-Mail')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 10
-    cy.get('label')
-      .contains('Tage vorher soll zur Mitgliederversammlung geladen')
-      .siblings('input')
-      .type('21')
+    cy.get('label').contains('soll zur Mitgliederversammlung geladen')
+    cy.get('input').type('21')
+    cy.get('button').contains('weiter').click()
 
     //Question 11
     cy.get('label')
@@ -105,6 +102,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('ordnungsgemäß einberufene Mitgliederversammlung')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 12
     cy.get('label')
@@ -113,6 +111,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('monatlich')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 13
     cy.get('label')
@@ -121,6 +120,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('einfache')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 14
     cy.get('label')
@@ -134,6 +134,7 @@ context('QuestionForm', () => {
       .get('label')
       .contains('Schatzmeister')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 15
     cy.get('label')
@@ -142,6 +143,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('Mehrheit des Vorstandes')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 16
     cy.get('label')
@@ -150,6 +152,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('drei')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 17
     cy.get('label')
@@ -158,6 +161,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('ja')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 18
     cy.get('label')
@@ -166,12 +170,12 @@ context('QuestionForm', () => {
       .find('label')
       .contains('schriftlich')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 19
-    cy.get('label')
-      .contains('Tage vorher soll zu einer Vorstandssitzung geladen')
-      .siblings('input')
-      .type('30')
+    cy.get('label').contains('vorher soll zu einer Vorstandssitzung geladen')
+    cy.get('input').type('30')
+    cy.get('button').contains('weiter').click()
 
     //Question 20
     cy.get('label')
@@ -180,6 +184,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('ja')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 21
     cy.get('label')
@@ -188,6 +193,7 @@ context('QuestionForm', () => {
       .find('label')
       .contains('ja')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 22
     cy.get('label')
@@ -198,41 +204,41 @@ context('QuestionForm', () => {
       .find('label')
       .contains('absolute')
       .click()
+    cy.get('button').contains('weiter').click()
 
     //Question 23
     cy.get('label')
       .contains('Tag soll über die Satzung beschlossen')
       .siblings('input')
       .type('2020-12-31')
+    cy.get('button').contains('weiter').click()
 
     //Question 24
-    cy.get('label')
-      .contains('Satzung unterschreiben')
-      .siblings('input')
-      .type('10')
+    cy.get('label').contains('Satzung unterschreiben')
+    cy.get('input').type('10')
+    cy.get('button').contains('Satzung anzeigen').click()
+    cy.url().should('eq', 'http://localhost:3000/bylawstext')
   })
 
-  it('shows error messages if no input is set', () => {
+  it('shows error message if no input is set', () => {
     cy.get('button')
+      .contains('weiter')
       .click()
       .get('[data-cy=errorMessage]')
-      .should('have.length', 24)
+      .should('have.length', 1)
   })
 
   it('check browser number validation message on invalid input', () => {
+    cy.visit('/questions/10')
     cy.get('[type="number"]').first().type('-2')
-    cy.get('button').contains('Satzungstext anzeigen').click()
+    cy.get('button').contains('weiter').click()
     cy.get('input:invalid').should('have.length', 1)
   })
 
   it('check browser date validation message on invalid input', () => {
+    cy.visit('/questions/23')
     cy.get('[type="date"]').first().type('2010-12-31')
-    cy.get('button').click()
+    cy.get('button').contains('weiter').click()
     cy.get('input:invalid').should('have.length', 1)
-  })
-
-  it('checks navigation to bylawstext page when clicking on button', () => {
-    cy.get('button').click()
-    cy.url().should('eq', 'http://localhost:3000/bylawstext')
   })
 })

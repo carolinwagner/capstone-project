@@ -5,26 +5,40 @@ import StyledButton from './StyledButton'
 
 export default function Start() {
   return (
-    <>
-      <p>
-        Jeder gemeinnützige Verein benötigt gemäß § 57 des Bürgerlichen
-        Gesetzbuches eine Satzung.
-      </p>
-      <p>
-        Beantworte einfach die folgenden Fragen und dir wird im Anschluss eine
-        individuell auf deinen Verein abgestimmte Satzung generiert.
-      </p>
-      <StyledContainer>
-        <Link to="/questions">
+    <StyledContainer>
+      <StyledTextContainer>
+        <p>
+          Jeder gemeinnützige Verein benötigt gemäß § 57 des Bürgerlichen
+          Gesetzbuches eine Satzung.
+        </p>
+        <p>
+          Beantworte einfach die folgenden Fragen und dir wird im Anschluss eine
+          individuell auf deinen Verein abgestimmte Satzung generiert.
+        </p>
+      </StyledTextContainer>
+      <StyledButtonContainer>
+        <Link to="/questions/1">
           <StyledButton>Zu den Fragen</StyledButton>
         </Link>
-      </StyledContainer>
-    </>
+      </StyledButtonContainer>
+    </StyledContainer>
   )
 }
 
-const StyledContainer = styled.div`
+const StyledButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 80px;
+  padding: 20px;
+`
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+`
+
+const StyledTextContainer = styled.div`
+  flex: 1;
 `

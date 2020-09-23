@@ -127,11 +127,11 @@
     "answerType": "radio",
     "answerOptions": [
       {
-        "label": "jede ordnungsgemäß einberufene Mitgliederversammlung soll beschlussfähig sein",
+        "label": "mit ordnungsgemäßer Einberufung",
         "name": "quorum"
       },
       {
-        "label": "mindestens die Hälfte der Mitglieder muss anwesend sein",
+        "label": "bei Anwesenheit der Hälfte der Mitglieder",
         "name": "minHalf"
       }
     ],
@@ -316,6 +316,7 @@
   },
   {
     "questionText": "Wie viele Mitglieder (min. 7) sollen die Satzung unterschreiben?",
+    "name": "signaturesNumber",
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },

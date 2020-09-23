@@ -27,12 +27,17 @@ export default function BylawsText({ answers }) {
   })
   const LocationAndDate = (
     <h4 id="locationAndDate">
-      {answers.clubLocation}, {answers.decisionDate}
+      {answers.clubLocation},{' den '}
+      {new Date(answers.decisionDate).toLocaleDateString('de-DE', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })}
     </h4>
   )
 
   return (
-    <>
+    <StyledContainer>
       {anyAnswerGiven && (
         <>
           <p>
@@ -60,17 +65,22 @@ export default function BylawsText({ answers }) {
           </p>
         </>
       )}
-      <StyledContainer>
-        <Link to="/questions">
-          <StyledButton>Zurück zu den Fragen</StyledButton>
+      <StyledButtonContainer>
+        <Link to="/questions/1">
+          <StyledButton>Fragen neu starten</StyledButton>
         </Link>
-      </StyledContainer>
-    </>
+      </StyledButtonContainer>
+    </StyledContainer>
   )
 }
 
 const StyledContainer = styled.div`
+  padding: 20px;
+  overflow-y: scroll;
+`
+
+const StyledButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 80px;
+  padding: 20px;
 `
