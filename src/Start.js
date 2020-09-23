@@ -15,6 +15,10 @@ export default function Start() {
           Beantworte einfach die folgenden Fragen und dir wird im Anschluss eine
           individuell auf deinen Verein abgestimmte Satzung generiert.
         </p>
+        <p>
+          Mit einem simplen Klick kannst du dir schließlich die Satzung in die
+          Zwischenablage kopieren und beliebig wiederverwenden.
+        </p>
       </StyledTextContainer>
       <StyledButtonContainer>
         <Link to="/questions/1">
