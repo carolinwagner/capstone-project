@@ -239,7 +239,7 @@
   {
     "questionText": "Für welchen Zeitraum soll der Vorstand gewählt werden?",
     "name": "boardPeriod",
-    "answerType": "number",
+    "answerType": "radio",
     "answerOptions": [
       { "label": "ein Jahr", "name": "oneYear" },
       { "label": "zwei Jahre", "name": "twoYears" },
