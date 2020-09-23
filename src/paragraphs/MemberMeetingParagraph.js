@@ -42,7 +42,9 @@ const MemberMeetingParagraph = ({ answers }) => {
       Die Mitgliederversammlung wird 
       ${generalMeetingFrequency[answers.generalMeetingFrequency]}
       durchgeführt. Die Mitgliederversammlung fasst ihre Beschlüsse mit
-      einer ${generalMeetingMajority[answers.generalMeetingMajority]}.`}
+      einer ${
+        generalMeetingMajority[answers.generalMeetingMajority]
+      }.Über die Beschlüsse der Mitgliederversammlung ist ein Protokoll anzufertigen, das vom Versammlungsleiter und dem Schriftführer zu unterzeichnen ist.`}
     />
   )
 }
