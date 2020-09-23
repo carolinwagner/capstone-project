@@ -50,16 +50,16 @@ export default function QuestionForm({
             Diese Frage muss beantwortet werden
           </StyledErrorMessage>
         )}
+        {question.info && (
+          <StyledInfoContainer>
+            <StyledInfoButton type="button" onClick={toggleInfo}>
+              <StyledInfoIcon />
+              <StyledInfoText>Mehr Infos</StyledInfoText>
+            </StyledInfoButton>
+            {isInfoVisible && <p>{question.info}</p>}
+          </StyledInfoContainer>
+        )}
       </StyledQuestionAndInputContainer>
-      {question.info && (
-        <StledInfoContainer>
-          <StyledInfoButton type="button" onClick={toggleInfo}>
-            <StyledInfoIcon />
-            <StyledInfoText>Mehr Infos</StyledInfoText>
-          </StyledInfoButton>
-          {isInfoVisible && <p>{question.info}</p>}
-        </StledInfoContainer>
-      )}
     </>
   )
 }
@@ -69,32 +69,36 @@ const StyledQuestionAndInputContainer = styled.div`
   flex: 1;
 `
 
-const StledInfoContainer = styled.div`
+const StyledInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  & p {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 300;
+    font-size: 0.92rem;
+  }
 `
 
 const StyledInfoButton = styled.div`
-  padding: 20px;
+  margin-top: 40px;
+  padding: 10px;
   color: var(--lightgrey);
   background-color: var(--lightblue);
   border-radius: 5px;
   border: none;
   cursor: pointer;
   font-size: 1em;
-  margin: 20px 100px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
 `
 
-const StyledInfoIcon = styled(InfoIcon)`
-  justify-self: flex-start;
-`
+const StyledInfoIcon = styled(InfoIcon)``
 
-const StyledInfoText = styled.p`
-  justify-self: center;
+const StyledInfoText = styled.span`
+  text-align: center;
+  flex: 1;
 `
 
 const StyledQuestionHeadline = styled.h2`
