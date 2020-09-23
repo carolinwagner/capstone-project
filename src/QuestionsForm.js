@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory, Route, Link } from 'react-router-dom'
 import questions from './questions.json'
@@ -15,6 +15,7 @@ export default function QuestionsForm({ onAddAnswer }) {
   const { register, handleSubmit, watch, errors } = useForm({
     reValidateMode: 'onSubmit',
   })
+  const [isContentVisible, setIsContentVisible] = useState(false)
 
   return (
     <>
@@ -70,7 +71,10 @@ export default function QuestionsForm({ onAddAnswer }) {
                 )}
               </StyledQuestionAndInputContainer>
               <StledInfoContainer>
-                <StyledButton>Mehr Infos</StyledButton>
+                <StyledButton type="button" onClick={toggleInfo}>
+                  Mehr Infos
+                </StyledButton>
+                {isContentVisible ? <p>{question.info}</p> : null}
               </StledInfoContainer>
               <StyledFooterContainer>
                 <Link to={buttonPrevious.path}>
@@ -83,6 +87,10 @@ export default function QuestionsForm({ onAddAnswer }) {
             </StyledForm>
           </Route>
         )
+
+        function toggleInfo() {
+          setIsContentVisible(!isContentVisible)
+        }
       })}
     </>
   )
