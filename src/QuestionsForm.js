@@ -71,7 +71,9 @@ export default function QuestionsForm({ onAddAnswer }) {
               </StyledQuestionAndInputContainer>
               <StyledFooterContainer>
                 <Link to={buttonPrevious.path}>
-                  <StyledButton>{buttonPrevious.caption}</StyledButton>
+                  <StyledButton type="button">
+                    {buttonPrevious.caption}
+                  </StyledButton>
                 </Link>
                 <StyledButton type="submit">{buttonNext.caption}</StyledButton>
               </StyledFooterContainer>
