@@ -9,6 +9,7 @@ import CheckboxInput from './CheckboxInput'
 import RadioInput from './RadioInput'
 import DateInput from './DateInput'
 import StyledButton from './StyledButton'
+import { ReactComponent as InfoIcon } from './svgs/info.svg'
 
 export default function QuestionsForm({ onAddAnswer }) {
   const history = useHistory()
@@ -71,10 +72,11 @@ export default function QuestionsForm({ onAddAnswer }) {
                 )}
               </StyledQuestionAndInputContainer>
               <StledInfoContainer>
-                <StyledButton type="button" onClick={toggleInfo}>
+                <StyledInfoButton type="button" onClick={toggleInfo}>
+                  <InfoIcon />
                   Mehr Infos
-                </StyledButton>
-                {isContentVisible ? <p>{question.info}</p> : null}
+                </StyledInfoButton>
+                <div>{isContentVisible ? <p>{question.info}</p> : null}</div>
               </StledInfoContainer>
               <StyledFooterContainer>
                 <Link to={buttonPrevious.path}>
@@ -100,6 +102,7 @@ const StyledForm = styled.form`
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 `
 
 const StyledQuestionAndInputContainer = styled.div`
@@ -109,8 +112,23 @@ const StyledQuestionAndInputContainer = styled.div`
 
 const StledInfoContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 20px;
+`
+
+const StyledInfoButton = styled.div`
+  padding: 20px;
+  color: var(--lightgrey);
+  background-color: var(--lightblue);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 20px 100px;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 `
 
 const StyledFooterContainer = styled.div`

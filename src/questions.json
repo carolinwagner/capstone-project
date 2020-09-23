@@ -346,7 +346,7 @@
     "answerOptions": [],
     "validationHookForm": { "required": true },
     "validationNative": { "minToday": true },
-    "info": "Bitte wähle hier den Tag, an dem die Gründungsversammlung stattfindet."
+    "info": "Bitte wähle hier den Tag, an dem die Gründungsversammlung stattfinden soll. Dies kann frühestens der heutige Tag sein."
   },
   {
     "questionText": "Wie viele Mitglieder (min. 7) sollen die Satzung unterschreiben?",
