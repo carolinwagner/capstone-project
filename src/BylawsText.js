@@ -101,6 +101,7 @@ const StyledButtonContainer = styled.div`
 `
 
 const StyledLink = styled(Link)`
+  margin-top: 20px;
   text-decoration: none;
   padding: 20px;
   color: var(--lightgrey);
@@ -108,6 +109,5 @@ const StyledLink = styled(Link)`
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
-  margin: 20px;
   text-align: center;
 `

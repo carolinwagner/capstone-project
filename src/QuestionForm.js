@@ -58,7 +58,7 @@ export default function QuestionForm({
             <StyledInfoButton type="button" onClick={toggleInfo}>
               <InfoIcon />
               <StyledInfoText>
-                {isInfoVisible ? 'Weniger Infos ' : 'Mehr Infos'}
+                {isInfoVisible ? 'Weniger' : 'Mehr'} Infos
               </StyledInfoText>
             </StyledInfoButton>
             {isInfoVisible && <p>{question.info}</p>}

@@ -42,17 +42,13 @@ export default function QuestionPage({ onAddAnswer }) {
                 errors={errors}
               />
               <StyledFooterContainer>
-                <StyledLink to={buttonPrevious.path}>
-                  <StyledPreviousButton type="button">
-                    <ArrowLeftIcon />
-                    <StyledButtonText>
-                      {buttonPrevious.caption}
-                    </StyledButtonText>
-                  </StyledPreviousButton>
-                </StyledLink>
+                <StyledPreviousLink to={buttonPrevious.path}>
+                  <ArrowLeftIcon />
+                  <StyledButtonText>{buttonPrevious.caption}</StyledButtonText>
+                </StyledPreviousLink>
                 <StyledNextButton type="submit">
                   <StyledButtonText>{buttonNext.caption}</StyledButtonText>
-                  <StyledArrowRightIcon />
+                  <ArrowRightIcon />
                 </StyledNextButton>
               </StyledFooterContainer>
             </StyledForm>
@@ -76,21 +72,6 @@ const StyledFooterContainer = styled.div`
   justify-content: space-between;
   padding: 20px;
 `
-const StyledPreviousButton = styled.button`
-  padding: 20px;
-  color: var(--blue);
-  background-color: var(--lightgrey);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-  flex: 1;
-`
 
 const StyledNextButton = styled.button`
   padding: 20px;
@@ -106,8 +87,20 @@ const StyledNextButton = styled.button`
   align-items: center;
   flex: 1;
 `
-const StyledLink = styled(Link)`
+const StyledPreviousLink = styled(Link)`
   text-decoration: none;
+  padding: 20px;
+  color: var(--blue);
+  background-color: var(--lightgrey);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
   flex: 1;
 `
 
@@ -116,4 +109,3 @@ const StyledButtonText = styled.span`
   text-align: center;
   flex: 1;
 `
-const StyledArrowRightIcon = styled(ArrowRightIcon)``
