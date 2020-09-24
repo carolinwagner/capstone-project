@@ -101,7 +101,7 @@ context('Bylawstext', () => {
       .contains('Mitgliederversammlung beschlussfähig')
       .closest('div')
       .find('label')
-      .contains('ordnungsgemäß einberufene Mitgliederversammlung')
+      .contains('ordnungsgemäß')
       .click()
     cy.get('button').contains('weiter').click()
 
@@ -216,7 +216,7 @@ context('Bylawstext', () => {
     cy.get('label').contains('Satzung unterschreiben')
     cy.get('input').type('10')
 
-    cy.get('button').contains('Satzung anzeigen').click()
+    cy.get('button').contains('Satzung').click()
     cy.url().should('eq', 'http://localhost:3000/bylawstext')
 
     //Paragraph 1
