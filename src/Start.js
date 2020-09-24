@@ -21,9 +21,9 @@ export default function Start() {
         </StyledParagraph>
       </StyledTextContainer>
       <StyledButtonContainer>
-        <Link to="/questions/1">
+        <StyledLink to="/questions/1">
           <StyledButton>Zu den Fragen</StyledButton>
-        </Link>
+        </StyledLink>
       </StyledButtonContainer>
     </StyledContainer>
   )
@@ -52,4 +52,7 @@ const StyledParagraph = styled.p`
   color: var(--darkgrey);
   line-height: 1.5;
   font-weight: 300;
+`
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `

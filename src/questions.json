@@ -24,15 +24,15 @@
     "answerOptions": [],
     "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
     "placeholder": "die Förderung der Programmierung",
-    "info": "Der Zweck des Vereins muss zumindest hauptsächlich ein gemeinnütziger Zweck sein. Bitte gib den Zweck des Vereins zum Beispiel so ein: 'als Beispiel dienen'"
+    "info": "Der Zweck des Vereins muss zumindest hauptsächlich ein gemeinnütziger Zweck sein."
   },
   {
     "questionText": "Wer soll Mitglied in dem Verein werden können?",
     "answerType": "checkbox",
     "name": "typeOfMembers",
     "answerOptions": [
-      { "label": "natürliche Personen < 18", "name": "Minderjährige" },
-      { "label": "natürliche Personen > 18", "name": "Volljährige" },
+      { "label": "natürliche Personen < 18 Jahre", "name": "Minderjährige" },
+      { "label": "natürliche Personen > 18 Jahre", "name": "Volljährige" },
       { "label": "juristische Personen", "name": "Juristische Personen" },
       { "label": "Personengesellschaften", "name": "Personengesellschaften" }
     ],

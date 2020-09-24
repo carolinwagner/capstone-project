@@ -24,12 +24,13 @@ body {
 
 #root {
   height: 100%;
-  background: rgb(237,242,245);
-background: linear-gradient(185deg, rgba(237,242,245,1) 73%, rgba(237,242,245,1) 77%, rgba(237,242,245,1) 82%, rgba(232,236,240,1) 92%, rgba(221,222,230,1) 100%) 
-    fixed no-repeat; 
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,236,236,1) 100%)
+  fixed no-repeat; 
 }
 
 input, select {
   font-size: 16px;
+  
 }
 `
