@@ -57,7 +57,9 @@ export default function QuestionForm({
           <StyledInfoContainer>
             <StyledInfoButton type="button" onClick={toggleInfo}>
               <InfoIcon />
-              <StyledInfoText>Mehr Infos</StyledInfoText>
+              <StyledInfoText>
+                {isInfoVisible ? 'Weniger Infos ' : 'Mehr Infos'}
+              </StyledInfoText>
             </StyledInfoButton>
             {isInfoVisible && <p>{question.info}</p>}
           </StyledInfoContainer>
@@ -79,7 +81,7 @@ const StyledInfoContainer = styled.div`
   & p {
     color: var(--darkgrey);
     font-weight: 300;
-    font-size: 0.92rem;
+    font-size: 1.1rem;
     line-height: 1.5;
   }
 `
@@ -113,6 +115,6 @@ const StyledErrorMessage = styled.p`
 
   ::before {
     display: inline;
-    content: '⚠ ';
+    content: '❗️';
   }
 `
