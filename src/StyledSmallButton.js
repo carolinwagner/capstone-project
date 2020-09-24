@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-const StyledButton = styled.button`
+const StyledSmallButton = styled.button`
   padding: 20px;
   color: var(--lightgrey);
   background-color: var(--blue);
@@ -14,4 +14,4 @@ const StyledButton = styled.button`
   align-items: center;
 `
 
-export default StyledButton
+export default StyledSmallButton

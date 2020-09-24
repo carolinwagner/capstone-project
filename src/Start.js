@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import StyledButton from './StyledButton'
+import StyledSmallButton from './StyledSmallButton'
 
 export default function Start() {
   return (
@@ -20,16 +20,16 @@ export default function Start() {
           Zwischenablage kopieren und beliebig wiederverwenden.
         </StyledParagraph>
       </StyledTextContainer>
-      <StyledButtonContainer>
+      <StyledSmallButtonContainer>
         <StyledLink to="/questions/1">
-          <StyledButton>Zu den Fragen</StyledButton>
+          <StyledSmallButton>Zu den Fragen</StyledSmallButton>
         </StyledLink>
-      </StyledButtonContainer>
+      </StyledSmallButtonContainer>
     </StyledContainer>
   )
 }
 
-const StyledButtonContainer = styled.div`
+const StyledSmallButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px;

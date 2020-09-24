@@ -15,7 +15,7 @@ import MembersParagraph from './paragraphs/MembersParagraph'
 import NameAndLocationParagraph from './paragraphs/NameAndLocationParagraph'
 import NonProfitParagraph from './paragraphs/NonProfitParagraph'
 import UseOfFundsParagraph from './paragraphs/UseOfFundsParagraph'
-import StyledButton from './StyledButton'
+import { ReactComponent as ClipboardIcon } from './svgs/clipboard.svg'
 
 export default function BylawsText({ answers }) {
   const bylawsRef = useRef(null)
@@ -52,9 +52,19 @@ export default function BylawsText({ answers }) {
       {anyAnswerGiven && (
         <>
           <p>
-            Die folgende Satzung wurde basierend auf deinen Antworten erstellt.
+            Die folgende Satzung wurde basierend auf deinen Antworten generiert.
+            Bitte überprüfe die Satzung. Gegebenenfalls kannst du natürlich noch
+            Ergänzungen vornehmen.
           </p>
-          <div ref={bylawsRef}>
+          <StyledSmallButtonContainer>
+            <StyledCopyButton onClick={copyBylawsToClipboard}>
+              <ClipboardIcon />
+              <StyledCopyText>
+                Satzungstext {isTextCopied ? 'kopiert' : 'kopieren'}
+              </StyledCopyText>
+            </StyledCopyButton>
+          </StyledSmallButtonContainer>
+          <StyledGeneratedBylaws ref={bylawsRef}>
             <NameAndLocationParagraph answers={answers} />
             <BusinessYearParagraph />
             <ClubPurposeParagraph answers={answers} />
@@ -75,33 +85,49 @@ export default function BylawsText({ answers }) {
             <p>
               Unterschriften der {answers.signaturesNumber} Gründungsmitglieder:
             </p>
-          </div>
+          </StyledGeneratedBylaws>
         </>
       )}
-      <StyledButtonContainer>
-        <StyledButton onClick={copyBylawsToClipboard}>
-          Satzungstext kopieren {isTextCopied ? ' ✅' : ''}
-        </StyledButton>
+      <StyledSmallButtonContainer>
         <StyledLink to="/questions/1">Fragen neu starten</StyledLink>
-      </StyledButtonContainer>
+      </StyledSmallButtonContainer>
     </StyledContainer>
   )
 }
+
+const StyledGeneratedBylaws = styled.div`
+  font-weight: 300;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 5px;
+  margin-top: 20px;
+`
 
 const StyledContainer = styled.div`
   padding: 20px;
   overflow-y: scroll;
 `
 
-const StyledButtonContainer = styled.div`
+const StyledSmallButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+`
+const StyledCopyButton = styled.button`
+  padding: 10px;
+  color: var(--lightgrey);
+  background-color: var(--lightblue);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `
 
 const StyledLink = styled(Link)`
-  margin-top: 20px;
+  margin: 20px 0;
   text-decoration: none;
   padding: 20px;
   color: var(--lightgrey);
@@ -110,4 +136,8 @@ const StyledLink = styled(Link)`
   cursor: pointer;
   font-size: 1em;
   text-align: center;
+`
+const StyledCopyText = styled.span`
+  text-align: center;
+  flex: 1;
 `

@@ -7,6 +7,7 @@ import RadioInput from './RadioInput'
 import TextInput from './TextInput'
 import { ReactComponent as InfoIcon } from './svgs/info.svg'
 import questions from './questions.json'
+import StyledLargeButton from './StyledLargeButton'
 
 export default function QuestionForm({
   question,
@@ -55,12 +56,12 @@ export default function QuestionForm({
         )}
         {question.info && (
           <StyledInfoContainer>
-            <StyledInfoButton type="button" onClick={toggleInfo}>
+            <StyledLargeButton type="button" onClick={toggleInfo}>
               <InfoIcon />
               <StyledInfoText>
                 {isInfoVisible ? 'Weniger' : 'Mehr'} Infos
               </StyledInfoText>
-            </StyledInfoButton>
+            </StyledLargeButton>
             {isInfoVisible && <p>{question.info}</p>}
           </StyledInfoContainer>
         )}
@@ -75,6 +76,7 @@ const StyledQuestionAndInputContainer = styled.div`
 `
 
 const StyledInfoContainer = styled.div`
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,20 +86,6 @@ const StyledInfoContainer = styled.div`
     font-size: 1.1rem;
     line-height: 1.5;
   }
-`
-
-const StyledInfoButton = styled.div`
-  margin-top: 40px;
-  padding: 10px;
-  color: var(--lightgrey);
-  background-color: var(--lightblue);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 `
 
 const StyledInfoText = styled.span`

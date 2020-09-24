@@ -44,10 +44,14 @@ export default function QuestionPage({ onAddAnswer }) {
               <StyledFooterContainer>
                 <StyledPreviousLink to={buttonPrevious.path}>
                   <ArrowLeftIcon />
-                  <StyledButtonText>{buttonPrevious.caption}</StyledButtonText>
+                  <StyledSmallButtonText>
+                    {buttonPrevious.caption}
+                  </StyledSmallButtonText>
                 </StyledPreviousLink>
                 <StyledNextButton type="submit">
-                  <StyledButtonText>{buttonNext.caption}</StyledButtonText>
+                  <StyledSmallButtonText>
+                    {buttonNext.caption}
+                  </StyledSmallButtonText>
                   <ArrowRightIcon />
                 </StyledNextButton>
               </StyledFooterContainer>
@@ -104,7 +108,7 @@ const StyledPreviousLink = styled(Link)`
   flex: 1;
 `
 
-const StyledButtonText = styled.span`
+const StyledSmallButtonText = styled.span`
   color: var--(lightgrey);
   text-align: center;
   flex: 1;
