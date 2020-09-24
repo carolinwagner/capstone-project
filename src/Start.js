@@ -7,18 +7,18 @@ export default function Start() {
   return (
     <StyledContainer>
       <StyledTextContainer>
-        <p>
-          Jeder gemeinnützige Verein benötigt gemäß § 57 des Bürgerlichen
+        <StyledParagraph>
+          Jeder gemeinnützige Verein benötigt gemäß <br />§ 57 des Bürgerlichen
           Gesetzbuches eine Satzung.
-        </p>
-        <p>
+        </StyledParagraph>
+        <StyledParagraph>
           Beantworte einfach die folgenden Fragen und dir wird im Anschluss eine
           individuell auf deinen Verein abgestimmte Satzung generiert.
-        </p>
-        <p>
+        </StyledParagraph>
+        <StyledParagraph>
           Mit einem simplen Klick kannst du dir schließlich die Satzung in die
           Zwischenablage kopieren und beliebig wiederverwenden.
-        </p>
+        </StyledParagraph>
       </StyledTextContainer>
       <StyledButtonContainer>
         <Link to="/questions/1">
@@ -45,4 +45,11 @@ const StyledContainer = styled.div`
 
 const StyledTextContainer = styled.div`
   flex: 1;
+  padding: 10px 0;
+`
+
+const StyledParagraph = styled.p`
+  color: var(--darkgrey);
+  line-height: 1.5;
+  font-weight: 300;
 `

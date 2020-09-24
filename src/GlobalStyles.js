@@ -14,7 +14,7 @@ body {
 }
 
 :root {
-  --darkgrey-main: #292424;
+  --darkgrey: #292424;
   --blue: #406E8F;
   --lightblue: #8EBADC;
   --lightgrey: #F2F2F2;
@@ -25,7 +25,7 @@ body {
 #root {
   height: 100%;
   background: rgb(237,242,245);
-  background: linear-gradient(185deg, rgba(237,242,245,1) 0%, rgba(248,251,251,1) 100%) 
+background: linear-gradient(185deg, rgba(237,242,245,1) 73%, rgba(237,242,245,1) 77%, rgba(237,242,245,1) 82%, rgba(232,236,240,1) 92%, rgba(221,222,230,1) 100%) 
     fixed no-repeat; 
 }
 

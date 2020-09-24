@@ -17,7 +17,10 @@ export default function QuestionForm({
 }) {
   const [isInfoVisible, setIsInfoVisible] = useState(false)
 
-  const toggleInfo = () => setIsInfoVisible(!isInfoVisible)
+  const toggleInfo = () => {
+    setIsInfoVisible(!isInfoVisible)
+  }
+
   return (
     <>
       <StyledQuestionAndInputContainer>
@@ -53,7 +56,7 @@ export default function QuestionForm({
         {question.info && (
           <StyledInfoContainer>
             <StyledInfoButton type="button" onClick={toggleInfo}>
-              <StyledInfoIcon />
+              <InfoIcon />
               <StyledInfoText>Mehr Infos</StyledInfoText>
             </StyledInfoButton>
             {isInfoVisible && <p>{question.info}</p>}
@@ -74,9 +77,10 @@ const StyledInfoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   & p {
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--darkgrey);
     font-weight: 300;
     font-size: 0.92rem;
+    line-height: 1.5;
   }
 `
 
@@ -93,8 +97,6 @@ const StyledInfoButton = styled.div`
   justify-content: flex-start;
   align-items: center;
 `
-
-const StyledInfoIcon = styled(InfoIcon)``
 
 const StyledInfoText = styled.span`
   text-align: center;

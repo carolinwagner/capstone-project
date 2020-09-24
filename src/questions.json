@@ -5,6 +5,7 @@
     "answerType": "text",
     "answerOptions": [],
     "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
+    "placeholder": "Beispielsverein",
     "info": "Der Name deines Vereins sollte unmissverständlich sein. Im Idealfall lässt der Name schon den Zweck deines Vereins erkennen. Bezeichnungen mit “AG”, “GmbH & Co. KG” oder Ähnliches sind nicht gestattet, da diese Personengesellschaften zugeordnet werden. "
   },
   {
@@ -13,6 +14,7 @@
     "answerType": "text",
     "answerOptions": [],
     "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
+    "placeholder": "Hamburg",
     "info": "Dein Verein hat seinen Sitz dort, wo der Mittelpunkt der Vereinstätigkeit sein wird. Diese Angabe ist maßgeblich für den Gerichtsstand und das zuständige Finanzamt."
   },
   {
@@ -21,6 +23,7 @@
     "answerType": "text",
     "answerOptions": [],
     "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
+    "placeholder": "die Förderung der Programmierung",
     "info": "Der Zweck des Vereins muss zumindest hauptsächlich ein gemeinnütziger Zweck sein. Bitte gib den Zweck des Vereins zum Beispiel so ein: 'als Beispiel dienen'"
   },
   {

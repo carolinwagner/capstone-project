@@ -16,6 +16,7 @@ const TextInput = ({ question, register }) => {
       autoFocus
       id={question.name}
       type="text"
+      placeholder={question.placeholder}
       name={question?.name || 'defaultTextInput'}
       ref={register(validationClone)}
       {...question?.validationNative}
