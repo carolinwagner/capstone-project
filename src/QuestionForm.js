@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTransition, animated } from 'react-spring'
 import styled from 'styled-components/macro'
 import CheckboxInput from './CheckboxInput'
 import DateInput from './DateInput'
@@ -21,6 +22,12 @@ export default function QuestionForm({
   const toggleInfo = () => {
     setIsInfoVisible(!isInfoVisible)
   }
+
+  const transitions = useTransition(isInfoVisible, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  })
 
   return (
     <>
@@ -62,7 +69,14 @@ export default function QuestionForm({
                 {isInfoVisible ? 'Weniger' : 'Mehr'} Infos
               </StyledInfoText>
             </StyledLargeButton>
-            {isInfoVisible && <p>{question.info}</p>}
+            {transitions.map(
+              ({ item, key, props }) =>
+                item && (
+                  <animated.p key={key} style={props}>
+                    {question.info}
+                  </animated.p>
+                )
+            )}
           </StyledInfoContainer>
         )}
       </StyledQuestionAndInputContainer>
