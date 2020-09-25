@@ -16,6 +16,7 @@ import NameAndLocationParagraph from './paragraphs/NameAndLocationParagraph'
 import NonProfitParagraph from './paragraphs/NonProfitParagraph'
 import UseOfFundsParagraph from './paragraphs/UseOfFundsParagraph'
 import { ReactComponent as ClipboardIcon } from './svgs/clipboard.svg'
+import { ReactComponent as DownloadIcon } from './svgs/download.svg'
 
 export default function BylawsText({ answers }) {
   const bylawsRef = useRef(null)
@@ -28,6 +29,8 @@ export default function BylawsText({ answers }) {
   })
   const [isTextCopied, setIsTextCopied] = useState(false)
 
+  const [isTextDownloaded, setIsTextDownloaded] = useState(false)
+
   const copyBylawsToClipboard = () => {
     const text = bylawsRef.current?.innerText
     text &&
@@ -35,6 +38,8 @@ export default function BylawsText({ answers }) {
         .writeText(bylawsRef.current?.innerText)
         .then(() => setIsTextCopied(true))
   }
+
+  const downloadBylaws = () => {}
 
   const LocationAndDate = (
     <h4 id="locationAndDate">
@@ -63,6 +68,12 @@ export default function BylawsText({ answers }) {
                 Satzungstext {isTextCopied ? 'kopiert' : 'kopieren'}
               </StyledCopyText>
             </StyledCopyButton>
+            <StyledDownloadButton onClick={downloadBylaws}>
+              <DownloadIcon />
+              <StyledDownloadText>
+                Satzungstext {isTextDownloaded ? 'downgeloaded' : 'downloaden'}
+              </StyledDownloadText>
+            </StyledDownloadButton>
           </StyledSmallButtonContainer>
           <StyledGeneratedBylaws ref={bylawsRef}>
             <NameAndLocationParagraph answers={answers} />
@@ -124,6 +135,28 @@ const StyledCopyButton = styled.button`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 20px;
+`
+const StyledCopyText = styled.span`
+  text-align: center;
+  flex: 1;
+`
+const StyledDownloadText = styled.span`
+  text-align: center;
+  flex: 1;
+`
+
+const StyledDownloadButton = styled.button`
+  padding: 10px;
+  color: var(--lightgrey);
+  background-color: var(--lightblue);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `
 
 const StyledLink = styled(Link)`
@@ -136,8 +169,4 @@ const StyledLink = styled(Link)`
   cursor: pointer;
   font-size: 1em;
   text-align: center;
-`
-const StyledCopyText = styled.span`
-  text-align: center;
-  flex: 1;
 `
