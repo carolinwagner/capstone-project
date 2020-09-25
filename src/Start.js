@@ -8,7 +8,8 @@ export default function Start() {
     <StyledContainer>
       <StyledTextContainer>
         <StyledParagraphHeadline>
-          Du bist Vereinsgründer und hast noch keine Vereinssatzung?
+          Du bist möchtest einen gemeinnützigen Verein gründen, hast aber noch
+          keine Satzung parat?
         </StyledParagraphHeadline>
         <StyledParagraph>
           Gemäß § 57 des Bürgerlichen Gesetzbuches benötigt jeder gemeinnützige
@@ -18,7 +19,8 @@ export default function Start() {
         </StyledParagraph>
         <StyledParagraph>
           Mit einem simplen Klick kannst du dir schließlich die Satzung in die
-          Zwischenablage kopieren und beliebig wiederverwenden.
+          Zwischenablage kopieren und beliebig wiederverwenden oder die Satzung
+          als text-Datei downloaden.
         </StyledParagraph>
       </StyledTextContainer>
       <StyledSmallButtonContainer>
