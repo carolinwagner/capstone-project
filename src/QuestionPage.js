@@ -32,7 +32,7 @@ export default function QuestionPage({ onAddAnswer }) {
         }
 
         return (
-          <Route key={index} exact path={`/questions/${index + 1}`}>
+          <Route key={question.name} exact path={`/questions/${index + 1}`}>
             <StyledForm onSubmit={handleSubmit(onFormSubmit)}>
               <QuestionForm
                 question={question}

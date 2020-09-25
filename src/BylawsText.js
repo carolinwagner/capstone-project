@@ -104,7 +104,7 @@ const StyledGeneratedBylaws = styled.div`
 `
 
 const StyledContainer = styled.div`
-  padding: 20px;
+  padding: 0;
   overflow-y: scroll;
 `
 

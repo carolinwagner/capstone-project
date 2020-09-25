@@ -7,13 +7,14 @@ export default function Start() {
   return (
     <StyledContainer>
       <StyledTextContainer>
+        <StyledParagraphHeadline>
+          Du bist Vereinsgründer und hast noch keine Vereinssatzung?
+        </StyledParagraphHeadline>
         <StyledParagraph>
-          Jeder gemeinnützige Verein benötigt gemäß <br />§ 57 des Bürgerlichen
-          Gesetzbuches eine Satzung.
-        </StyledParagraph>
-        <StyledParagraph>
-          Beantworte einfach die folgenden Fragen und dir wird im Anschluss eine
-          individuell auf deinen Verein abgestimmte Satzung generiert.
+          Gemäß § 57 des Bürgerlichen Gesetzbuches benötigt jeder gemeinnützige
+          Verein eine Satzung. Beantworte einfach die folgenden Fragen und dir
+          wird im Anschluss eine individuell auf deinen Verein abgestimmte
+          Satzung generiert.
         </StyledParagraph>
         <StyledParagraph>
           Mit einem simplen Klick kannst du dir schließlich die Satzung in die
@@ -44,15 +45,23 @@ const StyledContainer = styled.div`
 `
 
 const StyledTextContainer = styled.div`
-  flex: 1;
-  padding: 10px 0;
+  padding: 25px 0;
 `
 
+const StyledParagraphHeadline = styled.p`
+  color: var(--darkgrey);
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+`
 const StyledParagraph = styled.p`
   color: var(--darkgrey);
   line-height: 1.5;
   font-weight: 300;
 `
+
 const StyledLink = styled(Link)`
   text-decoration: none;
 `
