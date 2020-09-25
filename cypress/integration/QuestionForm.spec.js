@@ -15,7 +15,7 @@ context('QuestionForm', () => {
 
   it('has a button', () => {
     cy.get('button').contains('weiter')
-    cy.get('button').contains('Startseite')
+    cy.get('button').contains('Mehr Info')
   })
 
   it('can fill out and answer all inputs', () => {
