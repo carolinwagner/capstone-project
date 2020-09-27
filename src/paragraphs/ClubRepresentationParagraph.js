@@ -13,7 +13,7 @@ const ClubRepresentationParagraph = ({ answers }) => {
     <Paragraph
       id="clubRepresentation"
       headline="§ 11 Vertretung des Vereins"
-      text={` Der Verein wird vertreten von 
+      section1={` Der Verein wird vertreten von 
         ${clubRepresentation[answers.clubRepresentation]}.`}
     />
   )

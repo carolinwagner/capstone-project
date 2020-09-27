@@ -6,9 +6,10 @@ const ClubPurposeParagraph = ({ answers }) => {
     <Paragraph
       id="clubPurpose"
       headline="§ 3 Zweck des Vereins"
-      text={`Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige
-        Zwecke im Sinne des Abschnitts "Steuerbegünstigte Zwecke" der
-        Abgabenordnung. Zweck des Vereins ist ${answers.clubPurpose}.`}
+      section1="I. Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige
+        Zwecke im Sinne des Abschnitts “Steuerbegünstigte Zwecke“ der
+        Abgabenordnung."
+      section2={`II. Zweck des Vereins ist ${answers.clubPurpose}.`}
     />
   )
 }

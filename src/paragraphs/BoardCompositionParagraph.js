@@ -19,8 +19,10 @@ const BoardCompositionParagraph = ({ answers }) => {
     <Paragraph
       id="boardComposition"
       headline="§ 10 Zusammensetzung des Vorstandes"
-      text={` Der Vorstand setzt sich zusammen aus ${boardComposition}. Er wird für
-      einen Zeitraum von ${boardPeriod[answers.boardPeriod]} gewählt. Eine
+      section1={` I. Der Vorstand setzt sich zusammen aus ${boardComposition}.`}
+      section2={`II. Er wird für
+      einen Zeitraum von ${boardPeriod[answers.boardPeriod]} gewählt.`}
+      section3={`III. Eine
       Wiederwahl ist
       ${answers.boardReelection === 'yesReelection' ? '' : ' nicht'} möglich.`}
     />

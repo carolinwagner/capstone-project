@@ -13,7 +13,7 @@ const HeadlineGeneratedBylaws = ({ answers }) => {
 
 const StyledHeadline = styled.h2`
   font-weight: 600;
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 30px;
 `
 

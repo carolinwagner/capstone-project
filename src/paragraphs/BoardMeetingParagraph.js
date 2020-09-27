@@ -6,7 +6,7 @@ const BoardMeetingParagraph = ({ answers }) => {
     <Paragraph
       id="boardMeeting"
       headline="§ 12 Vorstandssitzung"
-      text={`Spätestens ${
+      section1={`I. Spätestens ${
         answers.boardMeetingDeadline === '1'
           ? '1 Tag'
           : `${answers.boardMeetingDeadline} Tage`
@@ -16,10 +16,11 @@ const BoardMeetingParagraph = ({ answers }) => {
         ? ' schriftlich '
         : ' per E-Mail '
     }
-    geladen werden. 
+    geladen werden.`}
+      section2={` 
     ${
       answers.agendaNotice === 'yesAgendaNotice'
-        ? 'In der Einladung zur Vorstandssitzung muss die Tagesordnung mitgeteilt werden.'
+        ? 'II. In der Einladung zur Vorstandssitzung muss die Tagesordnung mitgeteilt werden.'
         : ''
     }`}
     />

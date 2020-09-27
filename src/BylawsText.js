@@ -135,7 +135,7 @@ const StyledGeneratedBylaws = styled.div`
 `
 
 const StyledContainer = styled.div`
-  padding: 0;
+  padding: 0 20px;
   overflow-y: scroll;
 `
 
@@ -143,6 +143,7 @@ const StyledSmallButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 25px 0;
 `
 const StyledCopyButton = styled.button`
   padding: 10px;
