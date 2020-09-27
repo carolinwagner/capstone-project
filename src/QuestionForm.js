@@ -87,7 +87,7 @@ export default function QuestionForm({
               <StyledInfoText>
                 {isInfoVisible ? 'Weniger' : 'Mehr'} Infos
               </StyledInfoText>
-              <StyledChevronUpIcon isInfoVisible={isInfoVisible} />
+              <StyledChevronUpIcon $isInfoVisible={isInfoVisible} />
             </StyledLargeButton>
             {transitions.map(
               ({ item, key, props }) =>
@@ -129,7 +129,7 @@ const StyledInfoText = styled.span`
 
 const StyledChevronUpIcon = styled(ChevronUpIcon)`
   transform: ${(props) =>
-    props.isInfoVisible ? 'rotate(0deg);' : 'rotate(180deg)'};
+    props.$isInfoVisible ? 'rotate(0deg);' : 'rotate(180deg)'};
   transition: transform 0.5s ease-in-out;
 `
 
