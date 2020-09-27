@@ -7,7 +7,7 @@ import questions from './questions.json'
 import { ReactComponent as ArrowLeftIcon } from './svgs/arrow-left.svg'
 import { ReactComponent as ArrowRightIcon } from './svgs/arrow-right.svg'
 
-export default function QuestionPage({ onAddAnswer }) {
+export default function QuestionPage({ onAddAnswer, answers }) {
   const history = useHistory()
   const { handleSubmit, register, watch, errors } = useForm({
     reValidateMode: 'onSubmit',
@@ -26,6 +26,12 @@ export default function QuestionPage({ onAddAnswer }) {
           ? { path: '/', caption: 'Startseite' }
           : { path: `/questions/${index}`, caption: 'zurück' }
 
+        const currentAnswer = Object.entries(answers)
+          .map(([questionName, answer]) =>
+            questionName === question.name ? answer : undefined
+          )
+          .filter(Boolean)[0]
+
         const onFormSubmit = (data) => {
           onAddAnswer(data)
           history.push(buttonNext.path)
@@ -35,6 +41,7 @@ export default function QuestionPage({ onAddAnswer }) {
           <Route key={question.name} exact path={`/questions/${index + 1}`}>
             <StyledForm onSubmit={handleSubmit(onFormSubmit)}>
               <QuestionForm
+                currentAnswer={currentAnswer}
                 question={question}
                 index={index}
                 register={register}

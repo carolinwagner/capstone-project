@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import { useTransition, animated } from 'react-spring'
+import { animated, useTransition } from 'react-spring'
 import styled from 'styled-components/macro'
 import CheckboxInput from './CheckboxInput'
 import DateInput from './DateInput'
 import NumberInput from './NumberInput'
-import RadioInput from './RadioInput'
-import TextInput from './TextInput'
-import { ReactComponent as InfoIcon } from './svgs/info.svg'
-import { ReactComponent as ChevronUpIcon } from './svgs/chevron-up.svg'
 import questions from './questions.json'
+import RadioInput from './RadioInput'
 import StyledLargeButton from './StyledLargeButton'
+import { ReactComponent as ChevronUpIcon } from './svgs/chevron-up.svg'
+import { ReactComponent as InfoIcon } from './svgs/info.svg'
+import TextInput from './TextInput'
 
 export default function QuestionForm({
   question,
@@ -17,6 +17,7 @@ export default function QuestionForm({
   watch,
   errors,
   register,
+  currentAnswer,
 }) {
   const [isInfoVisible, setIsInfoVisible] = useState(false)
 
@@ -38,23 +39,40 @@ export default function QuestionForm({
         </StyledQuestionHeadline>
         <label htmlFor={question.name}>{question.questionText}</label>
         {question.answerType === 'text' && (
-          <TextInput question={question} register={register} />
+          <TextInput
+            question={question}
+            register={register}
+            defaultValue={currentAnswer}
+          />
         )}
         {question.answerType === 'number' && (
-          <NumberInput question={question} register={register} />
+          <NumberInput
+            question={question}
+            register={register}
+            defaultValue={currentAnswer}
+          />
         )}
         {question.answerType === 'checkbox' && (
           <CheckboxInput
             question={question}
             register={register}
             watch={watch}
+            defaultValue={currentAnswer}
           />
         )}
         {question.answerType === 'radio' && (
-          <RadioInput question={question} register={register} />
+          <RadioInput
+            question={question}
+            register={register}
+            defaultValue={currentAnswer}
+          />
         )}
         {question.answerType === 'date' && (
-          <DateInput question={question} register={register} />
+          <DateInput
+            question={question}
+            register={register}
+            defaultValue={currentAnswer}
+          />
         )}
 
         {errors[question?.name] && (

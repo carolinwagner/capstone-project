@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const TextInput = ({ question, register }) => {
+const TextInput = ({ question, register, defaultValue }) => {
   const regex =
     question?.validationHookForm?.pattern &&
     new RegExp(question?.validationHookForm?.pattern)
@@ -18,6 +18,7 @@ const TextInput = ({ question, register }) => {
       type="text"
       placeholder={question.placeholder}
       name={question?.name || 'defaultTextInput'}
+      defaultValue={defaultValue}
       ref={register(validationClone)}
       {...question?.validationNative}
     />

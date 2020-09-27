@@ -35,7 +35,7 @@ const defaultAnswers = {
 }
 
 function App() {
-  const [answers, setAnswers] = useState(defaultAnswers)
+  const [answers, setAnswers] = useState({})
 
   const addAnswer = (newAnswer) => setAnswers({ ...answers, ...newAnswer })
 
@@ -48,7 +48,7 @@ function App() {
             <Start />
           </Route>
           <Route path="/questions">
-            <QuestionPage onAddAnswer={addAnswer} />
+            <QuestionPage onAddAnswer={addAnswer} answers={answers} />
           </Route>
           <Route path="/bylawstext">
             <BylawsText answers={answers} />

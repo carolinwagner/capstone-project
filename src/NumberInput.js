@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const NumberInput = ({ question, register }) => {
+const NumberInput = ({ question, register, defaultValue }) => {
   return (
     <StyledCenterInput>
       <StyledNumberInput
@@ -10,6 +10,7 @@ const NumberInput = ({ question, register }) => {
         type="number"
         ref={register(question.validationHookForm)}
         name={question?.name || 'defaultTextInput'}
+        defaultValue={defaultValue}
         {...question?.validationNative}
       />
     </StyledCenterInput>

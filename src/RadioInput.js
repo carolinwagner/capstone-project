@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const RadioInput = ({ question, register }) => {
+const RadioInput = ({ question, register, defaultValue }) => {
   return (
     <div>
       {question.answerOptions.map((answerOption) => {
+        const isChecked = defaultValue === answerOption.name
         return (
           <StyledRadioContainer key={answerOption.name}>
             <StyledRadioInput
@@ -13,6 +14,7 @@ const RadioInput = ({ question, register }) => {
               id={answerOption.name}
               type="radio"
               ref={register(question.validationHookForm)}
+              defaultChecked={isChecked}
               {...question?.validationNative}
             />
             <StyledLabel htmlFor={answerOption.name}>

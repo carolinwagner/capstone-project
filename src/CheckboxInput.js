@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const CheckboxInput = ({ question, register, watch }) => {
+const CheckboxInput = ({ question, register, watch, defaultValue }) => {
   return (
     <div>
       {question.answerOptions.map((answerOption, index) => {
         const inputName = `${question?.name}[${index}]`
+        const isChecked = defaultValue?.includes(answerOption.name)
         return (
           <StyledCheckboxContainer key={answerOption.name}>
             <StyledCheckboxInput
@@ -13,6 +14,7 @@ const CheckboxInput = ({ question, register, watch }) => {
               name={inputName || 'defaultCheckboxInput'}
               id={answerOption.name}
               value={answerOption.name}
+              defaultChecked={isChecked}
               ref={register(
                 question.validationHookForm?.oneOfGroupRequired && {
                   validate: () =>
