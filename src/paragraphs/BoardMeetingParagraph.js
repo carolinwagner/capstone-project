@@ -6,10 +6,11 @@ const BoardMeetingParagraph = ({ answers }) => {
     <Paragraph
       id="boardMeeting"
       headline="§ 12 Vorstandssitzung"
-      text={`${
-        answers.boardMeetingDeadline
-      } Tage vor der Vorstandssitzung muss zu
-    dieser
+      text={`Spätestens ${
+        answers.boardMeetingDeadline === '1'
+          ? '1 Tag'
+          : `${answers.boardMeetingDeadline} Tage`
+      } vor der Vorstandssitzung muss zu dieser
     ${
       answers.boardInvitation === 'writtenBoardInvitation'
         ? ' schriftlich '

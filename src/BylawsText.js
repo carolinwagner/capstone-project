@@ -9,6 +9,8 @@ import ClubPurposeParagraph from './paragraphs/ClubPurposeParagraph'
 import ClubRepresentationParagraph from './paragraphs/ClubRepresentationParagraph'
 import CommitteesParagraph from './paragraphs/CommitteesParagraph'
 import DissolutionMajorityParagraph from './paragraphs/DissolutionMajorityParagraph'
+import HeadlineGeneratedBylaws from './paragraphs/HeadlineParagraph'
+import MemberExclusionParagraph from './paragraphs/MemberExclusion'
 import MemberFeeParagraph from './paragraphs/MemberFeeParagraph'
 import MemberMeetingParagraph from './paragraphs/MemberMeetingParagraph'
 import MembersParagraph from './paragraphs/MembersParagraph'
@@ -19,6 +21,7 @@ import { ReactComponent as ClipboardIcon } from './svgs/clipboard.svg'
 import { ReactComponent as DownloadIcon } from './svgs/download.svg'
 
 export default function BylawsText({ answers }) {
+  console.log('anwers:', answers)
   const bylawsRef = useRef(null)
   const answersArray = Object.entries(answers || {})
   const anyAnswerGiven = answersArray.some(([_, answer]) => {
@@ -90,6 +93,7 @@ export default function BylawsText({ answers }) {
             </StyledDownloadButton>
           </StyledSmallButtonContainer>
           <StyledGeneratedBylaws ref={bylawsRef}>
+            <HeadlineGeneratedBylaws answers={answers} />
             <NameAndLocationParagraph answers={answers} />
             <BusinessYearParagraph />
             <ClubPurposeParagraph answers={answers} />
@@ -103,12 +107,14 @@ export default function BylawsText({ answers }) {
             <ClubRepresentationParagraph answers={answers} />
             <BoardMeetingParagraph answers={answers} />
             <CommitteesParagraph answers={answers} />
+            <MemberExclusionParagraph />
             <DissolutionMajorityParagraph answers={answers} />
 
             {LocationAndDate}
 
             <p>
-              Unterschriften der {answers.signaturesNumber} Gründungsmitglieder:
+              Namen und Unterschriften der {answers.signaturesNumber}{' '}
+              Gründungsmitglieder:
             </p>
           </StyledGeneratedBylaws>
         </>

@@ -27,11 +27,17 @@ const MemberMeetingParagraph = ({ answers }) => {
       headline="§ 9 Mitgliederversammlung"
       text={`Die Mitgliederversammlung ist das oberste Vereinsorgan. Die
     Mitgliederversammlung wird vom Vorstand unter Einhaltung einer Frist
-    von ${answers.generalMeetingDeadline} Tagen ${
-        answers.typeOfInvitationGeneralMeeting === 'writtenInvitation'
-          ? ' schriftlich '
-          : ' per E-Mail '
-      }
+    von ${
+      answers.boardMeetingDeadline === '1'
+        ? 'einem Tag'
+        : `${answers.boardMeetingDeadline} Tagen`
+    }
+     
+    ${
+      answers.typeOfInvitationGeneralMeeting === 'writtenInvitation'
+        ? ' schriftlich '
+        : ' per E-Mail '
+    }
     unter Angabe der Tagesordnung einberufen. Die Mitgliederversammlung
         entscheidet über ${meetingDuties}. 
         ${

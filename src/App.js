@@ -8,6 +8,7 @@ import styled from 'styled-components/macro'
 
 const defaultAnswers = {
   clubName: 'Carolin',
+  clubRegistration: 'yesClubRegistration',
   clubLocation: 'Hamburg',
   clubPurpose: 'testen',
   typeOfMembers: ['Minderjährige', false, false, false],
