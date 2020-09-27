@@ -6,6 +6,10 @@ export default createGlobalStyle`
   box-sizing: border-box;
 }
 
+input[type="radio"], input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
 body {
   font-size: 112.5%;
   font-family: 'Lato', sans-serif;
