@@ -82,13 +82,20 @@ export default function BylawsText({ answers }) {
             <StyledCopyButton onClick={copyBylawsToClipboard}>
               <ClipboardIcon />
               <StyledCopyText>
-                Satzungstext {isTextCopied ? 'kopiert' : 'kopieren'}
+                Satzungstext {isTextCopied ? 'ist kopiert' : 'kopieren'}
               </StyledCopyText>
             </StyledCopyButton>
-            <StyledDownloadButton onClick={downloadBylaws}>
+            <StyledDownloadButton
+              onClick={() => {
+                const text = bylawsRef.current?.innerText
+                downloadBylaws(text, 'text/plain', 'Satzung.txt')
+                setIsTextDownloaded(true)
+              }}
+            >
               <DownloadIcon />
               <StyledDownloadText>
-                Satzungstext {isTextDownloaded ? 'downgeloaded' : 'downloaden'}
+                Satzungstext{' '}
+                {isTextDownloaded ? 'wurde heruntergeladen' : 'downloaden'}
               </StyledDownloadText>
             </StyledDownloadButton>
           </StyledSmallButtonContainer>
