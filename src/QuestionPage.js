@@ -67,7 +67,6 @@ const StyledForm = styled.form`
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
 `
 
 const StyledFooterContainer = styled.div`

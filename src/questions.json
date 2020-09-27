@@ -353,7 +353,7 @@
       }
     ],
     "validationHookForm": { "required": true },
-    "info": "Für die Auflösung eines Vereins ist gesetzlich eine Drei-Viertel Mehrheit vorgesehen. Diese Regelung kann jedoch durch die Satzung abgeändert werden."
+    "info": "Für die Auflösung eines Vereins ist gesetzlich eine Drei-Viertel Mehrheit vorgesehen. Von dieser Regelung kann jedoch in der Satzung abgewichen werden."
   },
   {
     "questionText": "An welchem Tag soll über die Satzung beschlossen werden?",
