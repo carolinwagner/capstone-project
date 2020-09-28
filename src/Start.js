@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import StyledSmallButton from './StyledSmallButton'
+import Button from './Button'
 
 export default function Start() {
   return (
@@ -25,7 +25,7 @@ export default function Start() {
       </StyledTextContainer>
       <StyledSmallButtonContainer>
         <StyledLink to="/questions/1">
-          <StyledSmallButton>Zu den Fragen</StyledSmallButton>
+          <Button variant="primary">Zu den Fragen</Button>
         </StyledLink>
       </StyledSmallButtonContainer>
     </StyledContainer>
@@ -50,7 +50,7 @@ const StyledTextContainer = styled.div`
   padding: 25px 0;
 `
 
-const StyledParagraphHeadline = styled.p`
+const StyledParagraphHeadline = styled.h2`
   color: var(--darkgrey);
   line-height: 1.5;
   font-weight: 400;

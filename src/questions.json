@@ -92,7 +92,7 @@
       }
     ],
     "validationHookForm": { "required": true },
-    "info": "Sofern Mitgliedsbeiträge gezahlt werden sollen, muss dies in der Satzung niedergeschrieben werden. Die exakte Höhe kann wiederum durch durch die Mitgliederversammlung oder den Vorstand bestimmt werden und muss nicht in der Satzung stehen. Daher kann die Höhe auch geändert werden, ohne dass eine Satzungsänderung nötig ist."
+    "info": "Sofern Mitgliedsbeiträge gezahlt werden sollen, muss dies in der Satzung niedergeschrieben werden. Die exakte Höhe kann wiederum durch die Mitgliederversammlung oder den Vorstand bestimmt werden und muss nicht in der Satzung stehen. Daher kann die Höhe auch geändert werden, ohne dass eine Satzungsänderung nötig ist."
   },
 
   {
@@ -332,7 +332,7 @@
       }
     ],
     "validationHookForm": { "required": true },
-    "info": "Arbeitsausschüsse können grundsätzlich gebildet werden, um wichtige Aufgabenbereiche des Verein zu prüfen und zu bearbeiten."
+    "info": "Arbeitsausschüsse können grundsätzlich gebildet werden, um wichtige Aufgabenbereiche des Vereins zu prüfen und zu bearbeiten."
   },
   {
     "questionText": "Welche Mehrheit ist erforderlich, sofern die Mitgliederversammlung über die Auflösung des Vereins entscheiden soll?",

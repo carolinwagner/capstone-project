@@ -14,12 +14,15 @@ body {
 }
 
 :root {
+  height: 100%;
+
   --darkgrey: #292424;
   --blue: #406E8F;
   --lightblue: #8EBADC;
   --lightgrey: #F2F2F2;
   --white: #FFFFFF;
-  height: 100%;
+
+  --button-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 #root {
@@ -33,4 +36,5 @@ input, select {
   font-size: 16px;
   
 }
+
 `

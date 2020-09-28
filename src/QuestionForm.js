@@ -9,7 +9,7 @@ import TextInput from './TextInput'
 import { ReactComponent as InfoIcon } from './svgs/info.svg'
 import { ReactComponent as ChevronUpIcon } from './svgs/chevron-up.svg'
 import questions from './questions.json'
-import StyledLargeButton from './StyledLargeButton'
+import Button from './Button'
 
 export default function QuestionForm({
   question,
@@ -64,13 +64,13 @@ export default function QuestionForm({
         )}
         {question.info && (
           <StyledInfoContainer>
-            <StyledLargeButton type="button" onClick={toggleInfo}>
+            <Button variant="secondary" type="button" onClick={toggleInfo}>
               <InfoIcon />
               <StyledInfoText>
                 {isInfoVisible ? 'Weniger' : 'Mehr'} Infos
               </StyledInfoText>
               <StyledChevronUpIcon isInfoVisible={isInfoVisible} />
-            </StyledLargeButton>
+            </Button>
             {transitions.map(
               ({ item, key, props }) =>
                 item && (
@@ -86,7 +86,7 @@ export default function QuestionForm({
   )
 }
 
-const StyledQuestionAndInputContainer = styled.div`
+const StyledQuestionAndInputContainer = styled.section`
   padding: 20px 20px 0 20px;
   flex: 1;
 `
@@ -95,7 +95,6 @@ const StyledInfoContainer = styled.div`
   padding-top: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   & p {
     color: var(--darkgrey);
     font-weight: 300;
