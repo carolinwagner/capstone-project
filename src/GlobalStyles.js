@@ -19,8 +19,8 @@ body {
 
 :root {
   --darkgrey: #292424;
-  --blue: #406E8F;
-  --lightblue: #8EBADC;
+  --blue: #0E4C73;
+  --lightblue: #1F80A6;
   --lightgrey: #F2F2F2;
   --white: #FFFFFF;
   height: 100%;
