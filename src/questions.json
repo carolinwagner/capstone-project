@@ -4,33 +4,40 @@
     "name": "clubName",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
+    "placeholder": "Beispielsverein",
+    "info": "Der Name deines Vereins sollte unmissverständlich sein. Im Idealfall lässt der Name schon den Zweck deines Vereins erkennen. Bezeichnungen mit “AG”, “GmbH & Co. KG” oder Ähnliches sind nicht gestattet, da diese Personengesellschaften zugeordnet werden. "
   },
   {
     "questionText": "In welcher Stadt soll dein Verein sitzen?",
     "name": "clubLocation",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
+    "placeholder": "Hamburg",
+    "info": "Dein Verein hat seinen Sitz dort, wo der Mittelpunkt der Vereinstätigkeit sein wird. Diese Angabe ist maßgeblich für den Gerichtsstand und das zuständige Finanzamt."
   },
   {
     "questionText": "Welchen Zweck verfolgt der Verein?",
     "name": "clubPurpose",
     "answerType": "text",
     "answerOptions": [],
-    "validationHookForm": { "required": true, "pattern": ".*\\S.*" }
+    "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
+    "placeholder": "die Förderung der Programmierung",
+    "info": "Der Zweck des Vereins muss zumindest hauptsächlich ein gemeinnütziger Zweck sein."
   },
   {
     "questionText": "Wer soll Mitglied in dem Verein werden können?",
     "answerType": "checkbox",
     "name": "typeOfMembers",
     "answerOptions": [
-      { "label": "natürliche Personen < 18", "name": "Minderjährige" },
-      { "label": "natürliche Personen > 18", "name": "Volljährige" },
+      { "label": "natürliche Personen < 18 Jahre", "name": "Minderjährige" },
+      { "label": "natürliche Personen > 18 Jahre", "name": "Volljährige" },
       { "label": "juristische Personen", "name": "Juristische Personen" },
       { "label": "Personengesellschaften", "name": "Personengesellschaften" }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "info": "Natürliche Personen sind alle Menschen, wohingegen juristische Personen Unternehmen sind. Personengesellschaften sind ein Zusammenschluss von natürlichen Personen (z. B. eine GmbH). Du kannst frei entscheiden, wer Mitglied in deinem Verein werden können soll."
   },
   {
     "questionText": "Auf welchem Wege sollen potentielle Mitglieder einen Mitgliedsantrag stellen?",
@@ -43,7 +50,8 @@
       { "label": "Brieftaube", "name": "per Brieftaube" },
       { "label": "Flaschenpost", "name": "per Flaschenpost" }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "info": "Du kannst frei entscheiden, wie potentielle Mitglieder einen Mitgliedsantrag stellen sollen."
   },
   {
     "questionText": "Sollen die Mitglieder eine Aufnahmegebühr zahlen?",
@@ -56,7 +64,8 @@
         "name": "noAdmissionFee"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Sofern eine einmalige Aufnahmegebühr erhoben werden soll, muss dies in der Satzung festgelegt werden. Die Höhe der Aufnahmegebühr kann durch die Mitgliederversammlung oder den Vorstand bestimmt werden und muss nicht in der Satzung stehen. Daher kann die Höhe auch geändert werden, ohne dass eine Satzungsänderung nötig ist."
   },
   {
     "questionText": "Sollen die Mitglieder einen Mitgliedsbeitrag zahlen?",
@@ -69,7 +78,8 @@
         "name": "noFee"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Sofern Mitgliedsbeiträge gezahlt werden sollen, muss dies in der Satzung niedergeschrieben werden. Die exakte Höhe kann wiederum durch die Mitgliederversammlung oder den Vorstand bestimmt werden und muss nicht in der Satzung stehen. Daher kann die Höhe auch geändert werden, ohne dass eine Satzungsänderung nötig ist."
   },
 
   {
@@ -98,7 +108,8 @@
         "name": "die Beschlussfassung über die Auflösung des Vereins"
       }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "info": "Die Mitgliedsversammlung besteht aus den Mitgliedern des Vereins und kann für verschiedene Belange des Vereins zuständig sein."
   },
   {
     "questionText": "Wie soll die Einladung zur Mitgliederversammlung erfolgen?",
@@ -118,7 +129,8 @@
         "name": "faxInvitation"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Die Form der Einladung zur Mitgliederversammlung ist frei wählbar."
   },
   {
     "questionText": "Wie viele Tage vorher (zwischen 14 und 365) soll zur Mitgliederversammlung geladen werden?",
@@ -126,7 +138,8 @@
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "14", "max": "365" }
+    "validationNative": { "min": "14", "max": "365" },
+    "info": "Die Frist beginnt mit dem auf die Absendung des Einladungsschreibens folgenden Tag. Das Einladungsschreiben gilt als den Mitgliedern zugegangen, wenn es an die letzte dem Verein bekannt gegebene Anschrift gerichtet war."
   },
   {
     "questionText": "Wann soll die Mitgliederversammlung beschlussfähig sein?",
@@ -142,7 +155,8 @@
         "name": "minHalf"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Sofern gewünscht wird, dass eine Mindestanzahl der Mitglieder bei der Mitgliederversammlung anwesend sein soll, damit diese beschlussfähig ist, sollte hier 'bei Anwesenheit der Hälfte der Mitglieder' gewählt werden."
   },
   {
     "questionText": "Wie häufig soll eine Mitgliederversammlung durchgeführt werden?",
@@ -157,7 +171,8 @@
       { "label": "halbjährlich", "name": "everySixMonths" },
       { "label": "jährlich", "name": "yearly" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Die Mitgliederversammlung muss in regelmäßigen Abständen durchgeführt werden."
   },
   {
     "questionText": "Mit welcher Mehrheit soll die Mitgliederversammlung ihre Beschlüsse fassen?",
@@ -174,7 +189,8 @@
       },
       { "label": "einfache Mehrheit", "name": "simpleMajority" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Die Mehrheit bei der Beschlussfassung ist frei wählbar."
   },
 
   {
@@ -195,7 +211,8 @@
         "name": "dem Schriftführer"
       }
     ],
-    "validationHookForm": { "oneOfGroupRequired": true }
+    "validationHookForm": { "oneOfGroupRequired": true },
+    "info": "Die Zusammensetzung des Vorstandes ist frei wählbar."
   },
   {
     "questionText": "Wer soll den Verein nach außen vertreten?",
@@ -219,7 +236,8 @@
         "name": "twoBoardMembers"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Der Vorstand ist gesetzlicher Vertreter des Vereins, er vertritt den Verein gerichtlich und außergerichtlich. Gesetzlich ist vorgesehen, dass die Mehrheit des Vorstands den Verein wirksam vertreten kann. Davon kann in der Satzung jedoch abgewichen werden, sodass die gesetzliche Regelung nicht einschlägig ist."
   },
   {
     "questionText": "Für welchen Zeitraum soll der Vorstand gewählt werden?",
@@ -231,7 +249,8 @@
       { "label": "drei Jahre", "name": "threeYears" },
       { "label": "vier Jahre", "name": "fourYears" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Die Amtszeit des Vorstandes muss in der Satzung festgelegt werden."
   },
   {
     "questionText": "Soll eine Wiederwahl des Vorstandes möglich sein?",
@@ -241,7 +260,8 @@
       { "label": "ja", "name": "yesReelection" },
       { "label": "nein", "name": "noReelection" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Es ist gesetzlich vorgesehen, dass ein Vorstand wiedergewählt werden kann. Sofern dies nicht gewünscht ist, muss dies in der Satzung ausdrücklich niedergeschrieben werden."
   },
   {
     "questionText": "Wie soll zur Vorstandssitzung geladen werden?",
@@ -261,7 +281,8 @@
         "name": "faxBoardInvitation"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Die Art der Ladung ist frei wählbar."
   },
   {
     "questionText": "Wie viele Tage (zwischen 14 und 365) vorher soll zu einer Vorstandssitzung geladen werden?",
@@ -269,7 +290,8 @@
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "14", "max": "365" }
+    "validationNative": { "min": "14", "max": "365" },
+    "info": "Die Frist beginnt mit dem auf die Absendung des Einladungsschreibens folgenden Tag. Das Einladungsschreiben gilt als den Mitgliedern zugegangen, wenn es an die letzte dem Verein bekannt gegebene Anschrift gerichtet war."
   },
   {
     "questionText": "Bedarf es der Mitteilung einer Tagesordnung in der Einladung zur Vorstandssitzung?",
@@ -279,7 +301,8 @@
       { "label": "ja", "name": "yesAgendaNotice" },
       { "label": "nein", "name": "noAgendaNotice" }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Die Mitteilung einer Tagesordnung in der Einladung ist zwar keine Pflicht, sie erleichtert jedoch den Vorständen die Vorbereitung auf die Sitzung."
   },
   {
     "questionText": "Sollen Arbeitsausschüsse gebildet werden?",
@@ -295,7 +318,8 @@
         "name": "noCommittees"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Arbeitsausschüsse können grundsätzlich gebildet werden, um wichtige Aufgabenbereiche des Vereins zu prüfen und zu bearbeiten."
   },
   {
     "questionText": "Welche Mehrheit ist erforderlich, sofern die Mitgliederversammlung über die Auflösung des Vereins entscheiden soll?",
@@ -315,7 +339,8 @@
         "name": "simpleMajorityDissolution"
       }
     ],
-    "validationHookForm": { "required": true }
+    "validationHookForm": { "required": true },
+    "info": "Für die Auflösung eines Vereins ist gesetzlich eine Drei-Viertel Mehrheit vorgesehen. Diese Regelung kann jedoch durch die Satzung abgeändert werden."
   },
   {
     "questionText": "An welchem Tag soll über die Satzung beschlossen werden?",
@@ -323,7 +348,8 @@
     "answerType": "date",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "minToday": true }
+    "validationNative": { "minToday": true },
+    "info": "Bitte wähle hier den Tag, an dem die Gründungsversammlung stattfinden soll. Dies kann frühestens der heutige Tag sein."
   },
   {
     "questionText": "Wie viele Mitglieder (min. 7) sollen die Satzung unterschreiben?",
@@ -331,6 +357,7 @@
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "7" }
+    "validationNative": { "min": "7" },
+    "info": "Die Mitglieder, die in der Gründungssitzung anwesend sind, sollten die Satzung unterschreiben. Dabei ist es gesetzlich erforderlich, dass mindestens sieben Mitglieder die Vereinssatzung unterzeichen."
   }
 ]

@@ -1,35 +1,36 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import StyledButton from './StyledButton'
+import Button from './Button'
 
 export default function Start() {
   return (
     <StyledContainer>
       <StyledTextContainer>
-        <p>
-          Jeder gemeinnützige Verein benötigt gemäß § 57 des Bürgerlichen
-          Gesetzbuches eine Satzung.
-        </p>
-        <p>
-          Beantworte einfach die folgenden Fragen und dir wird im Anschluss eine
-          individuell auf deinen Verein abgestimmte Satzung generiert.
-        </p>
-        <p>
+        <StyledParagraphHeadline>
+          Du bist Vereinsgründer und hast noch keine Vereinssatzung?
+        </StyledParagraphHeadline>
+        <StyledParagraph>
+          Gemäß § 57 des Bürgerlichen Gesetzbuches benötigt jeder gemeinnützige
+          Verein eine Satzung. Beantworte einfach die folgenden Fragen und dir
+          wird im Anschluss eine individuell auf deinen Verein abgestimmte
+          Satzung generiert.
+        </StyledParagraph>
+        <StyledParagraph>
           Mit einem simplen Klick kannst du dir schließlich die Satzung in die
           Zwischenablage kopieren und beliebig wiederverwenden.
-        </p>
+        </StyledParagraph>
       </StyledTextContainer>
-      <StyledButtonContainer>
-        <Link to="/questions/1">
-          <StyledButton>Zu den Fragen</StyledButton>
-        </Link>
-      </StyledButtonContainer>
+      <StyledSmallButtonContainer>
+        <StyledLink to="/questions/1">
+          <Button variant="primary">Zu den Fragen</Button>
+        </StyledLink>
+      </StyledSmallButtonContainer>
     </StyledContainer>
   )
 }
 
-const StyledButtonContainer = styled.div`
+const StyledSmallButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -44,5 +45,23 @@ const StyledContainer = styled.div`
 `
 
 const StyledTextContainer = styled.div`
-  flex: 1;
+  padding: 25px 0;
+`
+
+const StyledParagraphHeadline = styled.h2`
+  color: var(--darkgrey);
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+`
+const StyledParagraph = styled.p`
+  color: var(--darkgrey);
+  line-height: 1.5;
+  font-weight: 300;
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `

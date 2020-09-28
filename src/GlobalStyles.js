@@ -14,22 +14,26 @@ body {
 }
 
 :root {
-  --darkgrey-main: #292424;
+  height: 100%;
+
+  --darkgrey: #292424;
   --blue: #406E8F;
   --lightblue: #8EBADC;
   --lightgrey: #F2F2F2;
   --white: #FFFFFF;
-  height: 100%;
+
+  --button-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 #root {
   height: 100%;
-  background: rgb(237,242,245);
-  background: linear-gradient(185deg, rgba(237,242,245,1) 0%, rgba(248,251,251,1) 100%) 
-    fixed no-repeat; 
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,236,236,1) 100%)
+  fixed no-repeat; 
 }
 
 input, select {
   font-size: 16px;
 }
+
 `

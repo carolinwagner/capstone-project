@@ -16,6 +16,7 @@ const TextInput = ({ question, register }) => {
       autoFocus
       id={question.name}
       type="text"
+      placeholder={question.placeholder}
       name={question?.name || 'defaultTextInput'}
       ref={register(validationClone)}
       {...question?.validationNative}
@@ -30,6 +31,6 @@ const StyledTextInput = styled.input`
   padding: 12px 20px;
   margin: 20px 0;
   display: inline-block;
-  border: 1px solid var(--lightblue);
+  border: 1px solid var(--blue);
   border-radius: 4px;
 `

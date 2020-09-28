@@ -15,7 +15,7 @@ context('QuestionForm', () => {
 
   it('has a button', () => {
     cy.get('button').contains('weiter')
-    cy.get('button').contains('zur Startseite')
+    cy.get('button').contains('Mehr Info')
   })
 
   it('can fill out and answer all inputs', () => {
@@ -100,7 +100,7 @@ context('QuestionForm', () => {
       .contains('Mitgliederversammlung beschlussfähig')
       .closest('div')
       .find('label')
-      .contains('ordnungsgemäß einberufene Mitgliederversammlung')
+      .contains('ordnungsgemäßer')
       .click()
     cy.get('button').contains('weiter').click()
 
@@ -216,7 +216,7 @@ context('QuestionForm', () => {
     //Question 24
     cy.get('label').contains('Satzung unterschreiben')
     cy.get('input').type('10')
-    cy.get('button').contains('Satzung anzeigen').click()
+    cy.get('button').contains('Satzung').click()
     cy.url().should('eq', 'http://localhost:3000/bylawstext')
   })
 

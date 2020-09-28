@@ -19,7 +19,7 @@ const DateInput = ({ question, register }) => {
 export default DateInput
 
 const StyledDateInput = styled.input`
-  font-family: 'lato';
+  font-family: 'Lato';
   width: 100%;
   padding: 12px 20px;
   margin: 20px 0;

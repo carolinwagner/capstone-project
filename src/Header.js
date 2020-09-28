@@ -9,7 +9,8 @@ const StyledHeader = styled.h1`
   margin-top: 20px;
   margin-bottom: 0;
   font-family: 'Playfair Display', serif;
+  font-weight: 600;
   text-align: center;
-  font-size: 45px;
+  font-size: 60px;
   color: var(--blue);
 `
