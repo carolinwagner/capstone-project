@@ -6,33 +6,6 @@ import QuestionPage from './QuestionPage'
 import Start from './Start'
 import styled from 'styled-components/macro'
 
-const defaultAnswers = {
-  clubName: 'Carolin',
-  clubLocation: 'Hamburg',
-  clubPurpose: 'testen',
-  typeOfMembers: ['Minderjährige', false, false, false],
-  typeOfRequest: ['schriftlich', false, false, false, false],
-  admissionFee: 'yesAdmissionFee',
-  memberFee: 'yesMemberFee',
-  generalMeetingDuties: ['die Wahl des Vorstandes', false, false, false, false],
-  typeOfInvitationGeneralMeeting: ' writtenInvitation',
-  generalMeetingDeadline: '14',
-  quorumQuote: 'quorum',
-  generalMeetingFrequency: 'monthly',
-  generalMeetingMajority: 'absoluteMajority',
-  boardComposition: ['zwei Vorsitzenden', false, false],
-  clubRepresentation: 'firstBoardMember',
-  boardPeriod: 'oneYear',
-  boardReelection: 'yesReelection',
-  boardInvitation: 'writtenBoardInvitation',
-  boardMeetingDeadline: '14',
-  agendaNotice: 'yesAgendaNotice',
-  committees: 'yesCommittees',
-  dissolutionMajority: 'absoluteMajorityDissolution',
-  decisionDate: '2020-10-06',
-  signaturesNumber: '7',
-}
-
 function App() {
   const [answers, setAnswers] = useState(defaultAnswers)
 
@@ -71,5 +44,31 @@ const StyledCenterOnDesktop = styled.div`
   display: flex;
   justify-content: center;
 `
+const defaultAnswers = {
+  clubName: 'Carolin',
+  clubLocation: 'Hamburg',
+  clubPurpose: 'testen',
+  typeOfMembers: ['Minderjährige', false, false, false],
+  typeOfRequest: ['schriftlich', false, false, false, false],
+  admissionFee: 'yesAdmissionFee',
+  memberFee: 'yesMemberFee',
+  generalMeetingDuties: ['die Wahl des Vorstandes', false, false, false, false],
+  typeOfInvitationGeneralMeeting: ' writtenInvitation',
+  generalMeetingDeadline: '14',
+  quorumQuote: 'quorum',
+  generalMeetingFrequency: 'monthly',
+  generalMeetingMajority: 'absoluteMajority',
+  boardComposition: ['zwei Vorsitzenden', false, false],
+  clubRepresentation: 'firstBoardMember',
+  boardPeriod: 'oneYear',
+  boardReelection: 'yesReelection',
+  boardInvitation: 'writtenBoardInvitation',
+  boardMeetingDeadline: '14',
+  agendaNotice: 'yesAgendaNotice',
+  committees: 'yesCommittees',
+  dissolutionMajority: 'absoluteMajorityDissolution',
+  decisionDate: '2020-10-06',
+  signaturesNumber: '7',
+}
 
 export default App

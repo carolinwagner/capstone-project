@@ -16,6 +16,7 @@ import NameAndLocationParagraph from './paragraphs/NameAndLocationParagraph'
 import NonProfitParagraph from './paragraphs/NonProfitParagraph'
 import UseOfFundsParagraph from './paragraphs/UseOfFundsParagraph'
 import { ReactComponent as ClipboardIcon } from './svgs/clipboard.svg'
+import Button from './Button'
 
 export default function BylawsText({ answers }) {
   const bylawsRef = useRef(null)
@@ -57,12 +58,12 @@ export default function BylawsText({ answers }) {
             Ergänzungen vornehmen.
           </p>
           <StyledSmallButtonContainer>
-            <StyledCopyButton onClick={copyBylawsToClipboard}>
+            <Button variant="secondary" onClick={copyBylawsToClipboard}>
               <ClipboardIcon />
               <StyledCopyText>
                 Satzungstext {isTextCopied ? 'kopiert' : 'kopieren'}
               </StyledCopyText>
-            </StyledCopyButton>
+            </Button>
           </StyledSmallButtonContainer>
           <StyledGeneratedBylaws ref={bylawsRef}>
             <NameAndLocationParagraph answers={answers} />
@@ -95,7 +96,7 @@ export default function BylawsText({ answers }) {
   )
 }
 
-const StyledGeneratedBylaws = styled.div`
+const StyledGeneratedBylaws = styled.section`
   font-weight: 300;
   padding: 20px;
   background-color: var(--white);
@@ -103,7 +104,7 @@ const StyledGeneratedBylaws = styled.div`
   margin-top: 20px;
 `
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.section`
   padding: 0;
   overflow-y: scroll;
 `
@@ -112,18 +113,6 @@ const StyledSmallButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`
-const StyledCopyButton = styled.button`
-  padding: 10px;
-  color: var(--lightgrey);
-  background-color: var(--lightblue);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 `
 
 const StyledLink = styled(Link)`

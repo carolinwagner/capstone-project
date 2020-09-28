@@ -6,6 +6,7 @@ import QuestionForm from './QuestionForm'
 import questions from './questions.json'
 import { ReactComponent as ArrowLeftIcon } from './svgs/arrow-left.svg'
 import { ReactComponent as ArrowRightIcon } from './svgs/arrow-right.svg'
+import Button from './Button'
 
 export default function QuestionPage({ onAddAnswer }) {
   const history = useHistory()
@@ -48,12 +49,12 @@ export default function QuestionPage({ onAddAnswer }) {
                     {buttonPrevious.caption}
                   </StyledSmallButtonText>
                 </StyledPreviousLink>
-                <StyledNextButton type="submit">
+                <Button variant="primary" type="submit">
                   <StyledSmallButtonText>
                     {buttonNext.caption}
                   </StyledSmallButtonText>
                   <ArrowRightIcon />
-                </StyledNextButton>
+                </Button>
               </StyledFooterContainer>
             </StyledForm>
           </Route>
@@ -69,27 +70,11 @@ const StyledForm = styled.form`
   flex-direction: column;
 `
 
-const StyledFooterContainer = styled.div`
+const StyledFooterContainer = styled.footer`
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
   padding: 20px;
 `
 
-const StyledNextButton = styled.button`
-  padding: 20px;
-  color: var(--lightgrey);
-  background-color: var(--blue);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-`
 const StyledPreviousLink = styled(Link)`
   text-decoration: none;
   padding: 20px;

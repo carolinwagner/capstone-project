@@ -14,12 +14,15 @@ body {
 }
 
 :root {
+  height: 100%;
+
   --darkgrey: #292424;
   --blue: #406E8F;
   --lightblue: #8EBADC;
   --lightgrey: #F2F2F2;
   --white: #FFFFFF;
-  height: 100%;
+
+  --button-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 #root {
@@ -31,6 +34,6 @@ background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,236,236,1) 
 
 input, select {
   font-size: 16px;
-  
 }
+
 `
