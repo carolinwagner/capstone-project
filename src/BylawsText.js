@@ -22,7 +22,6 @@ import { ReactComponent as DownloadIcon } from './svgs/download.svg'
 import Button from './Button'
 
 export default function BylawsText({ answers }) {
-  console.log('anwers:', answers)
   const bylawsRef = useRef(null)
   const answersArray = Object.entries(answers || {})
   const anyAnswerGiven = answersArray.some(([_, answer]) => {
