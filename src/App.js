@@ -7,7 +7,7 @@ import Start from './Start'
 import styled from 'styled-components/macro'
 
 const defaultAnswers = {
-  clubName: 'Carolin',
+  clubName: 'Neuer Fisch',
   clubRegistration: 'yesClubRegistration',
   clubLocation: 'Hamburg',
   clubPurpose: 'testen',
@@ -35,7 +35,7 @@ const defaultAnswers = {
 }
 
 function App() {
-  const [answers, setAnswers] = useState({})
+  const [answers, setAnswers] = useState(defaultAnswers)
 
   const addAnswer = (newAnswer) => setAnswers({ ...answers, ...newAnswer })
 
