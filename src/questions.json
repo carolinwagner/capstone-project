@@ -319,7 +319,7 @@
       }
     ],
     "validationHookForm": { "required": true },
-    "info": "Arbeitsausschüsse können grundsätzlich gebildet werden, um wichtige Aufgabenbereiche des Verein zu prüfen und zu bearbeiten."
+    "info": "Arbeitsausschüsse können grundsätzlich gebildet werden, um wichtige Aufgabenbereiche des Vereins zu prüfen und zu bearbeiten."
   },
   {
     "questionText": "Welche Mehrheit ist erforderlich, sofern die Mitgliederversammlung über die Auflösung des Vereins entscheiden soll?",
