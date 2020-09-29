@@ -34,7 +34,7 @@ export default function BylawsText({ answers }) {
 
   const [isTextDownloaded, setIsTextDownloaded] = useState(false)
 
-  const copyBylawsToClipboard = () => {
+  function copyBylawsToClipboard() {
     const text = bylawsRef.current?.innerText
     text &&
       navigator.clipboard
@@ -42,7 +42,7 @@ export default function BylawsText({ answers }) {
         .then(() => setIsTextCopied(true))
   }
 
-  const downloadBylaws = (text, fileType, fileName) => {
+  function downloadBylaws(text, fileType, fileName) {
     const blob = new Blob([text], { type: fileType })
 
     const a = document.createElement('a')
@@ -79,12 +79,12 @@ export default function BylawsText({ answers }) {
             Ergänzungen vornehmen.
           </p>
           <StyledSmallButtonContainer>
-            <Button variant="secondary" onClick={copyBylawsToClipboard}>
+            <StyledButton variant="secondary" onClick={copyBylawsToClipboard}>
               <ClipboardIcon />
               <StyledCopyText>
                 Satzungstext {isTextCopied ? 'wurde kopiert' : 'kopieren'}
               </StyledCopyText>
-            </Button>
+            </StyledButton>
             <Button
               variant="secondary"
               onClick={() => {
@@ -149,10 +149,13 @@ const StyledContainer = styled.section`
 
 const StyledSmallButtonContainer = styled.div`
   display: flex;
-  gap: 20px;
   flex-direction: column;
   justify-content: center;
   padding: 25px 0;
+`
+
+const StyledButton = styled(Button)`
+  margin-bottom: 20px;
 `
 
 const StyledCopyText = styled.span`
