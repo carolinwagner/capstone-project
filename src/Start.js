@@ -8,8 +8,8 @@ export default function Start() {
   return (
     <StyledContainer>
       <StyledParagraphHeadline>
-        Du bist möchtest einen gemeinnützigen Verein gründen, hast aber noch
-        keine Satzung parat?
+        Du möchtest einen gemeinnützigen Verein gründen, hast aber noch keine
+        Satzung parat?
       </StyledParagraphHeadline>
       <StyledIllustration />
       <StyledParagraph>
@@ -20,7 +20,7 @@ export default function Start() {
       <StyledParagraph>
         Mit einem simplen Klick kannst du dir schließlich die Satzung in die
         Zwischenablage kopieren und beliebig wiederverwenden oder die Satzung
-        als text-Datei downloaden.
+        als .txt Datei downloaden.
       </StyledParagraph>
       <StyledSmallButtonContainer>
         <StyledLink to="/questions/1">
