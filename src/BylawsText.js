@@ -143,7 +143,7 @@ const StyledGeneratedBylaws = styled.section`
 `
 
 const StyledContainer = styled.section`
-  padding: 0;
+  padding: 15px;
   overflow-y: scroll;
 `
 
