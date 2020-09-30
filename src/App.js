@@ -45,9 +45,9 @@ const StyledCenterOnDesktop = styled.div`
   justify-content: center;
 `
 const defaultAnswers = {
-  clubName: 'Carolin',
+  clubName: 'Neuer Fisch',
   clubLocation: 'Hamburg',
-  clubPurpose: 'testen',
+  clubPurpose: 'programmieren',
   typeOfMembers: ['Minderjährige', false, false, false],
   typeOfRequest: ['schriftlich', false, false, false, false],
   admissionFee: 'yesAdmissionFee',
