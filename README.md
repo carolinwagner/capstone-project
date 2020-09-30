@@ -3,6 +3,8 @@
      height="40px"/>
 </div>
 
+---
+
 "Hello Bylaws" is developed to help founders of non-profit associations to create bylaws that are precisely tailored to the needs of the association by answering a simple list of questions. In addition, the founder will be provided with the necessary information to enable him to answer the questions in the best possible way.
 
 This app was developed as my capstone project during the final four weeks of the neuefische Web Development Bootcamp in September 2020.
