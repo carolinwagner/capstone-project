@@ -13,12 +13,13 @@ export default function Start() {
       </StyledParagraphHeadline>
       <StyledIllustration />
       <StyledParagraph>
-        Gemäß § 57 BGB benötigt jeder Verein eine Satzung. Beantworte einfach
-        die folgenden Fragen und dir wird im Anschluss eine individuell auf
-        deinen Verein abgestimmte Satzung generiert.
+        Gemäß § 57 des Bürgerlichen Gesetzbuches benötigt jeder Verein eine
+        Satzung. Beantworte einfach die folgenden Fragen und dir wird im
+        Anschluss eine individuell auf deinen Verein abgestimmte Satzung
+        generiert.
       </StyledParagraph>
       <StyledParagraph>
-        Mit einem simplen Klick kannst du dir schließlich die Satzung in die
+        Mit einem simplen Klick kannst du schließlich die Satzung in die
         Zwischenablage kopieren und beliebig wiederverwenden oder die Satzung
         als .txt Datei downloaden.
       </StyledParagraph>

@@ -24,7 +24,7 @@
   },
 
   {
-    "questionText": "In welcher Stadt soll dein Verein sitzen?",
+    "questionText": "Wo soll dein Verein sitzen?",
     "name": "clubLocation",
     "answerType": "text",
     "answerOptions": [],
