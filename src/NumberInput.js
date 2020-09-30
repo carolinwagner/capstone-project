@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const NumberInput = ({ question, register, defaultValue }) => {
+const NumberInput = ({ question, register = () => {}, defaultValue }) => {
   return (
     <StyledCenterInput>
       <StyledNumberInput

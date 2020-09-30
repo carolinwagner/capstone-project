@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const CheckboxInput = ({ question, register, watch, defaultValue }) => {
+const CheckboxInput = ({
+  question,
+  register = () => {},
+  watch = () => {},
+  defaultValue,
+}) => {
   return (
     <div>
       {question.answerOptions.map((answerOption, index) => {

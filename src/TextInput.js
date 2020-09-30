@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const TextInput = ({ question, register, defaultValue }) => {
+const TextInput = ({ question, register = () => {}, defaultValue }) => {
   const regex =
     question?.validationHookForm?.pattern &&
     new RegExp(question?.validationHookForm?.pattern)

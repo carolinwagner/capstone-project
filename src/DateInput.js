@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const DateInput = ({ question, register, defaultValue }) => {
+const DateInput = ({ question, register = () => {}, defaultValue }) => {
   const minToday = question?.validationNative?.minToday
   const getToday = () => new Date().toISOString().split('T')[0]
   return (

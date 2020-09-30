@@ -14,6 +14,11 @@ const defaultQuestion = {
     { label: 'd', name: 'd' },
   ],
 }
+
 export const DefaultCheckboxInput = () => (
-  <CheckboxInput question={defaultQuestion} />
+  <CheckboxInput
+    question={defaultQuestion}
+    register={() => {}}
+    watch={() => {}}
+  />
 )

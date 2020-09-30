@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const RadioInput = ({ question, register, defaultValue }) => {
+const RadioInput = ({ question, register = () => {}, defaultValue }) => {
   return (
     <div>
       {question.answerOptions.map((answerOption) => {

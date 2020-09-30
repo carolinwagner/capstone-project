@@ -1,11 +1,14 @@
 import React from 'react'
-import StyledSmallButton from '../StyledSmallButton'
+import Button from '../Button'
 
 export default {
-  title: 'StyledSmallButton',
-  component: StyledSmallButton,
+  title: 'Button',
+  component: Button,
 }
 
-export const DefaultButton = () => (
-  <StyledSmallButton>Default Button</StyledSmallButton>
+export const PrimaryButton = () => (
+  <Button variant="primary">Primary Button</Button>
+)
+export const SecondaryButton = () => (
+  <Button variant="secondary">Secondary Button</Button>
 )
