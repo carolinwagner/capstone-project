@@ -19,9 +19,9 @@ import NonProfitParagraph from './paragraphs/NonProfitParagraph'
 import UseOfFundsParagraph from './paragraphs/UseOfFundsParagraph'
 import { ReactComponent as ClipboardIcon } from './svgs/clipboard.svg'
 import { ReactComponent as DownloadIcon } from './svgs/download.svg'
+import Button from './Button'
 
 export default function BylawsText({ answers }) {
-  console.log('anwers:', answers)
   const bylawsRef = useRef(null)
   const answersArray = Object.entries(answers || {})
   const anyAnswerGiven = answersArray.some(([_, answer]) => {
@@ -34,7 +34,7 @@ export default function BylawsText({ answers }) {
 
   const [isTextDownloaded, setIsTextDownloaded] = useState(false)
 
-  const copyBylawsToClipboard = () => {
+  function copyBylawsToClipboard() {
     const text = bylawsRef.current?.innerText
     text &&
       navigator.clipboard
@@ -42,7 +42,7 @@ export default function BylawsText({ answers }) {
         .then(() => setIsTextCopied(true))
   }
 
-  const downloadBylaws = (text, fileType, fileName) => {
+  function downloadBylaws(text, fileType, fileName) {
     const blob = new Blob([text], { type: fileType })
 
     const a = document.createElement('a')
@@ -79,13 +79,14 @@ export default function BylawsText({ answers }) {
             Ergänzungen vornehmen.
           </p>
           <StyledSmallButtonContainer>
-            <StyledCopyButton onClick={copyBylawsToClipboard}>
+            <StyledButton variant="secondary" onClick={copyBylawsToClipboard}>
               <ClipboardIcon />
               <StyledCopyText>
-                Satzungstext {isTextCopied ? 'ist kopiert' : 'kopieren'}
+                Satzungstext {isTextCopied ? 'wurde kopiert' : 'kopieren'}
               </StyledCopyText>
-            </StyledCopyButton>
-            <StyledDownloadButton
+            </StyledButton>
+            <Button
+              variant="secondary"
               onClick={() => {
                 const text = bylawsRef.current?.innerText
                 downloadBylaws(text, 'text/plain', 'Satzung.txt')
@@ -97,7 +98,7 @@ export default function BylawsText({ answers }) {
                 Satzungstext{' '}
                 {isTextDownloaded ? 'wurde heruntergeladen' : 'downloaden'}
               </StyledDownloadText>
-            </StyledDownloadButton>
+            </Button>
           </StyledSmallButtonContainer>
           <StyledGeneratedBylaws ref={bylawsRef}>
             <HeadlineGeneratedBylaws answers={answers} />
@@ -133,7 +134,7 @@ export default function BylawsText({ answers }) {
   )
 }
 
-const StyledGeneratedBylaws = styled.div`
+const StyledGeneratedBylaws = styled.section`
   font-weight: 300;
   padding: 20px;
   background-color: var(--white);
@@ -141,8 +142,8 @@ const StyledGeneratedBylaws = styled.div`
   margin-top: 20px;
 `
 
-const StyledContainer = styled.div`
-  padding: 0 20px;
+const StyledContainer = styled.section`
+  padding: 15px;
   overflow-y: scroll;
 `
 
@@ -152,19 +153,11 @@ const StyledSmallButtonContainer = styled.div`
   justify-content: center;
   padding: 25px 0;
 `
-const StyledCopyButton = styled.button`
-  padding: 10px;
-  color: var(--lightgrey);
-  background-color: var(--lightblue);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+
+const StyledButton = styled(Button)`
   margin-bottom: 20px;
 `
+
 const StyledCopyText = styled.span`
   text-align: center;
   flex: 1;
@@ -172,19 +165,6 @@ const StyledCopyText = styled.span`
 const StyledDownloadText = styled.span`
   text-align: center;
   flex: 1;
-`
-
-const StyledDownloadButton = styled.button`
-  padding: 10px;
-  color: var(--lightgrey);
-  background-color: var(--lightblue);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 `
 
 const StyledLink = styled(Link)`
