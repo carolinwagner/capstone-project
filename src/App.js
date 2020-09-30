@@ -7,7 +7,7 @@ import Start from './Start'
 import styled from 'styled-components/macro'
 
 function App() {
-  const [answers, setAnswers] = useState(defaultAnswers)
+  const [answers, setAnswers] = useState({})
 
   const addAnswer = (newAnswer) => setAnswers({ ...answers, ...newAnswer })
 
