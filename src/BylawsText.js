@@ -9,6 +9,8 @@ import ClubPurposeParagraph from './paragraphs/ClubPurposeParagraph'
 import ClubRepresentationParagraph from './paragraphs/ClubRepresentationParagraph'
 import CommitteesParagraph from './paragraphs/CommitteesParagraph'
 import DissolutionMajorityParagraph from './paragraphs/DissolutionMajorityParagraph'
+import HeadlineGeneratedBylaws from './paragraphs/HeadlineParagraph'
+import MemberExclusionParagraph from './paragraphs/MemberExclusion'
 import MemberFeeParagraph from './paragraphs/MemberFeeParagraph'
 import MemberMeetingParagraph from './paragraphs/MemberMeetingParagraph'
 import MembersParagraph from './paragraphs/MembersParagraph'
@@ -16,6 +18,7 @@ import NameAndLocationParagraph from './paragraphs/NameAndLocationParagraph'
 import NonProfitParagraph from './paragraphs/NonProfitParagraph'
 import UseOfFundsParagraph from './paragraphs/UseOfFundsParagraph'
 import { ReactComponent as ClipboardIcon } from './svgs/clipboard.svg'
+import { ReactComponent as DownloadIcon } from './svgs/download.svg'
 import Button from './Button'
 
 export default function BylawsText({ answers }) {
@@ -29,12 +32,30 @@ export default function BylawsText({ answers }) {
   })
   const [isTextCopied, setIsTextCopied] = useState(false)
 
-  const copyBylawsToClipboard = () => {
+  const [isTextDownloaded, setIsTextDownloaded] = useState(false)
+
+  function copyBylawsToClipboard() {
     const text = bylawsRef.current?.innerText
     text &&
       navigator.clipboard
         .writeText(bylawsRef.current?.innerText)
         .then(() => setIsTextCopied(true))
+  }
+
+  function downloadBylaws(text, fileType, fileName) {
+    const blob = new Blob([text], { type: fileType })
+
+    const a = document.createElement('a')
+    a.download = fileName
+    a.href = URL.createObjectURL(blob)
+    a.dataset.downloadurl = [fileType, a.download, a.href].join(':')
+    a.style.display = 'none'
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    setTimeout(function () {
+      URL.revokeObjectURL(a.href)
+    }, 1500)
   }
 
   const LocationAndDate = (
@@ -58,14 +79,29 @@ export default function BylawsText({ answers }) {
             Ergänzungen vornehmen.
           </p>
           <StyledSmallButtonContainer>
-            <Button variant="secondary" onClick={copyBylawsToClipboard}>
+            <StyledButton variant="secondary" onClick={copyBylawsToClipboard}>
               <ClipboardIcon />
               <StyledCopyText>
-                Satzungstext {isTextCopied ? 'kopiert' : 'kopieren'}
+                Satzungstext {isTextCopied ? 'wurde kopiert' : 'kopieren'}
               </StyledCopyText>
+            </StyledButton>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                const text = bylawsRef.current?.innerText
+                downloadBylaws(text, 'text/plain', 'Satzung.txt')
+                setIsTextDownloaded(true)
+              }}
+            >
+              <DownloadIcon />
+              <StyledDownloadText>
+                Satzungstext{' '}
+                {isTextDownloaded ? 'wurde heruntergeladen' : 'downloaden'}
+              </StyledDownloadText>
             </Button>
           </StyledSmallButtonContainer>
           <StyledGeneratedBylaws ref={bylawsRef}>
+            <HeadlineGeneratedBylaws answers={answers} />
             <NameAndLocationParagraph answers={answers} />
             <BusinessYearParagraph />
             <ClubPurposeParagraph answers={answers} />
@@ -79,12 +115,14 @@ export default function BylawsText({ answers }) {
             <ClubRepresentationParagraph answers={answers} />
             <BoardMeetingParagraph answers={answers} />
             <CommitteesParagraph answers={answers} />
+            <MemberExclusionParagraph />
             <DissolutionMajorityParagraph answers={answers} />
 
             {LocationAndDate}
 
             <p>
-              Unterschriften der {answers.signaturesNumber} Gründungsmitglieder:
+              Namen und Unterschriften der {answers.signaturesNumber}{' '}
+              Gründungsmitglieder:
             </p>
           </StyledGeneratedBylaws>
         </>
@@ -113,6 +151,20 @@ const StyledSmallButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 25px 0;
+`
+
+const StyledButton = styled(Button)`
+  margin-bottom: 20px;
+`
+
+const StyledCopyText = styled.span`
+  text-align: center;
+  flex: 1;
+`
+const StyledDownloadText = styled.span`
+  text-align: center;
+  flex: 1;
 `
 
 const StyledLink = styled(Link)`
@@ -125,8 +177,4 @@ const StyledLink = styled(Link)`
   cursor: pointer;
   font-size: 1em;
   text-align: center;
-`
-const StyledCopyText = styled.span`
-  text-align: center;
-  flex: 1;
 `

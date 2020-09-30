@@ -6,7 +6,7 @@ const MemberFeeParagraph = ({ answers }) => {
     <Paragraph
       id="memberFee"
       headline="§ 8 Mitgliedsbeiträge"
-      text={
+      section1={
         answers.memberFee === 'yesMemberFee'
           ? 'Von den Mitgliedern werden Beiträge erhoben. Die Höhe der Beiträge und deren Fälligkeit bestimmt die Mitgliederversammlung.'
           : 'Mitgliedsbeiträge werden nicht erhoben.'

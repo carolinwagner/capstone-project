@@ -6,8 +6,23 @@
     "answerOptions": [],
     "validationHookForm": { "required": true, "pattern": ".*\\S.*" },
     "placeholder": "Beispielsverein",
-    "info": "Der Name deines Vereins sollte unmissverständlich sein. Im Idealfall lässt der Name schon den Zweck deines Vereins erkennen. Bezeichnungen mit “AG”, “GmbH & Co. KG” oder Ähnliches sind nicht gestattet, da diese Personengesellschaften zugeordnet werden. "
+    "info": "Der Name deines Vereins sollte unmissverständlich sein und sich von anderen Vereinen im Umkreis unterscheiden. Im Idealfall lässt der Name schon den Zweck deines Vereins erkennen. Bitte gib den Namen des Vereins ohne den Zusatz “e. V.” ein. Bezeichnungen des Vereins mit “AG”, “GmbH & Co. KG” oder Ähnlichem sind nicht gestattet, da diese Bezeichnungen Personengesellschaften zugeordnet werden."
   },
+  {
+    "questionText": "Soll der Verein in das Vereinsregister eingetragen werden? ",
+    "name": "clubRegistration",
+    "answerType": "radio",
+    "answerOptions": [
+      { "label": "ja", "name": "yesClubRegistration" },
+      {
+        "label": "nein",
+        "name": "noClubRegistration"
+      }
+    ],
+    "validationHookForm": { "required": true },
+    "info": "Durch die Eintragung wird der Verein eine juristische Person, die, wie jede natürliche Person, rechtlich selbstständig (rechtsfähig) ist und somit Träger von Rechten und Pflichten sein kann. Dadurch kann der Verein auch eigenes Vermögen erwerben. Die Mitglieder haften dann auch nicht persönlich für den Verein."
+  },
+
   {
     "questionText": "In welcher Stadt soll dein Verein sitzen?",
     "name": "clubLocation",
@@ -46,9 +61,7 @@
     "answerOptions": [
       { "label": "schriftlich", "name": "schriftlich" },
       { "label": "per E-Mail", "name": "per E-Mail" },
-      { "label": "per Fax", "name": "per Fax" },
-      { "label": "Brieftaube", "name": "per Brieftaube" },
-      { "label": "Flaschenpost", "name": "per Flaschenpost" }
+      { "label": "per Fax", "name": "per Fax" }
     ],
     "validationHookForm": { "oneOfGroupRequired": true },
     "info": "Du kannst frei entscheiden, wie potentielle Mitglieder einen Mitgliedsantrag stellen sollen."
@@ -133,12 +146,12 @@
     "info": "Die Form der Einladung zur Mitgliederversammlung ist frei wählbar."
   },
   {
-    "questionText": "Wie viele Tage vorher (zwischen 14 und 365) soll zur Mitgliederversammlung geladen werden?",
+    "questionText": "Wie viele Tage vorher (min. 1, max. 365) soll zur Mitgliederversammlung geladen werden?",
     "name": "generalMeetingDeadline",
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "14", "max": "365" },
+    "validationNative": { "min": "1", "max": "365" },
     "info": "Die Frist beginnt mit dem auf die Absendung des Einladungsschreibens folgenden Tag. Das Einladungsschreiben gilt als den Mitgliedern zugegangen, wenn es an die letzte dem Verein bekannt gegebene Anschrift gerichtet war."
   },
   {
@@ -204,11 +217,11 @@
       },
       {
         "label": "Schatzmeister",
-        "name": "dem Schatzmeister"
+        "name": "dem Schatzmeister / der Schatzmeisterin"
       },
       {
         "label": "Schriftführer",
-        "name": "dem Schriftführer"
+        "name": "dem Schriftführer / der Schatzmeisterin"
       }
     ],
     "validationHookForm": { "oneOfGroupRequired": true },
@@ -285,12 +298,12 @@
     "info": "Die Art der Ladung ist frei wählbar."
   },
   {
-    "questionText": "Wie viele Tage (zwischen 14 und 365) vorher soll zu einer Vorstandssitzung geladen werden?",
+    "questionText": "Wie viele Tage (min. 1, max. 365) vorher soll zu einer Vorstandssitzung geladen werden?",
     "name": "boardMeetingDeadline",
     "answerType": "number",
     "answerOptions": [],
     "validationHookForm": { "required": true },
-    "validationNative": { "min": "14", "max": "365" },
+    "validationNative": { "min": "1", "max": "365" },
     "info": "Die Frist beginnt mit dem auf die Absendung des Einladungsschreibens folgenden Tag. Das Einladungsschreiben gilt als den Mitgliedern zugegangen, wenn es an die letzte dem Verein bekannt gegebene Anschrift gerichtet war."
   },
   {
@@ -340,7 +353,7 @@
       }
     ],
     "validationHookForm": { "required": true },
-    "info": "Für die Auflösung eines Vereins ist gesetzlich eine Drei-Viertel Mehrheit vorgesehen. Diese Regelung kann jedoch durch die Satzung abgeändert werden."
+    "info": "Für die Auflösung eines Vereins ist gesetzlich eine Drei-Viertel Mehrheit vorgesehen. Von dieser Regelung kann jedoch in der Satzung abgewichen werden."
   },
   {
     "questionText": "An welchem Tag soll über die Satzung beschlossen werden?",

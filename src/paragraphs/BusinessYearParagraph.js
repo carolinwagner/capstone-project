@@ -6,7 +6,7 @@ const BusinessYearParagraph = () => {
     <Paragraph
       id="businessYear"
       headline="§ 2 Geschäftsjahr"
-      text="Geschäftsjahr ist das Kalenderjahr."
+      section1="Geschäftsjahr ist das Kalenderjahr."
     />
   )
 }

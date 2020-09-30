@@ -6,7 +6,7 @@ const UseOfFundsParagraph = () => {
     <Paragraph
       id="useOfFunds"
       headline="§ 5 Mittelverwendung"
-      text="Mittel des Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet
+      section1="Mittel des Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet
     werden. Die Mitglieder erhalten keine Zuwendungen aus Mitteln des
     Vereins."
     />

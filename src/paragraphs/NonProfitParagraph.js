@@ -6,7 +6,7 @@ const NonProfitParagraph = () => {
     <Paragraph
       id="nonProfit"
       headline="§ 4 Gemeinnützigkeit"
-      text="Der Verein ist selbstlos tätig. Er verfolgt nicht in erster Linie
+      section1="Der Verein ist selbstlos tätig. Er verfolgt nicht in erster Linie
       eigenwirtschaftliche Zwecke."
     />
   )

@@ -11,8 +11,8 @@ const DissolutionMajorityParagraph = ({ answers }) => {
   return (
     <Paragraph
       id="dissolutionMajority"
-      headline="§ 14 Auflösung des Vereins"
-      text={`Die Auflösung des Vereins kann nur mit einer
+      headline="§ 15 Auflösung des Vereins"
+      section1={`Die Auflösung des Vereins kann nur mit einer
       ${dissolutionMajority[answers.dissolutionMajority]} der anwesenden
       Mitglieder bei einer Mitgliederversammlung beschlossen werden.
         `}

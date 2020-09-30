@@ -17,7 +17,8 @@ const MembersParagraph = ({ answers }) => {
     <Paragraph
       id="members"
       headline="§ 6 Erwerb der Mitgliedschaft"
-      text={`${members} können Vereinsmitglieder werden. Der Aufnahmeantrag kann 
+      section1={`I. ${members} können Vereinsmitglieder werden.`}
+      section2={`II. Der Aufnahmeantrag kann 
    ${typeOfRequest} gestellt werden. Über den Aufnahmeantrag entscheidet
     der Vorstand. Gegen die Ablehnung, die keiner Begründung bedarf, steht
     dem/der Bewerber/in die Berufung an die Mitgliederversammlung zu,

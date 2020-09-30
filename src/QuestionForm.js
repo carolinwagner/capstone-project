@@ -7,6 +7,7 @@ import NumberInput from './NumberInput'
 import RadioInput from './RadioInput'
 import TextInput from './TextInput'
 import { ReactComponent as InfoIcon } from './svgs/info.svg'
+import { ReactComponent as ChevronUpIcon } from './svgs/chevron-up.svg'
 import questions from './questions.json'
 import Button from './Button'
 
@@ -68,6 +69,7 @@ export default function QuestionForm({
               <StyledInfoText>
                 {isInfoVisible ? 'Weniger' : 'Mehr'} Infos
               </StyledInfoText>
+              <StyledChevronUpIcon isInfoVisible={isInfoVisible} />
             </Button>
             {transitions.map(
               ({ item, key, props }) =>
@@ -104,6 +106,12 @@ const StyledInfoContainer = styled.div`
 const StyledInfoText = styled.span`
   text-align: center;
   flex: 1;
+`
+
+const StyledChevronUpIcon = styled(ChevronUpIcon)`
+  transform: ${(props) =>
+    props.isInfoVisible ? 'rotate(0deg);' : 'rotate(180deg)'};
+  transition: transform 0.5s ease-in-out;
 `
 
 const StyledQuestionHeadline = styled.h2`
