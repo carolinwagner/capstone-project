@@ -26,7 +26,7 @@ export default function QuestionForm({
   }
 
   const transitions = useTransition(isInfoVisible, null, {
-    from: { opacity: 0 },
+    from: { opacity: 0, maxHeight: '180px', overflow: 'scroll' },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
   })
@@ -110,7 +110,7 @@ const StyledQuestionAndInputContainer = styled.section`
 `
 
 const StyledInfoContainer = styled.div`
-  padding-top: 40px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   & p {
