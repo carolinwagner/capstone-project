@@ -4,6 +4,7 @@ import Header from './Header'
 import BylawsText from './BylawsText'
 import QuestionPage from './QuestionPage'
 import Start from './Start'
+import Footer from './Footer'
 import styled from 'styled-components/macro'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <BylawsText answers={answers} />
           </Route>
         </Switch>
+        <Footer />
       </StyledMainContainer>
     </StyledCenterOnDesktop>
   )
