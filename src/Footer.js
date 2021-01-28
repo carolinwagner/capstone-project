@@ -6,11 +6,10 @@ export default function Footer() {
 }
 
 const StyledFooter = styled.h1`
-  margin-top: 20px;
   margin-bottom: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lato';
   font-weight: 600;
   text-align: center;
-  font-size: 30px;
+  font-size: 10px;
   color: var(--blue);
 `
