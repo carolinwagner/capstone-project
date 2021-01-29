@@ -5,6 +5,7 @@ import BylawsText from './BylawsText'
 import QuestionPage from './QuestionPage'
 import Start from './Start'
 import Footer from './Footer'
+import Impressum from './Impressum'
 import styled from 'styled-components/macro'
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/bylawstext">
             <BylawsText answers={answers} />
+          </Route>
+          <Route path="/impressum">
+            <Impressum />
           </Route>
         </Switch>
         <Footer />
