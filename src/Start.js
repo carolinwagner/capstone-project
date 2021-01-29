@@ -12,6 +12,11 @@ export default function Start() {
         Satzung parat?
       </StyledParagraphHeadline>
       <StyledIllustration />
+      <StyledParagraphred>
+        Dies ist mein Abschlussprojekt des Web-Development Bootcamps bei
+        neuefische und dient lediglich dem Zweck der Programmierung. Eine
+        verbindliche Rechtsauskunft kann daher nicht gegeben werden.
+      </StyledParagraphred>
       <StyledParagraph>
         Gemäß § 57 des Bürgerlichen Gesetzbuches benötigt jeder Verein eine
         Satzung. Beantworte einfach die folgenden Fragen und dir wird im
@@ -59,6 +64,13 @@ const StyledParagraphHeadline = styled.h2`
 `
 const StyledParagraph = styled.p`
   color: var(--darkgrey);
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 5px;
+  margin-top: 5px;
+`
+const StyledParagraphred = styled.p`
+  color: red;
   line-height: 1.5;
   font-weight: 300;
   margin-bottom: 5px;
