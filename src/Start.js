@@ -13,8 +13,8 @@ export default function Start() {
       </StyledParagraphHeadline>
       <StyledIllustration />
       <StyledParagraphred>
-        Dies ist mein Abschlussprojekt des Web-Development Bootcamps bei
-        neuefische und dient lediglich dem Zweck der Programmierung. Eine
+        Dies ist ein Abschlussprojekt des Web-Development Bootcamps der
+        neuefische GmbH und dient lediglich dem Zweck der Programmierung. Eine
         verbindliche Rechtsauskunft kann daher nicht gegeben werden.
       </StyledParagraphred>
       <StyledParagraph>
@@ -72,9 +72,10 @@ const StyledParagraph = styled.p`
 const StyledParagraphred = styled.p`
   color: red;
   line-height: 1.5;
-  font-weight: 300;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
 `
 
 const StyledLink = styled(Link)`
