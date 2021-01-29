@@ -73,11 +73,17 @@ export default function BylawsText({ answers }) {
     <StyledContainer>
       {anyAnswerGiven && (
         <>
+          <StyledParagraphred>
+            Dies ist ein Abschlussprojekt des Web-Development Bootcamps der
+            neuefische GmbH und dient lediglich dem Zweck der Programmierung.
+            Eine verbindliche Rechtsauskunft kann daher nicht gegeben werden.
+          </StyledParagraphred>
           <p>
             Die folgende Satzung wurde basierend auf deinen Antworten generiert.
             Bitte überprüfe die Satzung. Gegebenenfalls kannst du natürlich noch
             Ergänzungen vornehmen.
           </p>
+
           <StyledSmallButtonContainer>
             <StyledButton variant="secondary" onClick={copyBylawsToClipboard}>
               <ClipboardIcon />
@@ -145,6 +151,14 @@ const StyledGeneratedBylaws = styled.section`
 const StyledContainer = styled.section`
   padding: 15px;
   overflow-y: scroll;
+`
+const StyledParagraphred = styled.p`
+  color: red;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
 `
 
 const StyledSmallButtonContainer = styled.div`
