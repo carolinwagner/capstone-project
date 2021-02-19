@@ -13,7 +13,6 @@ input[type="radio"], input[type="checkbox"] {
 body {
   font-size: 112.5%;
   font-family: 'Lato', sans-serif;
-  height: 100%;
   margin: 0;
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,236,236,1) 100%)
   fixed no-repeat;

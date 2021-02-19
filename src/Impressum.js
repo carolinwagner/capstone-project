@@ -6,8 +6,14 @@ import Button from './Button'
 export default function Impressum() {
   return (
     <>
-      <h2>Impressum</h2>
-      <p>Inhaberin der Seite bin ich.</p>
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        Carolin Wagner <br />
+        Richardstraße 62
+        <br /> 22089 Hamburg
+        <br />
+        hello@carolin-wagner.de
+      </p>
 
       <StyledSmallButtonContainer>
         <StyledLink to="/">

@@ -47,7 +47,7 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 20px;
+  padding: 0;
 `
 
 const StyledParagraphHeadline = styled.h2`

@@ -20,18 +20,20 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Start />
+            <Footer />
           </Route>
           <Route path="/questions">
             <QuestionPage onAddAnswer={addAnswer} answers={answers} />
+            <Footer />
           </Route>
           <Route path="/bylawstext">
             <BylawsText answers={answers} />
+            <Footer />
           </Route>
           <Route path="/impressum">
             <Impressum />
           </Route>
         </Switch>
-        <Footer />
       </StyledMainContainer>
     </StyledCenterOnDesktop>
   )
@@ -40,10 +42,12 @@ function App() {
 const StyledMainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   max-width: 500px;
   width: 100%;
+  position: relative;
+  min-height: 100vh;
 `
+
 const StyledCenterOnDesktop = styled.div`
   height: 100%;
   width: 100%;

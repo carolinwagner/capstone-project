@@ -1,15 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 export default function Footer() {
-  return <StyledFooter>Impressum</StyledFooter>
+  return (
+    <StyledFooterContainer>
+      <StyledLink to="/impressum">Impressum</StyledLink>
+    </StyledFooterContainer>
+  )
 }
 
-const StyledFooter = styled.h1`
-  margin-bottom: 0;
-  font-family: 'Lato';
-  font-weight: 600;
-  text-align: center;
-  font-size: 10px;
-  color: var(--blue);
+const StyledFooterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 25px 20px;
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `
